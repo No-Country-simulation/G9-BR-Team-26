@@ -23,19 +23,19 @@ Sistema inteligente para análise de comportamento financeiro, classificação d
 
 ### 1. Setup do projeto e modelagem de dados
 **Endpoints tratados nesta etapa:** nenhum ainda (fundação para todos os endpoints)
-- [ ] Criar projeto Spring Boot (Spring Web, Spring Data JPA, MySQL Driver, Validation, Lombok)
-- [ ] Definir `docker-compose.yml` com serviços `app` (Spring Boot) + `mysql` (volume persistente + variáveis de ambiente)
-- [ ] Modelar entidades: `Usuario`, `Transacao`, `AnaliseFinanceira`, `Recomendacao`
-- [ ] Criar `application.yml` com profiles (`dev` / `docker`) apontando para o MySQL do container
-- [ ] Rodar migração inicial (Flyway ou `ddl-auto: update` para o MVP)
+- [ x ] Criar projeto Spring Boot (Spring Web, Spring Data JPA, MySQL Driver, Validation, Lombok)
+- [ x ] Definir `docker-compose.yml` com serviços `app` (Spring Boot) + `mysql` (volume persistente + variáveis de ambiente)
+- [ x ] Modelar entidades: `Usuario`, `Transacao`, `AnaliseFinanceira`, `Recomendacao`
+- [ x ] Criar `application.yml` com profiles (`dev` / `docker`) apontando para o MySQL do container
+- [ x ] Rodar migração inicial (Flyway ou `ddl-auto: update` para o MVP)
 
 ### 2. Autenticação (login/signup)
 **Endpoints tratados nesta etapa:**
 - `POST /auth/signup`
 - `POST /auth/login`
-- [ ] Implementar `POST /auth/signup` (cadastro de usuário, validação de e-mail duplicado)
-- [ ] Implementar `POST /auth/login` (autenticação e emissão de JWT)
-- [ ] Configurar Spring Security com filtro JWT para proteger as rotas autenticadas
+- [ x ] Implementar `POST /auth/signup` (cadastro de usuário, validação de e-mail duplicado)
+- [ x ] Implementar `POST /auth/login` (autenticação e emissão de JWT)
+- [ x ] Configurar Spring Security com filtro JWT para proteger as rotas autenticadas
 
 ### 3. Estrutura em camadas e CRUD base
 **Endpoints tratados nesta etapa:**

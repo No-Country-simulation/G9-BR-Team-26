@@ -1,89 +1,120 @@
-# 📊 Smart Finance - Análise de Comportamento Financeiro (G9 Hackathon)
+# 📊 Smart Finance - Análise de Comportamento Financeiro
 
-Bem-vindo ao repositório do projeto **Smart Finance**, uma plataforma de análise de comportamento financeiro desenvolvida no contexto do Hackathon. O sistema analisa receitas, nível de endividamento, frequência de poupança e histórico de transações de usuários para classificar despesas, mapear perfis financeiros (Saudável, Em Observação ou Em Risco) e gerar recomendações inteligentes e personalizadas.
+Bem-vindo ao repositório do projeto Smart Finance, uma solução de análise financeira desenvolvida para o hackathon. O objetivo principal é entender o comportamento financeiro do usuário, classificar despesas, identificar o perfil financeiro e gerar recomendações personalizadas.
 
-## Lógica do sistema
+## 🧭 Visão geral do fluxo
+
+A arquitetura do projeto foi pensada com uma divisão clara de responsabilidades:
+
+- O módulo de Ciência de Dados treina os modelos, valida o desempenho e entrega artefatos serializados em formato .joblib.
+- O backend é responsável por receber os dados do usuário, carregar esses modelos, executar a inferência e retornar a resposta em formato JSON.
+- A persistência e a camada de API ficam no backend, enquanto a modelagem preditiva fica concentrada no módulo de dados.
 
 ```text
-[ data-science ]  ->  treina modelos e gera artefatos
+[ data-science ]  -> treina modelos e gera artefatos .joblib
         |
         v
-[ backend/src/main/resources/models ]
+[ backend ]       -> carrega os modelos e executa inferência
         |
         v
-[ backend Java ]  -> usa os artefatos para inferência via API
+[ Spring Boot API + MySQL ]
 ```
 
 ---
 
-## 🏗️ Arquitetura do Sistema
-
-O projeto é dividido em três grandes blocos estruturais que trabalham de forma coordenada:
+## 🏗️ Arquitetura do sistema
 
 ```mermaid
-graph TD
-    Client[Cliente / Frontend] -->|POST /analise-financeira| API[Spring Boot API - Backend]
-    API -->|Persistência| DB[(MySQL Database - Docker)]
-    API -->|HTTP Request| DS[FastAPI - Ciência de Dados]
-    DS -->|Classificadores/Regras| ModelCategory[Modelo Categoria .joblib]
-    DS -->|Classificadores/Regras| ModelProfile[Modelo Perfil .joblib]
-    DS -->|Backup / Upload| OCI[OCI Object Storage]
+graph LR
+    Client[Cliente / Frontend] -->|HTTP| Backend[Spring Boot API]
+    Backend -->|Persistência| DB[(MySQL)]
+    DataScience[Data Science] -->|artefatos .joblib| Models[Modelos treinados]
+    Models --> Backend
+    Backend -->|Resposta JSON| Client
 ```
 
-1. **Backend (`/backend`)**: API REST construída com **Spring Boot 3.x** e **Java 17**, responsável pelas regras de negócio, persistência de transações e integração com o motor de Machine Learning.
-2. **Ciência de Dados (`/data-science`)**: Pipeline em **Python** focado em Engenharia de Atributos, Treinamento de Modelos de Classificação (TF-IDF + Naive Bayes/SVM e Random Forest/Logistic Regression) e API de inferência com **FastAPI**.
-3. **Infraestrutura (`/docker`)**: Orquestração e persistência de dados via **Docker Compose**, provendo um ambiente isolado para o banco de dados **MySQL 8.0**.
+### Componentes
+
+1. Backend
+   - API REST em Java 17 com Spring Boot.
+   - Responsável por autenticação, validação, regras de negócio e integração com os modelos.
+   - Já conta com estrutura inicial para cadastro/login e configuração com MySQL e JWT.
+
+2. Data Science
+   - Pipeline em Python para pré-processamento, engenharia de atributos, treino e avaliação de modelos.
+   - Gera artefatos serializados em .joblib para posterior uso pelo backend.
+   - O foco principal é classificar categorias de gasto e inferir o perfil financeiro do usuário.
+
+3. Infraestrutura
+   - Docker Compose para subir o banco de dados MySQL.
+   - Organização em módulos para facilitar a execução do hackathon e a integração entre time de dados e backend.
 
 ---
 
-## 📁 Estrutura de Diretórios
+## 📁 Estrutura do repositório
 
 ```bash
 G9-HACKATHON-TEST/
-├── backend/            # Código-fonte da API Spring Boot e configurações do Maven
-├── data-science/       # Modelos de Machine Learning, scripts de treinamento e API FastAPI
-├── docker/             # Arquivos auxiliares e scripts para execução no Docker
-├── docs/               # Documentações técnicas adicionais
-├── docker-compose.yml  # Configuração global de serviços (MySQL)
-└── STEPS.md            # Planejamento detalhado do Hackathon
+├── backend/            # API Spring Boot, DTOs, controllers, serviços e integração com os modelos
+├── data-science/       # Pipeline de ML, documentação e artefatos de treinamento
+├── docker/             # Documentação e recursos auxiliares de infraestrutura
+├── docs/               # Planejamento, metas e especificação de endpoints
+└── README.md           # Visão geral do projeto
 ```
 
 ---
 
-## 🚀 Como Iniciar
+## 🔍 Status atual do projeto
 
-### Requisitos Prévios
-- [Docker](https://www.docker.com/) e Docker Compose instalados
-- [Java JDK 17](https://www.oracle.com/java/technologies/downloads/) instalado
-- [Maven 3.x](https://maven.apache.org/) instalado
-- [Python 3.10+](https://www.python.org/) instalado
+O repositório já apresenta uma base inicial bem organizada:
 
-### Passo 1: Inicializar o Banco de Dados
-Na raiz do projeto, execute o Docker Compose para subir a instância do MySQL:
+- O backend possui estrutura Spring Boot com autenticação, configuração de banco e dependências para validação e segurança.
+- O módulo de dados já documenta a lógica de treino, feature engineering e serialização de modelos.
+- A integração entre os dois módulos ainda deve ser finalizada com a entrega dos artefatos .joblib e a carga desses modelos no backend.
+
+Esse alinhamento é essencial para o MVP: a Ciência de Dados entrega o modelo; o Backend o consome para gerar a análise financeira em tempo real.
+
+---
+
+## 🚀 Como executar
+
+### Requisitos prévios
+
+- Docker e Docker Compose
+- Java 17
+- Maven 3.x
+- Python 3.10+
+
+### 1. Subir o banco de dados
+
+No diretório do backend, execute:
+
 ```bash
+cd backend
 docker compose up -d
 ```
-*Consulte o [docker/README.md](file:///c:/Users/Admin/Documents/projetos/G9-HACKATHON-TEST/docker/README.md) para mais detalhes sobre credenciais e portas.*
 
-### Passo 2: Executar o Backend
-Acesse a pasta `backend`, instale as dependências Maven e inicie o Spring Boot:
+### 2. Rodar o backend
+
 ```bash
 cd backend
 mvn clean spring-boot:run
 ```
-*Consulte o [backend/README.md](file:///c:/Users/Admin/Documents/projetos/G9-HACKATHON-TEST/backend/README.md) para ver a documentação dos endpoints e Swagger.*
 
-### Passo 3: Configurar o Módulo de Ciência de Dados
-Acesse o diretório `data-science` para consultar a documentação de modelagem, pré-processamento e FastAPI.
-*Consulte o [data-science/README.md](file:///c:/Users/Admin/Documents/projetos/G9-HACKATHON-TEST/data-science/README.md).*
+### 3. Trabalhar no módulo de dados
+
+Consulte a documentação do módulo de ciência de dados em [data-science/README.md](data-science/README.md) para acompanhar o treinamento dos modelos e a geração dos artefatos.
 
 ---
 
-## 🔗 Contrato da API Principal
+## 🔗 Contrato principal da API
 
-### `POST /analise-financeira`
+O endpoint principal do MVP é o fluxo de análise financeira:
 
-**Payload de Entrada (JSON)**
+### POST /analise-financeira
+
+Entrada esperada:
+
 ```json
 {
   "renda_mensal": 4500,
@@ -97,7 +128,8 @@ Acesse o diretório `data-science` para consultar a documentação de modelagem,
 }
 ```
 
-**Payload de Saída (JSON)**
+Saída esperada:
+
 ```json
 {
   "perfil_financeiro": "Em observacao",
@@ -116,6 +148,19 @@ Acesse o diretório `data-science` para consultar a documentação de modelagem,
 
 ---
 
-## ☁️ Integração OCI (Oracle Cloud Infrastructure)
-Como requisito obrigatório do hackathon, o projeto fará uso de:
-- **OCI Object Storage**: Armazenamento seguro e versionado dos arquivos serializados de modelos (`.joblib`) e relatórios periódicos em PDF dos usuários.
+## ☁️ Integração com OCI
+
+Como parte do requisito do hackathon, o projeto deve contemplar integração com OCI, especialmente para:
+
+- versionamento e armazenamento seguro dos modelos .joblib;
+- possível persistência de relatórios ou artefatos gerados;
+- futura disponibilização de pipelines e artefatos em ambiente externo.
+
+---
+
+## 📚 Documentação complementar
+
+- [docs/METAS.md](docs/METAS.md)
+- [docs/PLANO-ENDPOINTS.md](docs/PLANO-ENDPOINTS.md)
+- [backend/README.md](backend/README.md)
+- [data-science/README.md](data-science/README.md)

@@ -1,5 +1,7 @@
 # 📊 Smart Finance - Ciência de Dados (ML Pipeline)
 
+`Esta parte é uma descrição de como será o projeto mas o líder de dados Thiago deverá confirmar se seguirá esta lógica ` 
+
 Este diretório contém o planejamento e a documentação para o módulo de **Ciência de Dados** do projeto Smart Finance. O objetivo deste módulo é classificar despesas a partir de descrições textuais, identificar perfis financeiros com base no comportamento de gastos e fornecer recomendações automatizadas personalizadas.
 
 ---
