@@ -41,7 +41,7 @@ public class AuthService {
         usuario = usuarioRepository.save(usuario);
 
         return UserResponse.builder()
-                .id("usr_" + usuario.getId()) // Mantendo o padrão do exemplo
+                .id(usuario.getId())
                 .nome(usuario.getNome())
                 .email(usuario.getEmail())
                 .criadoEm(usuario.getCriadoEm())

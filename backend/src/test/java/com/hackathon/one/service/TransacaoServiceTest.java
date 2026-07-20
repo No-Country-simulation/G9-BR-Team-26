@@ -3,6 +3,7 @@ package com.hackathon.one.service;
 import com.hackathon.one.domain.Transacao;
 import com.hackathon.one.domain.Usuario;
 import com.hackathon.one.dto.TransacaoRequest;
+import com.hackathon.one.dto.TransacaoResponse;
 import com.hackathon.one.repository.TransacaoRepository;
 import com.hackathon.one.repository.UsuarioRepository;
 import org.junit.jupiter.api.Test;
