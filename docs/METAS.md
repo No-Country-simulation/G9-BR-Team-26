@@ -42,9 +42,9 @@ Sistema inteligente para análise de comportamento financeiro, classificação d
 - `POST /transacoes` *(criação/persistência)*
 - `GET /transacoes/{usuarioId}`
 - `GET /usuarios/{id}`
-- [ ] Criar camadas: `Controller` → `Service` → `Repository` → `DTO` (nunca expor entidade diretamente)
-- [ ] Endpoints CRUD básicos: `POST /transacoes`, `GET /transacoes/{usuarioId}`, `GET /usuarios/{id}`
-- [ ] Configurar `ModelMapper` ou mapeamento manual DTO ↔ Entity
+- [ x ] Criar camadas: `Controller` → `Service` → `Repository` → `DTO` (nunca expor entidade diretamente)
+- [ x ] Endpoints CRUD básicos: `POST /transacoes`, `GET /transacoes/{usuarioId}`, `GET /usuarios/{id}`
+- [ x ] Configurar `ModelMapper` ou mapeamento manual DTO ↔ Entity
 - [ ] Testar tudo via Postman/Insomnia antes de avançar
 
 ### 4. Endpoint principal de análise financeira
