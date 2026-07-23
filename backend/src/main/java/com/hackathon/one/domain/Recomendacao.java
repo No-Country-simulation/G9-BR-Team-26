@@ -1,3 +1,4 @@
+
 package com.hackathon.one.domain;
 
 import jakarta.persistence.*;
@@ -14,5 +15,10 @@ public class Recomendacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // TODO: Adicionar os campos restantes
+    @Column(nullable = false, length = 500)
+    private String texto;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "analise_id", nullable = false)
+    private AnaliseFinanceira analiseFinanceira;
 }

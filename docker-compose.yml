@@ -1,0 +1,21 @@
+# docker-compose.yml
+# Define os serviços de infraestrutura do projeto Finance AI.
+# Neste momento, apenas o banco de dados MySQL está incluído.
+
+services:
+  mysql:
+    image: mysql:8.0              # imagem oficial do MySQL, versão 8.0 (confirmado no README)
+    container_name: finance-mysql # nome do container, facilita identificar no `docker ps`
+    restart: unless-stopped       # reinicia o container automaticamente se ele cair, exceto se você parar manualmente
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: finance_db              # banco de dados criado automaticamente na primeira subida
+      MYSQL_USER: finance_user                # usuário que a aplicação Spring Boot vai usar
+      MYSQL_PASSWORD: finance_password        # senha desse usuário
+    ports:
+      - "3306:3306"                # expõe a porta padrão do MySQL (host:container)
+    volumes:
+      - mysql_data:/var/lib/mysql  # garante que os dados sobrevivem mesmo se o container for recriado
+
+volumes:
+  mysql_data:                      # volume nomeado, gerenciado pelo Docker (persistência real dos dados)

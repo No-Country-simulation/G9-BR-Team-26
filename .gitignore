@@ -1,0 +1,18 @@
+# Maven
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de teste temporários
+*.csv
+!src/**/*.csv
+
+# Logs
+*.log
