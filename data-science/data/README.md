@@ -10,3 +10,9 @@ Esta pasta contém os arquivos de dados em formato CSV utilizados pelos Jupyter 
 
 ### 📌 Utilização:
 Estes CSVs são lidos pelos notebooks em `data-science/notebooks/` para treinar e validar os modelos que serão exportados para `data-science/models/`.
+
+# Dados brutos
+
+Esta pasta contém os datasets originais (`usuarios.csv`, `transacoes.csv`) utilizados como ponto de partida do projeto Smart Finance.
+
+A exploração inicial e verificação de qualidade sobre esses dados está documentada em `data-science/data/eda.ipynb`.
