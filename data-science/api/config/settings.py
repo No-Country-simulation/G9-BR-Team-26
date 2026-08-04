@@ -17,5 +17,5 @@ load_dotenv(ENV_FILE)
 API_TOKEN: str = os.getenv("SMART_FINANCE_API_TOKEN")
 
 # Diretório onde ficam os artefatos .joblib (tfidf, modelo_categoria, modelo_perfil)
-BASE_DIR = Path(__file__).resolve().parents[1]  # aponta pra api/
+BASE_DIR = Path(__file__).resolve().parents[2]  # aponta pra data-science/ (não api/)
 MODELS_DIR = Path(os.getenv("MODELS_DIR", BASE_DIR / "models"))

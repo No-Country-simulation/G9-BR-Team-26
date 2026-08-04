@@ -1,0 +1,7 @@
+.venv
+api/__pycache__/
+api/scripts/__pycache__/
+api/service/__pycache__/
+api/controller/__pycache__/
+api/config/__pycache__/
+api/dto/__pycache__/

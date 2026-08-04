@@ -20,7 +20,7 @@ from dto.schemas import (
 )
 
 if TYPE_CHECKING:
-    from predictor import ModelPredictor
+    from scripts.predictor import ModelPredictor
 
 logger = logging.getLogger(__name__)
 
