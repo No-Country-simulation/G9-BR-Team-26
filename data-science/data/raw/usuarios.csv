@@ -1,0 +1,1001 @@
+usuario_id,idade,sexo,estado_civil,dependentes,cidade,estado,profissao,escolaridade,renda_mensal,outras_rendas,nivel_endividamento,score_credito,saldo_medio_conta,limite_cartao,frequencia_poupanca,percentual_renda_investida,tempo_emprego_anos,possui_financiamento,possui_imovel,possui_veiculo,perfil_financeiro
+1,40,Masculino,Divorciado,2,Belo Horizonte,MG,Analista de TI,Médio,9214.53,1013.56,27.98,562,3401.85,6849.44,Sempre,7.9,0.9,Não,Não,Não,Em observação
+2,41,Masculino,Solteiro,2,Duque de Caxias,RJ,Recepcionista,Fundamental,1812.22,0.0,59.68,397,299.94,1343.19,Nunca,1.35,0.5,Não,Não,Sim,Em risco
+3,40,Feminino,Casado,0,Guarulhos,SP,Analista de TI,Superior,7668.81,691.22,35.69,550,3406.79,11308.24,Às vezes,9.13,0.6,Sim,Não,Sim,Em observação
+4,38,Masculino,Divorciado,4,Cuiabá,MT,Analista de TI,Superior,7828.2,0.0,49.59,558,2848.93,9317.56,Frequentemente,10.23,16.1,Não,Não,Sim,Em observação
+5,27,Feminino,Solteiro,0,Maceió,AL,Empresário,Superior,21743.69,0.0,17.56,700,45557.9,35583.72,Sempre,12.76,0.9,Não,Sim,Não,Saudável
+6,37,Masculino,Solteiro,4,São Paulo,SP,Jornalista,Pós-graduação,6253.23,2081.2,16.72,935,10805.05,10388.74,Às vezes,29.73,3.7,Não,Não,Sim,Saudável
+7,55,Masculino,Solteiro,2,Juiz de Fora,MG,Engenheiro de Produção,Superior,12094.59,1416.82,8.0,1000,22691.74,16726.5,Sempre,25.63,4.5,Não,Não,Não,Saudável
+8,41,Masculino,Casado,0,Anápolis,GO,Médico,Pós-graduação,14309.89,0.0,79.01,324,1872.52,7113.63,Nunca,0.22,5.5,Sim,Não,Sim,Em risco
+9,68,Masculino,Solteiro,2,Salvador,BA,Gerente Comercial,Superior,11927.26,0.0,35.22,625,6423.84,14602.51,Frequentemente,4.92,24.8,Não,Não,Sim,Em observação
+10,50,Masculino,Solteiro,3,Belo Horizonte,MG,Cabeleireiro,Médio,4618.06,0.0,53.79,567,2350.27,3125.67,Frequentemente,3.5,16.7,Não,Sim,Sim,Em observação
+11,40,Masculino,Solteiro,1,Palmas,TO,Motoboy,Médio,3367.48,0.0,12.33,802,7658.53,7686.38,Sempre,21.31,14.6,Não,Não,Sim,Saudável
+12,40,Feminino,Solteiro,2,Guarulhos,SP,Recepcionista,Médio,1570.72,0.0,79.9,300,165.29,285.9,Às vezes,1.57,14.8,Não,Não,Não,Em risco
+13,36,Masculino,Casado,1,Niterói,RJ,Veterinário,Superior,4267.14,0.0,55.0,332,634.53,2712.1,Nunca,0.66,8.1,Sim,Não,Não,Em risco
+14,35,Masculino,Casado,1,Feira de Santana,BA,Aposentado,Médio,5144.59,680.45,3.97,825,13206.26,8539.55,Frequentemente,21.46,11.7,Sim,Não,Não,Saudável
+15,44,Feminino,Viúvo,2,Goiânia,GO,Designer Gráfico,Superior,8168.45,2478.59,11.8,887,7259.62,10333.52,Sempre,27.97,21.5,Não,Sim,Sim,Saudável
+16,42,Feminino,Solteiro,1,Rio de Janeiro,RJ,Eletricista,Médio,4183.92,0.0,6.7,700,9851.58,7617.76,Frequentemente,23.39,1.8,Sim,Não,Não,Saudável
+17,18,Masculino,Viúvo,0,Pelotas,RS,Engenheiro Civil,Superior,12133.27,2355.7,17.32,806,33617.14,18017.8,Frequentemente,17.58,0.0,Não,Não,Sim,Saudável
+18,40,Feminino,Solteiro,0,Teresina,PI,Vendedor,Médio,2728.23,0.0,25.0,529,1124.43,3433.24,Frequentemente,5.16,3.9,Sim,Sim,Não,Em observação
+19,59,Masculino,Casado,2,Santos,SP,Vendedor,Superior,3236.93,0.0,43.22,596,1778.74,3229.0,Às vezes,8.85,25.6,Não,Sim,Sim,Em observação
+20,30,Masculino,Solteiro,4,Rio de Janeiro,RJ,Engenheiro de Produção,Superior,12805.87,1339.95,8.61,885,21719.15,29590.87,Sempre,26.78,12.0,Não,Não,Sim,Saudável
+21,45,Feminino,Solteiro,0,Blumenau,SC,Autônomo,Pós-graduação,6020.59,799.99,30.79,645,2011.01,5301.3,Raramente,8.62,1.1,Não,Não,Não,Em observação
+22,58,Feminino,Viúvo,3,Uberlândia,MG,Vendedor,Superior,4259.59,0.0,8.79,888,11105.6,6906.18,Frequentemente,10.54,25.7,Não,Sim,Não,Saudável
+23,41,Masculino,Solteiro,3,Vitória,ES,Motoboy,Fundamental,3237.29,661.85,9.96,933,3107.0,6416.84,Sempre,10.0,15.8,Não,Não,Não,Saudável
+24,19,Feminino,Solteiro,0,Uberlândia,MG,Funcionário Público,Superior,8556.82,0.0,37.55,574,2026.19,10087.29,Às vezes,9.7,0.3,Sim,Sim,Não,Em observação
+25,34,Masculino,Divorciado,1,Belo Horizonte,MG,Advogado,Pós-graduação,16630.31,0.0,58.0,574,4130.34,9359.46,Às vezes,5.41,0.7,Não,Sim,Sim,Em observação
+26,35,Masculino,Solteiro,0,Vitória,ES,Eletricista,Médio,4219.92,0.0,80.38,407,704.64,1976.26,Nunca,1.16,4.4,Sim,Sim,Não,Em risco
+27,26,Masculino,União Estável,0,Florianópolis,SC,Funcionário Público,Superior,13695.12,0.0,16.51,926,13554.46,35405.34,Sempre,19.02,6.1,Não,Sim,Sim,Saudável
+28,40,Feminino,União Estável,2,São Paulo,SP,Recepcionista,Superior,2735.34,0.0,49.46,628,866.08,3327.15,Raramente,2.57,22.0,Não,Sim,Não,Em observação
+29,50,Masculino,Casado,2,Juazeiro do Norte,CE,Médico,Pós-graduação,26920.7,1952.78,37.73,661,14653.35,36033.72,Às vezes,2.32,27.0,Sim,Sim,Sim,Em observação
+30,22,Masculino,Casado,0,São Paulo,SP,Analista Financeiro,Superior,9722.62,0.0,0.49,713,7399.22,23401.35,Sempre,16.39,2.3,Não,Sim,Não,Saudável
+31,18,Feminino,Solteiro,0,Londrina,PR,Funcionário Público,Superior,8952.47,0.0,58.0,651,3888.49,12008.59,Frequentemente,12.0,0.0,Não,Sim,Sim,Em observação
+32,34,Masculino,Solteiro,3,Natal,RN,Eletricista,Médio,4895.27,393.71,14.74,700,6005.13,8882.86,Sempre,19.41,5.3,Não,Não,Não,Saudável
+33,30,Feminino,Solteiro,2,Curitiba,PR,Técnico em Informática,Fundamental,4399.16,0.0,0.89,996,3673.87,10270.39,Frequentemente,21.33,6.3,Não,Não,Não,Saudável
+34,39,Masculino,Casado,2,Blumenau,SC,Analista de TI,Superior,7978.93,0.0,69.85,361,819.8,3492.54,Raramente,0.27,3.3,Não,Não,Sim,Em risco
+35,34,Masculino,Solteiro,1,Olinda,PE,Vendedor,Médio,2480.95,0.0,89.97,334,332.99,1870.53,Nunca,1.05,0.2,Sim,Não,Não,Em risco
+36,31,Masculino,Casado,4,Niterói,RJ,Professor,Fundamental,2561.57,0.0,58.56,355,146.14,1670.96,Raramente,2.11,0.6,Não,Não,Não,Em risco
+37,33,Feminino,Viúvo,0,Maceió,AL,Jornalista,Superior,6581.05,0.0,10.57,771,4953.77,14729.18,Às vezes,12.66,3.7,Não,Não,Não,Saudável
+38,43,Feminino,Solteiro,2,Teresina,PI,Engenheiro Civil,Superior,18958.1,0.0,26.82,892,41848.7,40388.55,Às vezes,31.68,24.9,Não,Sim,Sim,Saudável
+39,40,Feminino,Casado,2,Vitória,ES,Engenheiro de Produção,Médio,10373.54,0.0,27.28,655,6327.32,7864.25,Raramente,7.83,22.0,Sim,Não,Sim,Em observação
+40,38,Masculino,Solteiro,2,Manaus,AM,Recepcionista,Médio,2159.1,0.0,51.04,620,1057.55,1165.43,Raramente,7.75,7.6,Sim,Sim,Não,Em observação
+41,18,Feminino,Casado,0,João Pessoa,PB,Aposentado,Médio,5508.29,1794.7,15.56,852,13622.74,8907.02,Sempre,19.99,0.0,Sim,Não,Não,Saudável
+42,41,Masculino,Solteiro,0,Juazeiro do Norte,CE,Analista de TI,Superior,8063.41,343.16,42.9,527,5133.05,9716.97,Frequentemente,9.94,20.7,Sim,Não,Sim,Em observação
+43,54,Feminino,Casado,1,Caxias do Sul,RS,Analista de TI,Superior,8774.55,0.0,15.9,775,5763.0,12901.51,Sempre,18.88,33.8,Não,Sim,Sim,Saudável
+44,18,Feminino,Casado,0,Caxias do Sul,RS,Professor,Superior,3841.91,213.28,78.52,388,-136.23,3251.82,Nunca,1.99,0.0,Não,Não,Sim,Em risco
+45,30,Masculino,Solteiro,1,Pelotas,RS,Motorista,Médio,4794.0,1410.35,9.88,700,9456.5,10806.07,Frequentemente,25.47,11.5,Sim,Não,Sim,Saudável
+46,23,Masculino,Divorciado,0,Uberlândia,MG,Analista Financeiro,Pós-graduação,6406.26,474.7,25.0,566,1556.06,8560.81,Raramente,5.95,1.3,Não,Sim,Sim,Em observação
+47,37,Feminino,Casado,1,Joinville,SC,Gerente Comercial,Superior,16887.15,1341.26,16.06,722,22194.56,45168.3,Frequentemente,19.76,7.9,Não,Sim,Sim,Saudável
+48,29,Masculino,Casado,0,Vitória,ES,Designer Gráfico,Superior,6824.88,0.0,49.36,710,3157.49,10132.42,Às vezes,4.18,0.8,Não,Não,Sim,Em observação
+49,39,Masculino,Solteiro,0,Santos,SP,Recepcionista,Médio,2777.14,0.0,55.5,541,730.65,2456.86,Às vezes,9.9,4.1,Não,Sim,Sim,Em observação
+50,52,Feminino,Solteiro,0,Santos,SP,Autônomo,Fundamental,10830.3,1501.44,17.03,884,15598.53,17451.67,Às vezes,27.87,27.1,Não,Sim,Sim,Saudável
+51,30,Masculino,Casado,1,Maringá,PR,Técnico em Informática,Médio,3696.15,0.0,86.13,429,-66.44,1429.62,Às vezes,1.66,2.5,Sim,Não,Não,Em risco
+52,35,Masculino,Casado,0,Feira de Santana,BA,Aposentado,Médio,3684.65,0.0,71.68,390,511.28,1740.55,Raramente,1.03,8.8,Não,Não,Não,Em risco
+53,42,Masculino,Solteiro,1,Vila Velha,ES,Gerente Comercial,Fundamental,10464.57,641.44,67.18,510,806.72,3749.29,Raramente,1.66,13.5,Não,Não,Sim,Em risco
+54,34,Feminino,Casado,4,Maceió,AL,Farmacêutico,Superior,3322.33,126.6,74.76,368,294.93,2203.2,Raramente,1.27,4.2,Sim,Não,Sim,Em risco
+55,28,Masculino,Solteiro,0,Pelotas,RS,Engenheiro Civil,Superior,10217.77,0.0,45.83,633,6620.95,9248.52,Às vezes,4.88,9.7,Não,Não,Sim,Em observação
+56,58,Feminino,Casado,1,Manaus,AM,Motoboy,Fundamental,2492.75,0.0,65.99,409,175.1,1494.72,Nunca,0.13,11.4,Sim,Não,Não,Em risco
+57,30,Masculino,Casado,0,Anápolis,GO,Motorista,Pós-graduação,3091.27,464.53,17.79,892,7217.97,6907.56,Frequentemente,25.73,4.3,Sim,Não,Sim,Saudável
+58,43,Masculino,União Estável,3,Teresina,PI,Recepcionista,Médio,3187.16,562.13,2.44,939,2742.04,6437.46,Sempre,23.49,14.9,Não,Não,Sim,Saudável
+59,21,Feminino,Solteiro,0,Porto Alegre,RS,Desenvolvedor de Software,Superior,11402.17,0.0,3.78,700,30438.03,19595.7,Frequentemente,21.02,3.0,Não,Sim,Não,Saudável
+60,23,Feminino,Solteiro,0,Fortaleza,CE,Desenvolvedor de Software,Superior,12815.12,0.0,0.0,979,29271.38,19451.0,Frequentemente,17.26,4.5,Sim,Não,Não,Saudável
+61,26,Feminino,União Estável,0,João Pessoa,PB,Engenheiro Civil,Superior,11017.67,0.0,31.97,571,5808.41,6301.04,Às vezes,10.7,0.6,Sim,Não,Sim,Em observação
+62,18,Feminino,Viúvo,0,Londrina,PR,Professor,Superior,6519.95,0.0,18.19,836,17349.65,8505.38,Frequentemente,23.1,0.0,Não,Não,Sim,Saudável
+63,24,Masculino,Casado,4,Pelotas,RS,Autônomo,Médio,4320.93,0.0,81.8,355,-52.66,1329.64,Nunca,0.55,2.2,Não,Sim,Não,Em risco
+64,34,Masculino,Casado,0,Pelotas,RS,Cozinheiro,Médio,2793.71,0.0,41.37,514,1732.47,4008.9,Às vezes,5.83,7.0,Sim,Não,Não,Em observação
+65,38,Masculino,Casado,0,Belém,PA,Recepcionista,Médio,3353.15,0.0,6.9,771,3226.92,6238.3,Sempre,15.2,4.3,Não,Não,Não,Saudável
+66,33,Feminino,União Estável,2,Salvador,BA,Engenheiro de Produção,Superior,8531.21,0.0,44.6,586,5119.33,9320.96,Às vezes,3.79,10.5,Sim,Não,Sim,Em observação
+67,39,Feminino,Divorciado,1,Salvador,BA,Autônomo,Médio,9070.6,0.0,1.93,789,23703.28,20554.5,Às vezes,27.69,17.5,Não,Sim,Não,Saudável
+68,34,Outro,Solteiro,0,Florianópolis,SC,Contador,Fundamental,3918.48,284.4,80.8,347,235.43,2275.5,Nunca,1.14,7.6,Não,Não,Não,Em risco
+69,25,Masculino,Casado,0,Palmas,TO,Cozinheiro,Fundamental,2733.72,0.0,15.0,936,5966.56,8147.9,Às vezes,32.0,1.5,Não,Não,Não,Saudável
+70,59,Feminino,Casado,2,Natal,RN,Motorista,Médio,2257.79,0.0,79.21,394,354.61,868.45,Nunca,0.0,10.1,Não,Não,Sim,Em risco
+71,30,Masculino,Casado,1,Rio de Janeiro,RJ,Motoboy,Fundamental,1940.47,0.0,55.0,394,377.96,1152.44,Nunca,1.78,2.7,Não,Sim,Sim,Em risco
+72,33,Masculino,Solteiro,1,Vila Velha,ES,Farmacêutico,Superior,8406.59,1713.23,15.67,739,5657.77,15198.21,Sempre,15.93,13.9,Não,Não,Não,Saudável
+73,23,Masculino,Casado,0,João Pessoa,PB,Analista de TI,Superior,8599.4,0.0,17.84,700,21516.04,19720.97,Frequentemente,10.0,0.7,Não,Sim,Sim,Saudável
+74,41,Feminino,Viúvo,0,Duque de Caxias,RJ,Motoboy,Fundamental,2638.46,0.0,77.29,440,-120.05,2174.0,Raramente,1.29,8.8,Sim,Não,Sim,Em risco
+75,42,Feminino,Solteiro,0,Duque de Caxias,RJ,Analista Financeiro,Superior,8740.72,0.0,56.54,637,2303.01,7254.02,Às vezes,1.15,22.6,Sim,Não,Não,Em observação
+76,48,Feminino,Solteiro,0,Cuiabá,MT,Engenheiro de Produção,Médio,12943.83,0.0,41.93,594,8381.01,18655.5,Às vezes,4.6,25.8,Sim,Sim,Sim,Em observação
+77,49,Masculino,Casado,1,Salvador,BA,Funcionário Público,Superior,5954.74,0.0,81.01,364,854.33,3402.22,Às vezes,0.0,11.9,Sim,Não,Não,Em risco
+78,38,Feminino,Casado,1,Santos,SP,Professor,Superior,6486.23,0.0,0.79,841,14502.6,14350.99,Frequentemente,23.31,5.3,Sim,Sim,Sim,Saudável
+79,35,Feminino,Casado,0,Guarulhos,SP,Analista de TI,Superior,7181.47,625.9,25.0,571,3888.21,8109.7,Às vezes,3.74,16.8,Sim,Não,Sim,Em observação
+80,27,Feminino,Casado,3,Salvador,BA,Engenheiro Civil,Pós-graduação,15378.86,0.0,13.88,794,22577.2,31429.11,Frequentemente,16.08,7.1,Não,Sim,Sim,Saudável
+81,32,Feminino,Solteiro,1,Belo Horizonte,MG,Professor,Médio,4019.46,0.0,76.76,385,257.48,1641.29,Nunca,0.09,3.8,Sim,Sim,Não,Em risco
+82,40,Masculino,Solteiro,1,Goiânia,GO,Cozinheiro,Médio,2188.68,0.0,43.98,632,956.27,3197.81,Às vezes,6.7,20.8,Sim,Sim,Não,Em observação
+83,18,Feminino,Casado,0,Guarulhos,SP,Enfermeiro,Superior,4981.2,0.0,7.48,700,10979.47,12475.83,Sempre,24.4,0.0,Não,Não,Sim,Saudável
+84,50,Feminino,Divorciado,2,Guarulhos,SP,Motoboy,Fundamental,3804.15,0.0,7.31,817,4951.13,8994.52,Frequentemente,24.86,23.3,Não,Não,Não,Saudável
+85,34,Feminino,Viúvo,0,Duque de Caxias,RJ,Designer Gráfico,Pós-graduação,5930.69,0.0,3.5,834,11868.41,11156.86,Às vezes,19.03,5.3,Não,Não,Não,Saudável
+86,23,Outro,Casado,0,Juiz de Fora,MG,Cabeleireiro,Médio,3920.14,0.0,7.85,787,6711.28,12262.33,Frequentemente,19.91,0.2,Sim,Não,Sim,Saudável
+87,18,Masculino,Solteiro,1,Londrina,PR,Motoboy,Fundamental,2517.46,341.1,36.81,660,1614.21,2057.38,Frequentemente,7.11,0.0,Sim,Não,Não,Em observação
+88,40,Masculino,Divorciado,2,Juazeiro do Norte,CE,Gerente Comercial,Médio,11112.87,0.0,29.38,526,2300.84,6261.13,Raramente,3.38,22.0,Sim,Não,Sim,Em observação
+89,25,Feminino,Casado,1,Duque de Caxias,RJ,Autônomo,Pós-graduação,3328.54,0.0,77.87,460,350.05,968.33,Nunca,2.37,2.2,Sim,Não,Não,Em risco
+90,41,Masculino,Viúvo,0,Florianópolis,SC,Designer Gráfico,Superior,6658.68,0.0,44.21,606,1675.8,9753.63,Frequentemente,4.97,11.1,Sim,Não,Não,Em observação
+91,41,Feminino,Solteiro,0,Caxias do Sul,RS,Vendedor,Médio,4989.06,828.0,19.32,700,9329.61,14623.7,Sempre,32.0,19.9,Não,Não,Não,Saudável
+92,51,Masculino,Solteiro,3,Juazeiro do Norte,CE,Motorista,Superior,3064.73,0.0,38.16,710,1867.98,1596.81,Às vezes,6.58,24.6,Não,Não,Sim,Em observação
+93,26,Masculino,Solteiro,0,Natal,RN,Autônomo,Médio,5995.75,0.0,58.44,452,141.83,959.44,Raramente,1.21,2.5,Não,Não,Não,Em risco
+94,52,Masculino,Casado,0,Juazeiro do Norte,CE,Analista de TI,Superior,8444.33,0.0,46.37,580,2735.19,4835.31,Raramente,3.77,28.3,Sim,Não,Sim,Em observação
+95,38,Feminino,Solteiro,1,Londrina,PR,Cozinheiro,Superior,2572.6,153.06,82.3,311,20.83,891.93,Raramente,0.19,6.4,Não,Não,Não,Em risco
+96,45,Masculino,Casado,1,Cuiabá,MT,Empresário,Superior,20708.58,0.0,28.85,480,8743.69,24586.52,Nunca,6.55,6.8,Não,Sim,Sim,Em observação
+97,40,Masculino,Solteiro,2,Vitória,ES,Eletricista,Fundamental,3735.67,0.0,52.33,480,648.53,4454.84,Nunca,5.92,7.3,Não,Sim,Não,Em observação
+98,34,Masculino,Solteiro,0,São Luís,MA,Engenheiro de Produção,Superior,12635.2,0.0,41.4,550,3766.92,10075.72,Frequentemente,5.09,13.4,Sim,Não,Sim,Em observação
+99,35,Masculino,Solteiro,2,São Paulo,SP,Funcionário Público,Médio,12436.45,2068.11,17.29,958,7581.25,19076.35,Sempre,25.56,17.0,Não,Não,Não,Saudável
+100,25,Feminino,Divorciado,1,Rio de Janeiro,RJ,Recepcionista,Superior,2500.65,0.0,19.41,866,4253.31,5164.99,Frequentemente,19.25,2.9,Sim,Não,Sim,Saudável
+101,32,Masculino,Viúvo,0,Belo Horizonte,MG,Analista Financeiro,Superior,12077.75,0.0,22.17,923,12979.11,30866.22,Frequentemente,19.55,2.0,Não,Não,Sim,Saudável
+102,50,Feminino,Casado,0,Fortaleza,CE,Autônomo,Médio,8073.03,0.0,27.68,537,1065.24,5026.78,Às vezes,1.76,27.6,Sim,Sim,Sim,Em observação
+103,35,Masculino,Casado,1,Maringá,PR,Empresário,Superior,26099.04,1382.65,5.04,878,45461.16,66685.25,Frequentemente,19.75,13.9,Não,Sim,Não,Saudável
+104,46,Feminino,Solteiro,0,Londrina,PR,Eletricista,Médio,3784.94,0.0,45.33,596,1103.13,3440.18,Nunca,10.65,18.7,Sim,Não,Não,Em observação
+105,46,Feminino,Casado,0,São Paulo,SP,Enfermeiro,Superior,2751.1,0.0,83.12,359,195.38,1852.07,Nunca,0.16,21.4,Sim,Não,Não,Em risco
+106,44,Feminino,Solteiro,0,Campo Grande,MS,Eletricista,Médio,4509.69,0.0,12.36,860,10457.56,10627.52,Às vezes,14.03,17.2,Não,Não,Não,Saudável
+107,28,Masculino,Solteiro,1,Vila Velha,ES,Recepcionista,Médio,2959.65,0.0,28.68,570,535.75,1505.35,Às vezes,6.46,1.5,Sim,Não,Não,Em observação
+108,38,Masculino,Solteiro,0,Curitiba,PR,Recepcionista,Médio,2347.31,0.0,55.48,510,136.62,424.23,Nunca,0.0,1.4,Sim,Não,Não,Em risco
+109,43,Feminino,União Estável,0,Palmas,TO,Contador,Superior,10791.63,0.0,14.6,834,12636.91,22381.75,Frequentemente,21.99,16.2,Sim,Não,Sim,Saudável
+110,43,Masculino,Solteiro,1,Pelotas,RS,Recepcionista,Médio,3274.67,0.0,12.13,894,6767.17,4995.18,Frequentemente,12.24,13.0,Não,Sim,Sim,Saudável
+111,45,Feminino,Casado,0,Juiz de Fora,MG,Analista de TI,Superior,9642.27,0.0,10.55,872,7809.07,19838.05,Raramente,24.28,18.5,Não,Sim,Sim,Saudável
+112,46,Outro,Solteiro,2,Palmas,TO,Veterinário,Pós-graduação,8304.7,1393.01,10.73,852,22356.61,19551.3,Frequentemente,20.9,7.3,Não,Não,Sim,Saudável
+113,23,Feminino,União Estável,0,São Luís,MA,Engenheiro de Produção,Pós-graduação,8409.26,0.0,83.77,377,1577.7,4685.1,Nunca,1.35,2.1,Sim,Não,Sim,Em risco
+114,35,Masculino,Casado,1,Pelotas,RS,Advogado,Pós-graduação,6739.78,346.28,86.06,369,1103.69,1987.92,Nunca,0.0,9.4,Sim,Não,Não,Em risco
+115,32,Masculino,Divorciado,2,Duque de Caxias,RJ,Jornalista,Superior,4617.68,618.14,48.62,483,1541.73,2499.68,Raramente,6.96,0.0,Não,Não,Não,Em observação
+116,29,Feminino,Solteiro,0,João Pessoa,PB,Aposentado,Médio,3442.17,0.0,62.72,466,558.0,1534.66,Nunca,1.46,6.1,Sim,Não,Não,Em risco
+117,55,Masculino,Solteiro,1,Belo Horizonte,MG,Aposentado,Médio,3386.1,0.0,55.0,426,324.87,2764.94,Nunca,0.34,9.5,Sim,Não,Não,Em risco
+118,38,Masculino,Solteiro,3,João Pessoa,PB,Técnico em Informática,Médio,5820.51,0.0,5.31,927,9404.64,17705.93,Sempre,25.97,18.1,Não,Sim,Não,Saudável
+119,31,Feminino,União Estável,3,Vila Velha,ES,Eletricista,Pós-graduação,3577.63,0.0,61.8,425,668.2,1779.45,Nunca,2.14,7.3,Sim,Não,Sim,Em risco
+120,19,Masculino,Divorciado,0,Teresina,PI,Aposentado,Pós-graduação,5507.7,0.0,36.79,590,2727.14,7980.13,Raramente,4.02,1.0,Não,Não,Sim,Em observação
+121,24,Masculino,Casado,2,Pelotas,RS,Farmacêutico,Superior,3814.02,0.0,62.85,461,603.41,2991.19,Nunca,2.35,0.2,Não,Não,Não,Em risco
+122,52,Feminino,Divorciado,1,João Pessoa,PB,Estudante,Médio,1412.0,0.0,56.82,361,82.17,889.29,Nunca,1.55,10.1,Sim,Não,Não,Em risco
+123,23,Feminino,Divorciado,0,Rio de Janeiro,RJ,Corretor de Imóveis,Médio,9836.65,1307.25,15.65,860,7362.79,22008.54,Às vezes,19.71,0.7,Não,Sim,Não,Saudável
+124,30,Feminino,Casado,0,Fortaleza,CE,Motoboy,Fundamental,2907.33,566.67,23.91,747,5945.09,9120.51,Frequentemente,13.98,1.0,Sim,Não,Não,Saudável
+125,40,Masculino,Casado,0,Caxias do Sul,RS,Autônomo,Médio,5799.78,0.0,6.31,937,11263.27,10589.32,Frequentemente,26.08,19.9,Não,Não,Sim,Saudável
+126,44,Feminino,Casado,2,Rio de Janeiro,RJ,Empresário,Superior,21136.48,0.0,43.07,576,8890.2,16452.88,Às vezes,5.87,10.8,Não,Sim,Sim,Em observação
+127,27,Masculino,União Estável,1,Belém,PA,Desenvolvedor de Software,Superior,5987.59,0.0,73.31,492,-285.83,3368.72,Raramente,0.41,1.6,Sim,Sim,Sim,Em risco
+128,42,Feminino,Solteiro,0,Campo Grande,MS,Corretor de Imóveis,Médio,3760.24,0.0,81.82,493,382.35,2335.15,Nunca,0.56,14.8,Não,Não,Não,Em risco
+129,21,Masculino,Divorciado,0,São Luís,MA,Autônomo,Médio,8473.25,0.0,13.45,813,22248.1,20072.26,Frequentemente,16.28,1.5,Não,Não,Não,Saudável
+130,35,Masculino,Solteiro,2,Olinda,PE,Jornalista,Superior,5514.7,0.0,53.08,709,3391.29,3145.62,Frequentemente,3.7,8.0,Sim,Sim,Sim,Em observação
+131,29,Masculino,União Estável,0,Belém,PA,Técnico em Informática,Médio,4728.88,0.0,40.04,694,1149.73,3194.08,Raramente,2.95,2.2,Sim,Não,Não,Em observação
+132,44,Feminino,Solteiro,0,Feira de Santana,BA,Empresário,Superior,21068.12,4308.47,18.78,700,29038.95,60193.96,Sempre,23.2,24.7,Não,Não,Sim,Saudável
+133,39,Masculino,Viúvo,0,Manaus,AM,Analista Financeiro,Superior,10593.22,0.0,0.0,845,10873.93,30907.13,Sempre,32.0,18.9,Não,Não,Sim,Saudável
+134,24,Masculino,Solteiro,2,Uberlândia,MG,Eletricista,Médio,4593.26,0.0,14.51,840,4386.55,6279.49,Raramente,30.47,6.0,Sim,Sim,Sim,Saudável
+135,35,Masculino,Casado,0,Campo Grande,MS,Cozinheiro,Médio,1577.94,58.97,71.3,359,299.75,917.43,Raramente,0.24,4.4,Sim,Não,Não,Em risco
+136,38,Feminino,Viúvo,1,Vitória,ES,Advogado,Médio,17628.91,1491.73,2.92,746,23655.43,26190.99,Sempre,21.53,8.2,Sim,Não,Sim,Saudável
+137,18,Feminino,Divorciado,0,Anápolis,GO,Contador,Superior,6999.59,0.0,42.34,710,3351.04,5449.88,Nunca,8.88,0.0,Não,Não,Não,Em observação
+138,37,Feminino,Divorciado,1,Anápolis,GO,Motorista,Pós-graduação,2627.68,0.0,51.01,541,823.26,3636.42,Frequentemente,5.81,1.3,Sim,Não,Não,Em observação
+139,43,Feminino,Casado,0,Niterói,RJ,Estudante,Médio,1412.0,0.0,40.4,572,915.61,1574.33,Raramente,10.04,9.1,Sim,Não,Sim,Em observação
+140,30,Masculino,Casado,2,Brasília,DF,Vendedor,Médio,1616.31,0.0,55.0,435,114.75,248.46,Raramente,0.0,2.4,Não,Não,Não,Em risco
+141,46,Masculino,Casado,0,Guarulhos,SP,Jornalista,Superior,4681.26,0.0,84.47,477,-35.25,1341.1,Às vezes,1.36,17.9,Não,Não,Não,Em risco
+142,40,Masculino,Solteiro,1,Campinas,SP,Eletricista,Médio,5798.08,761.19,18.59,773,6559.38,9449.86,Frequentemente,13.95,11.7,Não,Sim,Sim,Saudável
+143,27,Masculino,Casado,2,Belo Horizonte,MG,Cozinheiro,Pós-graduação,2542.13,0.0,53.67,524,1567.19,3050.59,Raramente,8.67,1.9,Sim,Não,Sim,Em observação
+144,19,Masculino,Divorciado,0,Goiânia,GO,Engenheiro Civil,Superior,17290.09,0.0,16.33,744,26819.73,21825.25,Frequentemente,28.61,1.0,Sim,Sim,Sim,Saudável
+145,39,Feminino,Viúvo,3,Belo Horizonte,MG,Jornalista,Superior,6587.91,2110.03,10.16,787,12311.13,8791.64,Às vezes,23.87,7.2,Não,Não,Não,Saudável
+146,25,Feminino,Solteiro,2,Campinas,SP,Cabeleireiro,Médio,4950.16,0.0,10.29,927,5496.86,6082.57,Sempre,12.13,6.1,Não,Sim,Não,Saudável
+147,50,Masculino,Viúvo,1,Anápolis,GO,Autônomo,Médio,6588.56,980.3,58.0,568,3222.26,6115.2,Raramente,10.69,30.6,Não,Não,Sim,Em observação
+148,20,Outro,União Estável,0,Pelotas,RS,Médico,Pós-graduação,25957.38,0.0,41.27,631,3357.36,25963.63,Às vezes,10.79,1.1,Não,Não,Sim,Em observação
+149,61,Masculino,Casado,0,Cuiabá,MT,Gerente Comercial,Superior,11966.88,0.0,12.03,940,11902.06,31236.89,Frequentemente,30.11,29.3,Não,Sim,Sim,Saudável
+150,44,Masculino,Divorciado,2,Guarulhos,SP,Designer Gráfico,Superior,8858.14,0.0,21.32,741,13146.82,13352.6,Frequentemente,32.0,24.9,Não,Não,Sim,Saudável
+151,32,Feminino,Casado,0,Rio de Janeiro,RJ,Funcionário Público,Superior,7083.82,507.68,73.19,418,19.89,5341.89,Às vezes,1.44,4.9,Sim,Não,Não,Em risco
+152,41,Feminino,Divorciado,0,Belém,PA,Farmacêutico,Superior,7123.62,499.4,12.52,811,5387.43,11551.56,Frequentemente,15.52,6.4,Não,Sim,Sim,Saudável
+153,18,Masculino,Solteiro,0,Goiânia,GO,Pedreiro,Pós-graduação,3060.27,0.0,8.76,795,4228.39,7797.53,Às vezes,16.52,0.0,Sim,Sim,Não,Saudável
+154,37,Feminino,Casado,2,Vitória,ES,Engenheiro Civil,Superior,10141.47,0.0,32.36,601,1817.79,12031.82,Raramente,12.0,1.6,Não,Sim,Sim,Em observação
+155,23,Masculino,Casado,0,Maceió,AL,Jornalista,Superior,5025.41,0.0,55.0,377,424.68,3709.13,Frequentemente,1.44,0.9,Não,Não,Não,Em risco
+156,18,Masculino,Solteiro,1,Campo Grande,MS,Motorista,Médio,3723.35,552.81,1.72,970,3266.14,5930.69,Sempre,18.36,0.0,Sim,Não,Não,Saudável
+157,23,Masculino,Solteiro,0,Niterói,RJ,Motorista,Médio,2558.02,0.0,45.95,512,647.83,1894.42,Raramente,6.87,1.7,Não,Não,Não,Em observação
+158,24,Feminino,Divorciado,1,São Luís,MA,Eletricista,Médio,2195.79,0.0,77.65,464,327.13,598.54,Raramente,0.96,1.1,Sim,Não,Não,Em risco
+159,44,Masculino,Solteiro,1,Blumenau,SC,Veterinário,Superior,8216.73,0.0,20.6,827,21574.07,10518.39,Frequentemente,14.54,6.4,Sim,Não,Sim,Saudável
+160,57,Feminino,Casado,1,Brasília,DF,Gerente Comercial,Superior,12129.92,0.0,38.15,660,2351.87,6471.43,Raramente,4.9,17.9,Sim,Sim,Não,Em observação
+161,44,Feminino,Solteiro,1,Cuiabá,MT,Corretor de Imóveis,Fundamental,8098.16,0.0,58.0,572,921.04,8049.11,Raramente,6.86,19.6,Sim,Sim,Não,Em observação
+162,28,Feminino,Divorciado,1,Maringá,PR,Professor,Superior,5514.54,0.0,35.08,609,1270.07,6866.33,Às vezes,4.66,4.3,Não,Sim,Sim,Em observação
+163,39,Masculino,Solteiro,0,Teresina,PI,Jornalista,Superior,4222.84,0.0,51.66,595,2589.71,3344.68,Às vezes,6.76,7.0,Não,Não,Não,Em observação
+164,41,Feminino,Solteiro,4,Blumenau,SC,Aposentado,Fundamental,2828.8,0.0,44.8,649,1251.69,4495.3,Raramente,9.12,1.9,Sim,Não,Sim,Em observação
+165,49,Masculino,Solteiro,1,Manaus,AM,Corretor de Imóveis,Médio,14489.71,0.0,8.73,859,13490.49,45441.94,Frequentemente,13.11,7.9,Não,Sim,Sim,Saudável
+166,47,Masculino,União Estável,2,Goiânia,GO,Estudante,Médio,1412.0,0.0,84.79,434,74.55,609.54,Às vezes,0.0,12.5,Não,Não,Não,Em risco
+167,31,Feminino,Casado,2,Teresina,PI,Contador,Superior,7224.33,0.0,8.55,850,8911.06,15789.78,Frequentemente,30.28,6.1,Não,Sim,Sim,Saudável
+168,48,Feminino,Divorciado,2,Olinda,PE,Motorista,Médio,4675.77,0.0,12.74,853,9564.13,14012.22,Frequentemente,27.63,0.3,Não,Não,Não,Saudável
+169,40,Feminino,Solteiro,4,Fortaleza,CE,Médico,Médio,23770.15,1667.96,5.62,966,15958.7,59839.81,Frequentemente,23.61,4.0,Sim,Sim,Sim,Saudável
+170,37,Feminino,Solteiro,0,Joinville,SC,Motorista,Superior,3466.82,0.0,44.06,498,1517.37,2697.68,Às vezes,5.3,16.5,Sim,Não,Não,Em observação
+171,22,Masculino,Solteiro,0,Maringá,PR,Enfermeiro,Superior,3944.78,318.23,27.43,664,874.48,3625.61,Frequentemente,5.81,1.9,Não,Não,Sim,Em observação
+172,40,Masculino,Solteiro,1,São Paulo,SP,Corretor de Imóveis,Médio,10765.4,1058.95,15.14,844,19774.05,28307.69,Às vezes,20.32,2.7,Não,Não,Não,Saudável
+173,30,Feminino,Casado,1,Santos,SP,Técnico em Informática,Médio,4867.29,0.0,42.02,615,1486.48,3800.72,Raramente,9.59,5.4,Sim,Não,Não,Em observação
+174,36,Feminino,Solteiro,2,Blumenau,SC,Médico,Superior,21299.39,0.0,7.24,722,53983.87,49288.51,Frequentemente,18.25,13.9,Não,Não,Sim,Saudável
+175,40,Masculino,Casado,2,Vila Velha,ES,Contador,Superior,7222.05,780.46,46.23,687,3997.11,4774.35,Frequentemente,4.49,19.4,Não,Não,Sim,Em observação
+176,35,Masculino,Casado,1,Joinville,SC,Médico,Pós-graduação,25111.1,0.0,14.17,700,17236.08,43793.69,Raramente,24.56,17.0,Não,Sim,Sim,Saudável
+177,53,Masculino,União Estável,1,São Luís,MA,Pedreiro,Fundamental,3232.45,176.4,29.39,688,1546.49,2044.29,Frequentemente,9.21,21.8,Sim,Sim,Sim,Em observação
+178,18,Feminino,Solteiro,0,São Luís,MA,Enfermeiro,Superior,5491.75,750.92,51.35,578,851.96,2846.11,Às vezes,3.73,0.0,Não,Sim,Sim,Em observação
+179,33,Masculino,União Estável,1,Teresina,PI,Jornalista,Superior,2664.52,0.0,68.91,404,128.49,453.12,Raramente,0.38,5.7,Sim,Sim,Não,Em risco
+180,42,Masculino,Solteiro,2,Palmas,TO,Vendedor,Pós-graduação,3937.35,0.0,11.48,808,7125.46,5123.07,Frequentemente,24.68,20.1,Não,Sim,Sim,Saudável
+181,36,Feminino,Viúvo,0,Vila Velha,ES,Enfermeiro,Pós-graduação,5204.15,1434.99,5.72,829,8184.23,9725.53,Frequentemente,16.06,3.1,Não,Não,Não,Saudável
+182,30,Feminino,Solteiro,1,Palmas,TO,Desenvolvedor de Software,Superior,12258.48,0.0,15.19,794,8290.16,24318.63,Sempre,20.95,8.3,Sim,Sim,Não,Saudável
+183,34,Feminino,Casado,0,Porto Alegre,RS,Pedreiro,Fundamental,2407.72,0.0,82.32,428,375.82,1030.25,Nunca,1.58,3.9,Não,Não,Sim,Em risco
+184,45,Masculino,Viúvo,0,Curitiba,PR,Vendedor,Médio,2511.98,134.03,88.39,315,81.82,1368.93,Raramente,0.0,16.9,Sim,Não,Não,Em risco
+185,26,Masculino,Solteiro,3,São Paulo,SP,Empresário,Superior,18923.93,0.0,7.26,911,24857.05,48312.18,Frequentemente,22.71,6.1,Não,Sim,Sim,Saudável
+186,49,Feminino,Casado,0,Recife,PE,Desenvolvedor de Software,Superior,10970.65,0.0,33.11,541,1458.75,7065.88,Às vezes,8.13,1.4,Não,Não,Sim,Em observação
+187,47,Feminino,Casado,0,Florianópolis,SC,Professor,Superior,2416.24,0.0,74.53,341,210.3,657.83,Nunca,2.33,9.4,Não,Não,Não,Em risco
+188,38,Feminino,Solteiro,1,Campo Grande,MS,Recepcionista,Médio,2383.01,0.0,58.0,579,426.09,3065.01,Raramente,8.32,14.7,Não,Não,Não,Em observação
+189,52,Masculino,Solteiro,0,Maceió,AL,Vendedor,Médio,3105.31,0.0,50.45,629,1392.86,3579.82,Nunca,2.59,11.3,Não,Não,Não,Em observação
+190,27,Feminino,Divorciado,3,Juiz de Fora,MG,Professor,Superior,6479.13,0.0,9.35,810,14277.84,17880.08,Às vezes,14.76,7.1,Sim,Sim,Sim,Saudável
+191,38,Masculino,União Estável,1,Cuiabá,MT,Analista Financeiro,Superior,11276.13,851.54,9.9,700,21827.18,22298.01,Frequentemente,25.26,6.6,Sim,Sim,Sim,Saudável
+192,37,Masculino,Viúvo,4,Florianópolis,SC,Corretor de Imóveis,Médio,5787.64,0.0,78.3,369,153.0,2499.64,Raramente,1.61,2.3,Não,Não,Sim,Em risco
+193,58,Masculino,Divorciado,3,Feira de Santana,BA,Funcionário Público,Superior,6399.74,0.0,83.43,440,-21.38,1075.05,Nunca,1.95,15.7,Sim,Sim,Sim,Em risco
+194,68,Masculino,Solteiro,0,Cuiabá,MT,Desenvolvedor de Software,Superior,7981.53,0.0,34.22,660,1824.24,9590.22,Frequentemente,12.0,17.4,Sim,Não,Sim,Em observação
+195,48,Masculino,Divorciado,1,Campinas,SP,Professor,Superior,6713.6,0.0,1.18,955,10913.62,10606.63,Sempre,11.95,11.1,Não,Não,Sim,Saudável
+196,33,Masculino,Casado,0,São Luís,MA,Cozinheiro,Superior,3718.36,0.0,10.91,958,5946.42,7528.04,Sempre,16.53,1.9,Não,Não,Não,Saudável
+197,30,Feminino,Casado,0,Londrina,PR,Estudante,Médio,1412.0,0.0,38.51,520,230.62,2077.9,Às vezes,1.0,8.6,Sim,Não,Não,Em observação
+198,40,Masculino,Solteiro,1,Feira de Santana,BA,Engenheiro Civil,Pós-graduação,9911.74,0.0,81.13,301,342.16,2366.69,Nunca,1.99,6.8,Sim,Sim,Não,Em risco
+199,49,Masculino,Solteiro,2,Blumenau,SC,Professor,Superior,3631.74,0.0,78.06,406,642.83,1552.27,Nunca,0.17,2.5,Sim,Não,Sim,Em risco
+200,52,Feminino,Casado,1,Fortaleza,CE,Recepcionista,Médio,2370.09,0.0,78.81,361,438.99,561.81,Às vezes,1.52,4.1,Não,Sim,Não,Em risco
+201,69,Masculino,Casado,1,Belém,PA,Corretor de Imóveis,Médio,10512.89,0.0,44.79,554,1815.56,10343.01,Às vezes,8.53,1.9,Sim,Sim,Não,Em observação
+202,22,Feminino,Solteiro,0,Manaus,AM,Farmacêutico,Fundamental,8879.17,0.0,8.27,700,20950.61,20505.32,Sempre,26.38,3.9,Não,Não,Sim,Saudável
+203,38,Masculino,Solteiro,1,Fortaleza,CE,Motorista,Médio,4022.47,0.0,16.04,956,7045.29,6651.34,Sempre,23.33,9.3,Sim,Sim,Sim,Saudável
+204,32,Feminino,Casado,1,Manaus,AM,Veterinário,Superior,5084.85,0.0,59.94,459,-69.5,2562.7,Nunca,0.5,5.0,Sim,Não,Não,Em risco
+205,40,Masculino,Solteiro,3,Maceió,AL,Aposentado,Médio,5158.06,302.05,27.97,491,1531.82,8193.35,Às vezes,6.36,3.3,Não,Não,Não,Em observação
+206,51,Feminino,Casado,1,Goiânia,GO,Eletricista,Pós-graduação,4084.41,0.0,21.7,739,3335.06,12716.57,Frequentemente,16.91,10.7,Não,Não,Sim,Saudável
+207,45,Masculino,Casado,3,Porto Alegre,RS,Motorista,Médio,3117.01,0.0,19.28,749,7235.63,9927.77,Frequentemente,12.13,23.3,Não,Sim,Não,Saudável
+208,41,Feminino,Divorciado,0,Vila Velha,ES,Motoboy,Fundamental,3038.59,226.68,39.45,662,1647.8,4415.27,Nunca,6.85,3.4,Não,Não,Não,Em observação
+209,44,Outro,Solteiro,2,Cuiabá,MT,Gerente Comercial,Superior,13681.41,1230.0,0.0,953,22770.87,27866.01,Frequentemente,12.99,15.5,Não,Sim,Sim,Saudável
+210,63,Feminino,Divorciado,0,Teresina,PI,Analista de TI,Superior,9806.42,2785.65,23.16,700,20876.86,22895.85,Sempre,22.6,21.4,Não,Sim,Sim,Saudável
+211,31,Masculino,Casado,0,Belo Horizonte,MG,Aposentado,Médio,2818.1,0.0,25.89,480,1420.42,1483.28,Às vezes,5.9,2.4,Não,Não,Sim,Em observação
+212,48,Feminino,Casado,3,Recife,PE,Funcionário Público,Pós-graduação,7656.28,0.0,58.0,646,3279.34,10651.24,Às vezes,6.55,28.3,Não,Não,Sim,Em observação
+213,28,Feminino,Solteiro,1,Joinville,SC,Vendedor,Médio,3721.58,280.77,34.26,546,551.85,2564.21,Às vezes,6.6,3.1,Sim,Não,Não,Em observação
+214,50,Masculino,Solteiro,0,Maringá,PR,Cabeleireiro,Médio,5724.53,0.0,16.23,1000,11784.86,14644.11,Sempre,11.12,23.8,Não,Sim,Não,Saudável
+215,34,Feminino,Solteiro,3,Uberlândia,MG,Veterinário,Superior,7100.23,0.0,44.06,522,3670.27,9485.95,Raramente,8.28,3.6,Sim,Não,Não,Em observação
+216,35,Masculino,Divorciado,2,Belém,PA,Contador,Superior,10852.59,0.0,14.77,741,22549.07,28852.91,Frequentemente,18.3,9.1,Sim,Sim,Sim,Saudável
+217,53,Feminino,Casado,0,Recife,PE,Analista Financeiro,Superior,9504.32,0.0,17.35,839,13443.96,25685.97,Sempre,20.45,6.4,Não,Não,Sim,Saudável
+218,32,Feminino,Solteiro,0,Blumenau,SC,Veterinário,Superior,6386.08,0.0,38.36,605,1700.97,9225.13,Frequentemente,6.64,2.2,Não,Não,Não,Em observação
+219,24,Masculino,Casado,1,Brasília,DF,Contador,Superior,5617.82,0.0,51.07,649,3223.39,3657.37,Frequentemente,4.15,4.6,Sim,Não,Não,Em observação
+220,36,Masculino,Solteiro,2,Florianópolis,SC,Cabeleireiro,Médio,3232.35,0.0,79.06,337,543.88,866.92,Nunca,1.46,6.5,Não,Não,Sim,Em risco
+221,40,Feminino,Casado,1,Pelotas,RS,Cozinheiro,Médio,2990.82,0.0,51.06,666,1663.67,3829.23,Raramente,5.54,15.4,Não,Não,Não,Em observação
+222,42,Feminino,Casado,3,Belém,PA,Desenvolvedor de Software,Superior,7646.38,0.0,45.47,594,3419.9,6098.87,Raramente,6.56,7.5,Não,Não,Sim,Em observação
+223,43,Feminino,Solteiro,0,Anápolis,GO,Autônomo,Médio,8468.47,0.0,12.28,921,14499.25,18762.03,Às vezes,19.05,6.5,Não,Sim,Não,Saudável
+224,19,Feminino,Divorciado,0,Guarulhos,SP,Advogado,Pós-graduação,16222.15,0.0,55.71,530,5708.83,12690.78,Às vezes,11.48,0.6,Não,Sim,Não,Em observação
+225,47,Feminino,Solteiro,0,Duque de Caxias,RJ,Veterinário,Fundamental,8506.2,0.0,11.15,765,7356.16,11357.56,Sempre,23.13,12.9,Não,Sim,Sim,Saudável
+226,23,Masculino,Casado,0,Florianópolis,SC,Analista de TI,Pós-graduação,8226.17,0.0,1.57,820,19457.23,15485.67,Frequentemente,17.28,3.1,Não,Não,Não,Saudável
+227,41,Feminino,União Estável,2,Juiz de Fora,MG,Professor,Superior,2858.8,0.0,74.73,412,469.94,623.67,Raramente,0.81,0.1,Sim,Não,Não,Em risco
+228,50,Feminino,Solteiro,0,Juazeiro do Norte,CE,Eletricista,Médio,3650.53,0.0,35.52,483,1203.09,3338.61,Frequentemente,7.41,16.3,Não,Não,Sim,Em observação
+229,25,Feminino,Solteiro,2,Juazeiro do Norte,CE,Veterinário,Superior,3677.74,0.0,62.3,350,-119.03,2892.91,Nunca,1.06,1.5,Não,Não,Sim,Em risco
+230,35,Masculino,Solteiro,1,Fortaleza,CE,Pedreiro,Pós-graduação,3213.75,0.0,41.98,551,832.14,2939.81,Raramente,3.33,2.9,Não,Não,Sim,Em observação
+231,38,Masculino,Divorciado,1,Guarulhos,SP,Eletricista,Médio,2350.49,0.0,55.0,352,104.22,1032.95,Nunca,0.88,15.5,Sim,Não,Sim,Em risco
+232,33,Masculino,Solteiro,2,Recife,PE,Vendedor,Pós-graduação,2786.93,0.0,29.34,587,1466.98,2443.72,Às vezes,6.55,2.3,Sim,Não,Não,Em observação
+233,41,Masculino,Solteiro,0,Duque de Caxias,RJ,Aposentado,Médio,3678.37,0.0,47.76,505,668.28,4252.61,Frequentemente,9.96,3.2,Sim,Sim,Sim,Em observação
+234,49,Masculino,Casado,1,Campinas,SP,Desenvolvedor de Software,Superior,12112.99,563.63,27.65,674,2411.54,7520.34,Frequentemente,5.56,21.9,Sim,Sim,Sim,Em observação
+235,33,Masculino,Solteiro,1,Brasília,DF,Designer Gráfico,Superior,5662.51,533.12,10.94,781,14744.14,6863.49,Frequentemente,18.42,4.9,Sim,Não,Sim,Saudável
+236,41,Masculino,Casado,1,Belém,PA,Cozinheiro,Médio,2438.87,101.48,54.88,575,742.99,3257.86,Raramente,7.79,17.7,Não,Não,Não,Em observação
+237,19,Masculino,União Estável,0,Londrina,PR,Professor,Superior,5582.32,1889.42,10.63,778,7668.04,16853.57,Frequentemente,10.0,1.0,Não,Não,Não,Saudável
+238,33,Masculino,União Estável,1,Pelotas,RS,Estudante,Médio,1887.37,550.22,19.01,800,1345.28,3781.82,Sempre,26.56,12.0,Não,Não,Não,Saudável
+239,45,Masculino,Solteiro,0,Salvador,BA,Aposentado,Médio,4896.1,405.09,33.37,536,2907.67,5275.81,Às vezes,1.0,12.5,Sim,Sim,Sim,Em observação
+240,49,Masculino,Solteiro,2,Florianópolis,SC,Motoboy,Fundamental,3450.35,0.0,15.24,909,9474.33,8098.41,Frequentemente,24.57,2.2,Não,Não,Sim,Saudável
+241,50,Masculino,Casado,1,Rio de Janeiro,RJ,Aposentado,Superior,3792.73,0.0,68.4,446,-106.07,2631.24,Raramente,0.5,5.4,Sim,Não,Não,Em risco
+242,23,Feminino,Solteiro,0,Vitória,ES,Corretor de Imóveis,Médio,5638.34,0.0,81.25,422,331.81,4607.56,Raramente,1.5,1.4,Não,Sim,Não,Em risco
+243,33,Masculino,Casado,1,Maringá,PR,Autônomo,Fundamental,2198.03,0.0,66.54,480,423.02,1449.25,Às vezes,0.0,3.8,Não,Não,Não,Em risco
+244,35,Masculino,Solteiro,1,São Luís,MA,Designer Gráfico,Superior,4701.93,0.0,58.0,558,689.92,4607.28,Às vezes,7.52,5.0,Sim,Não,Sim,Em observação
+245,18,Masculino,Solteiro,0,Recife,PE,Analista de TI,Pós-graduação,9714.8,3168.59,12.2,832,21658.76,21081.47,Às vezes,18.38,0.0,Não,Não,Sim,Saudável
+246,18,Feminino,Solteiro,0,São Luís,MA,Veterinário,Superior,4135.3,0.0,67.44,401,587.99,799.61,Raramente,0.0,0.0,Sim,Não,Sim,Em risco
+247,37,Masculino,Solteiro,1,Santos,SP,Cabeleireiro,Médio,2787.83,0.0,34.79,710,1154.16,2413.34,Raramente,1.73,7.3,Sim,Sim,Não,Em observação
+248,41,Masculino,Solteiro,1,Recife,PE,Jornalista,Superior,3980.86,0.0,87.19,489,81.53,1483.38,Às vezes,0.71,8.8,Sim,Não,Não,Em risco
+249,28,Masculino,Casado,1,Maringá,PR,Eletricista,Médio,2224.05,0.0,60.24,475,-66.88,1397.1,Às vezes,0.0,0.8,Sim,Não,Não,Em risco
+250,41,Masculino,Casado,0,Uberlândia,MG,Pedreiro,Fundamental,1918.08,0.0,85.08,442,48.42,534.82,Raramente,1.7,3.3,Sim,Sim,Não,Em risco
+251,23,Outro,Solteiro,0,Guarulhos,SP,Enfermeiro,Fundamental,5184.94,0.0,11.27,793,9560.59,6439.79,Às vezes,28.83,4.9,Não,Não,Sim,Saudável
+252,48,Feminino,Divorciado,0,Uberlândia,MG,Professor,Superior,6003.8,0.0,40.72,524,3698.34,4821.79,Raramente,10.26,23.7,Não,Não,Sim,Em observação
+253,45,Feminino,Casado,0,Londrina,PR,Engenheiro de Produção,Superior,7250.82,0.0,84.73,466,425.14,5501.01,Nunca,0.41,2.8,Não,Não,Não,Em risco
+254,24,Masculino,Solteiro,0,Goiânia,GO,Funcionário Público,Superior,11071.5,2128.97,26.82,789,16385.41,14556.63,Frequentemente,13.76,1.1,Não,Não,Sim,Saudável
+255,58,Feminino,Casado,0,Curitiba,PR,Motorista,Pós-graduação,4240.47,0.0,7.23,804,5979.7,13391.67,Frequentemente,20.59,31.8,Não,Não,Não,Saudável
+256,42,Feminino,Casado,1,Recife,PE,Analista Financeiro,Fundamental,11280.2,0.0,42.8,559,6481.92,11602.99,Nunca,6.73,10.4,Não,Não,Sim,Em observação
+257,40,Feminino,União Estável,1,Rio de Janeiro,RJ,Advogado,Médio,7472.45,0.0,90.15,463,195.97,2128.7,Nunca,0.72,9.6,Sim,Sim,Sim,Em risco
+258,43,Feminino,União Estável,1,Manaus,AM,Veterinário,Superior,5848.74,794.54,38.43,698,3749.28,3247.18,Nunca,4.97,7.3,Não,Sim,Sim,Em observação
+259,36,Masculino,Casado,0,Manaus,AM,Analista de TI,Superior,9775.76,208.88,30.03,613,3304.81,10646.75,Às vezes,6.79,16.9,Sim,Não,Sim,Em observação
+260,46,Masculino,Casado,1,Goiânia,GO,Recepcionista,Superior,2766.89,0.0,13.28,700,3358.5,5561.28,Sempre,23.63,16.8,Sim,Sim,Sim,Saudável
+261,43,Feminino,Solteiro,0,Goiânia,GO,Médico,Pós-graduação,19441.86,0.0,25.0,637,11670.51,9853.18,Frequentemente,1.0,2.4,Não,Sim,Não,Em observação
+262,34,Feminino,Casado,2,Palmas,TO,Motoboy,Superior,2416.45,0.0,75.3,509,124.23,648.61,Às vezes,2.62,5.1,Não,Não,Não,Em risco
+263,39,Outro,Casado,1,Caxias do Sul,RS,Pedreiro,Fundamental,3861.65,0.0,25.52,794,5264.62,7968.96,Sempre,13.21,17.5,Não,Não,Sim,Saudável
+264,30,Feminino,Casado,0,Olinda,PE,Pedreiro,Fundamental,2187.27,228.09,46.29,480,1381.99,2467.94,Frequentemente,7.77,7.4,Sim,Não,Não,Em observação
+265,27,Feminino,Casado,1,Guarulhos,SP,Enfermeiro,Fundamental,4594.24,124.41,92.09,358,798.89,3797.76,Nunca,0.0,3.4,Sim,Não,Não,Em risco
+266,19,Feminino,Casado,0,Maceió,AL,Advogado,Pós-graduação,10884.19,0.0,29.01,510,4539.79,17215.25,Raramente,1.0,1.0,Não,Não,Sim,Em observação
+267,32,Masculino,Divorciado,0,Maceió,AL,Empresário,Superior,23276.49,0.0,41.67,500,4040.29,36046.85,Nunca,5.37,5.2,Sim,Sim,Sim,Em observação
+268,33,Feminino,Solteiro,1,Belém,PA,Pedreiro,Fundamental,3125.44,0.0,33.88,554,984.53,4919.76,Frequentemente,2.28,3.9,Não,Sim,Não,Em observação
+269,38,Masculino,Viúvo,2,Belém,PA,Motorista,Médio,2918.46,0.0,25.0,522,389.61,3711.47,Nunca,9.38,6.9,Sim,Não,Não,Em observação
+270,49,Feminino,Casado,2,Vila Velha,ES,Aposentado,Superior,6054.19,2096.02,7.88,891,11753.0,18345.39,Às vezes,13.08,18.2,Não,Sim,Não,Saudável
+271,48,Masculino,Casado,1,Goiânia,GO,Técnico em Informática,Superior,3237.5,43.97,55.0,397,89.22,897.55,Nunca,0.0,4.3,Sim,Sim,Não,Em risco
+272,42,Feminino,Divorciado,2,Feira de Santana,BA,Engenheiro de Produção,Pós-graduação,9914.65,178.24,83.59,456,935.33,5973.43,Nunca,1.16,0.6,Sim,Sim,Sim,Em risco
+273,42,Feminino,Casado,2,Porto Alegre,RS,Pedreiro,Fundamental,1720.53,0.0,55.0,404,114.96,386.6,Raramente,1.64,12.7,Não,Sim,Sim,Em risco
+274,33,Feminino,União Estável,1,Santos,SP,Gerente Comercial,Superior,10427.33,0.0,67.6,365,1397.05,3572.08,Raramente,1.07,6.5,Sim,Sim,Não,Em risco
+275,47,Masculino,União Estável,0,São Luís,MA,Engenheiro de Produção,Superior,13100.58,0.0,44.6,669,2234.86,15919.9,Sempre,9.96,13.2,Não,Sim,Sim,Em observação
+276,44,Feminino,Solteiro,1,Porto Alegre,RS,Cozinheiro,Médio,2808.18,0.0,47.89,602,762.17,3026.8,Nunca,7.83,9.7,Não,Não,Não,Em observação
+277,51,Masculino,Solteiro,0,Juazeiro do Norte,CE,Jornalista,Superior,2907.07,0.0,90.19,382,289.02,2205.85,Às vezes,0.89,5.3,Sim,Não,Não,Em risco
+278,32,Masculino,Viúvo,0,São Paulo,SP,Motorista,Médio,3233.44,0.0,26.38,577,932.26,3560.42,Nunca,9.54,8.7,Não,Sim,Sim,Em observação
+279,51,Feminino,Solteiro,1,Maceió,AL,Motorista,Fundamental,3677.17,0.0,42.67,520,1573.79,2947.75,Nunca,2.0,21.3,Não,Não,Não,Em observação
+280,25,Feminino,Solteiro,0,Campinas,SP,Advogado,Pós-graduação,10747.66,0.0,82.56,336,-253.51,7727.52,Raramente,1.17,4.1,Sim,Não,Sim,Em risco
+281,45,Feminino,Casado,0,Pelotas,RS,Cozinheiro,Médio,2793.26,0.0,80.4,404,-23.39,1811.58,Nunca,0.43,10.5,Sim,Não,Sim,Em risco
+282,38,Masculino,Solteiro,1,Santos,SP,Advogado,Fundamental,14827.42,0.0,23.36,872,28262.64,40177.19,Frequentemente,14.7,8.5,Não,Não,Sim,Saudável
+283,26,Masculino,Solteiro,3,Joinville,SC,Aposentado,Fundamental,3543.92,0.0,27.83,631,683.31,5546.8,Às vezes,6.8,6.1,Não,Não,Sim,Em observação
+284,31,Feminino,Solteiro,1,Caxias do Sul,RS,Eletricista,Médio,5994.06,0.0,10.06,727,4883.61,9193.07,Sempre,23.25,5.0,Não,Não,Não,Saudável
+285,52,Masculino,Solteiro,0,João Pessoa,PB,Enfermeiro,Superior,4797.8,0.0,50.3,600,2676.29,7632.28,Raramente,8.84,23.6,Não,Não,Não,Em observação
+286,24,Masculino,Solteiro,2,Santos,SP,Estudante,Pós-graduação,2091.34,0.0,17.56,967,3233.87,4340.64,Frequentemente,11.8,6.0,Não,Não,Sim,Saudável
+287,42,Feminino,Solteiro,0,Blumenau,SC,Corretor de Imóveis,Fundamental,11179.35,0.0,45.26,673,2699.07,14436.2,Nunca,8.52,15.7,Sim,Sim,Não,Em observação
+288,46,Feminino,Casado,0,Fortaleza,CE,Eletricista,Médio,3163.05,437.27,29.05,637,2054.85,2317.17,Raramente,4.29,28.0,Não,Não,Não,Em observação
+289,33,Masculino,União Estável,0,Palmas,TO,Pedreiro,Fundamental,3159.64,0.0,14.24,804,7567.66,6182.25,Às vezes,17.01,15.0,Não,Não,Não,Saudável
+290,31,Feminino,Solteiro,0,Anápolis,GO,Eletricista,Médio,4431.73,0.0,47.48,589,2497.81,4389.52,Às vezes,8.35,2.4,Não,Não,Não,Em observação
+291,35,Masculino,União Estável,1,Cuiabá,MT,Empresário,Superior,29319.03,0.0,7.72,953,55996.78,87171.07,Frequentemente,18.11,11.3,Não,Sim,Sim,Saudável
+292,33,Feminino,Divorciado,0,Teresina,PI,Analista Financeiro,Pós-graduação,11228.91,0.0,15.42,959,10291.61,13668.26,Raramente,16.93,7.3,Não,Sim,Sim,Saudável
+293,57,Feminino,Divorciado,0,Caxias do Sul,RS,Empresário,Superior,16274.13,0.0,67.96,325,149.4,9595.57,Raramente,1.13,6.6,Sim,Não,Sim,Em risco
+294,20,Masculino,Solteiro,1,Belém,PA,Analista Financeiro,Superior,8798.94,0.0,39.47,710,5316.46,12150.46,Às vezes,4.22,1.8,Não,Não,Sim,Em observação
+295,18,Masculino,Solteiro,1,Salvador,BA,Designer Gráfico,Pós-graduação,7304.99,1749.28,10.39,733,10422.81,10214.51,Frequentemente,20.75,0.0,Não,Sim,Sim,Saudável
+296,46,Masculino,Casado,1,Niterói,RJ,Professor,Superior,3748.16,0.0,38.58,629,600.51,5856.2,Raramente,1.11,7.1,Não,Não,Não,Em observação
+297,50,Masculino,Solteiro,0,Goiânia,GO,Gerente Comercial,Superior,6613.87,523.56,93.77,480,801.48,1973.95,Nunca,0.24,5.7,Sim,Sim,Não,Em risco
+298,37,Feminino,Solteiro,2,Teresina,PI,Técnico em Informática,Médio,5815.97,546.6,13.7,869,11375.1,7500.98,Frequentemente,16.95,7.4,Não,Não,Não,Saudável
+299,44,Feminino,Divorciado,1,Brasília,DF,Veterinário,Superior,8650.38,0.0,38.84,553,4695.56,12414.56,Raramente,7.78,1.3,Não,Sim,Sim,Em observação
+300,60,Feminino,União Estável,0,Santos,SP,Enfermeiro,Superior,5031.95,272.75,18.85,895,10391.4,14317.48,Raramente,20.67,16.1,Não,Não,Sim,Saudável
+301,38,Masculino,Casado,0,São Luís,MA,Funcionário Público,Superior,13523.73,0.0,25.98,842,26355.8,20480.44,Sempre,19.29,1.5,Não,Sim,Sim,Saudável
+302,44,Masculino,Casado,1,Caxias do Sul,RS,Veterinário,Superior,8088.55,0.0,44.46,598,3238.95,4840.35,Às vezes,2.74,23.1,Não,Sim,Sim,Em observação
+303,45,Feminino,Casado,0,Goiânia,GO,Médico,Médio,23600.79,0.0,36.67,661,5393.48,28394.63,Raramente,4.23,24.5,Não,Sim,Não,Em observação
+304,26,Feminino,Solteiro,2,Teresina,PI,Jornalista,Fundamental,6591.32,0.0,42.25,590,3612.33,10083.27,Às vezes,3.08,4.8,Não,Não,Não,Em observação
+305,18,Masculino,Divorciado,0,Feira de Santana,BA,Analista de TI,Superior,8065.84,0.0,32.64,583,3347.52,6147.55,Às vezes,1.0,0.0,Não,Sim,Sim,Em observação
+306,36,Feminino,Casado,0,Olinda,PE,Cabeleireiro,Médio,1677.35,54.72,78.17,510,65.65,776.8,Às vezes,2.27,2.1,Sim,Não,Não,Em risco
+307,45,Feminino,Casado,2,Juiz de Fora,MG,Cozinheiro,Médio,2632.29,245.56,31.63,629,338.92,3784.7,Raramente,3.59,9.9,Não,Não,Não,Em observação
+308,37,Feminino,Solteiro,3,Campinas,SP,Professor,Médio,7431.47,1210.42,2.7,837,8868.96,19357.47,Sempre,24.79,5.3,Não,Não,Sim,Saudável
+309,38,Feminino,Solteiro,0,Florianópolis,SC,Contador,Superior,4666.29,0.0,92.88,413,-142.92,758.83,Nunca,2.08,12.1,Sim,Não,Não,Em risco
+310,28,Masculino,Divorciado,0,Fortaleza,CE,Jornalista,Fundamental,7256.33,0.0,9.99,1000,19458.66,17121.62,Frequentemente,18.58,0.7,Sim,Sim,Sim,Saudável
+311,48,Feminino,Divorciado,0,Juiz de Fora,MG,Engenheiro Civil,Fundamental,11207.64,0.0,48.54,548,2690.56,11631.8,Às vezes,1.95,1.7,Não,Sim,Sim,Em observação
+312,31,Masculino,Casado,1,Feira de Santana,BA,Aposentado,Médio,5649.71,0.0,13.06,789,7352.52,13485.82,Frequentemente,17.04,13.0,Sim,Sim,Não,Saudável
+313,29,Feminino,Solteiro,2,Vila Velha,ES,Empresário,Superior,26793.91,0.0,18.77,753,30426.46,77284.02,Frequentemente,22.85,8.4,Sim,Sim,Não,Saudável
+314,29,Masculino,Solteiro,0,Belo Horizonte,MG,Designer Gráfico,Superior,3727.46,0.0,78.05,399,-71.46,1605.34,Nunca,0.27,3.6,Não,Não,Não,Em risco
+315,42,Masculino,Solteiro,1,Campo Grande,MS,Estudante,Médio,1412.0,0.0,69.66,350,277.43,983.43,Nunca,1.04,13.2,Sim,Não,Não,Em risco
+316,43,Masculino,Viúvo,3,Caxias do Sul,RS,Autônomo,Fundamental,8215.0,265.59,49.01,689,4241.48,9590.09,Raramente,6.92,18.7,Não,Sim,Sim,Em observação
+317,31,Feminino,Casado,1,Olinda,PE,Engenheiro de Produção,Superior,11937.6,0.0,30.93,648,2608.42,7550.89,Frequentemente,7.41,13.0,Sim,Não,Sim,Em observação
+318,49,Feminino,União Estável,0,Belo Horizonte,MG,Analista de TI,Superior,10769.59,2447.5,2.2,716,15099.46,31095.69,Às vezes,24.72,18.0,Não,Não,Não,Saudável
+319,41,Masculino,Casado,4,Uberlândia,MG,Autônomo,Médio,8107.7,752.68,2.27,877,10567.46,23805.8,Sempre,19.23,2.0,Não,Não,Sim,Saudável
+320,34,Feminino,Divorciado,1,Teresina,PI,Farmacêutico,Superior,7509.18,1222.92,22.17,869,17867.03,14444.18,Frequentemente,10.0,4.6,Não,Sim,Não,Saudável
+321,44,Masculino,Solteiro,1,Manaus,AM,Veterinário,Pós-graduação,7137.08,649.1,54.72,549,1472.64,11032.64,Às vezes,5.33,1.4,Sim,Sim,Não,Em observação
+322,46,Feminino,Divorciado,0,Rio de Janeiro,RJ,Veterinário,Superior,5890.75,0.0,58.0,482,1390.83,7126.4,Às vezes,5.01,12.1,Não,Sim,Sim,Em observação
+323,38,Masculino,Solteiro,1,Manaus,AM,Corretor de Imóveis,Médio,5493.94,0.0,42.56,637,3475.63,6013.71,Às vezes,6.39,14.1,Não,Sim,Não,Em observação
+324,35,Feminino,Casado,1,Manaus,AM,Analista de TI,Médio,8863.14,0.0,0.8,945,18265.4,16633.77,Sempre,20.09,3.8,Não,Sim,Não,Saudável
+325,40,Masculino,Solteiro,0,Palmas,TO,Aposentado,Superior,2686.92,145.08,85.82,489,53.58,1465.63,Nunca,1.11,11.2,Sim,Não,Não,Em risco
+326,18,Feminino,Viúvo,0,Duque de Caxias,RJ,Vendedor,Médio,4295.76,0.0,39.8,610,570.77,6346.81,Raramente,5.19,0.0,Sim,Não,Sim,Em observação
+327,49,Feminino,Solteiro,1,Niterói,RJ,Autônomo,Superior,5650.65,785.46,36.49,591,3636.78,5717.36,Nunca,10.82,14.0,Sim,Sim,Não,Em observação
+328,28,Masculino,Casado,3,Curitiba,PR,Professor,Superior,5861.33,509.79,48.01,610,2367.9,3670.46,Raramente,10.43,3.0,Não,Sim,Não,Em observação
+329,39,Masculino,União Estável,1,Natal,RN,Engenheiro de Produção,Superior,8740.71,0.0,36.18,662,5666.31,8508.01,Raramente,6.55,4.2,Não,Não,Sim,Em observação
+330,36,Feminino,Casado,3,Juiz de Fora,MG,Vendedor,Médio,3929.96,1153.21,9.58,835,2967.95,12057.38,Sempre,15.97,15.7,Não,Não,Não,Saudável
+331,42,Masculino,Solteiro,1,Londrina,PR,Eletricista,Médio,3410.46,0.0,41.81,561,1508.84,1742.92,Raramente,12.0,23.8,Não,Não,Não,Em observação
+332,46,Feminino,Casado,0,Rio de Janeiro,RJ,Engenheiro Civil,Pós-graduação,12279.14,0.0,93.59,382,-534.64,3748.15,Raramente,0.05,1.2,Sim,Sim,Sim,Em risco
+333,45,Masculino,Viúvo,2,São Luís,MA,Jornalista,Superior,5612.09,0.0,16.67,876,13233.2,12441.77,Frequentemente,22.56,20.4,Não,Não,Sim,Saudável
+334,29,Masculino,Solteiro,0,São Luís,MA,Pedreiro,Fundamental,4197.86,0.0,7.39,923,7640.8,12607.28,Sempre,17.56,0.9,Sim,Sim,Não,Saudável
+335,36,Masculino,Solteiro,2,Fortaleza,CE,Advogado,Pós-graduação,21694.52,0.0,18.93,826,17126.86,50293.83,Frequentemente,10.0,8.4,Sim,Sim,Sim,Saudável
+336,36,Masculino,Casado,1,Olinda,PE,Gerente Comercial,Superior,11228.49,3104.45,12.11,740,20988.96,16951.46,Frequentemente,16.68,10.6,Não,Sim,Sim,Saudável
+337,36,Feminino,Viúvo,0,Natal,RN,Professor,Superior,4073.03,0.0,75.19,388,173.6,2233.02,Às vezes,1.09,4.8,Não,Não,Não,Em risco
+338,30,Feminino,Divorciado,1,Santos,SP,Designer Gráfico,Fundamental,5045.49,0.0,39.63,651,2583.04,4034.11,Raramente,4.99,12.0,Sim,Não,Não,Em observação
+339,18,Masculino,Casado,0,Niterói,RJ,Eletricista,Médio,3415.4,0.0,51.07,633,920.77,4974.51,Às vezes,6.18,0.0,Sim,Sim,Não,Em observação
+340,31,Masculino,Casado,0,Campo Grande,MS,Técnico em Informática,Fundamental,4894.01,956.89,3.61,948,4784.83,13779.88,Sempre,21.02,9.8,Não,Não,Sim,Saudável
+341,41,Masculino,Solteiro,3,São Luís,MA,Pedreiro,Fundamental,2967.95,0.0,58.0,583,1531.45,4076.62,Às vezes,3.47,6.4,Não,Não,Não,Em observação
+342,41,Masculino,Solteiro,3,Natal,RN,Advogado,Pós-graduação,11975.27,517.13,45.95,561,2851.98,10210.41,Raramente,1.55,13.7,Sim,Sim,Sim,Em observação
+343,43,Masculino,Solteiro,2,Juazeiro do Norte,CE,Corretor de Imóveis,Médio,8936.66,0.0,14.02,797,21241.95,15127.05,Às vezes,14.79,22.3,Sim,Não,Sim,Saudável
+344,53,Masculino,Solteiro,3,Guarulhos,SP,Vendedor,Pós-graduação,3178.27,0.0,58.0,501,1267.86,1843.43,Às vezes,2.21,23.7,Sim,Não,Não,Em observação
+345,47,Feminino,Divorciado,0,Palmas,TO,Engenheiro Civil,Superior,12962.88,0.0,51.02,548,3454.9,13031.33,Frequentemente,10.18,16.4,Não,Não,Não,Em observação
+346,35,Masculino,Divorciado,3,Anápolis,GO,Empresário,Fundamental,17625.17,0.0,37.19,582,3999.22,14458.21,Às vezes,3.45,14.9,Sim,Sim,Sim,Em observação
+347,34,Feminino,União Estável,2,Juazeiro do Norte,CE,Professor,Superior,4743.03,0.0,34.09,530,1943.41,7295.5,Nunca,4.65,16.0,Sim,Sim,Sim,Em observação
+348,51,Feminino,União Estável,2,Anápolis,GO,Enfermeiro,Superior,4857.41,0.0,13.47,872,6166.37,6668.81,Raramente,10.0,28.5,Não,Não,Não,Saudável
+349,25,Feminino,Solteiro,0,Cuiabá,MT,Veterinário,Superior,8242.08,1135.33,31.21,569,1335.73,12008.94,Às vezes,8.31,3.4,Sim,Sim,Não,Em observação
+350,41,Feminino,Solteiro,1,Juiz de Fora,MG,Cabeleireiro,Médio,3806.89,0.0,39.78,658,2212.23,5834.41,Frequentemente,3.26,13.2,Não,Não,Sim,Em observação
+351,18,Feminino,Solteiro,1,Manaus,AM,Advogado,Pós-graduação,11909.18,0.0,31.86,593,1564.92,7402.72,Raramente,3.22,0.0,Sim,Não,Sim,Em observação
+352,18,Feminino,Divorciado,0,Olinda,PE,Técnico em Informática,Médio,2225.64,0.0,65.22,393,-38.46,700.85,Às vezes,1.95,0.0,Não,Não,Não,Em risco
+353,31,Feminino,Casado,1,Uberlândia,MG,Recepcionista,Fundamental,3003.12,0.0,44.85,591,1817.45,4488.24,Raramente,3.35,8.7,Sim,Sim,Não,Em observação
+354,22,Masculino,Solteiro,0,Vitória,ES,Funcionário Público,Superior,15517.69,5004.81,0.0,928,18705.31,46850.6,Frequentemente,11.14,4.0,Sim,Não,Sim,Saudável
+355,18,Feminino,Solteiro,0,Londrina,PR,Engenheiro de Produção,Superior,16734.22,0.0,14.18,753,32866.06,31467.8,Sempre,20.04,0.0,Não,Sim,Sim,Saudável
+356,48,Feminino,Solteiro,1,Maringá,PR,Vendedor,Médio,4414.23,622.96,33.07,555,804.14,4683.43,Às vezes,2.46,28.8,Não,Não,Não,Em observação
+357,20,Feminino,Solteiro,0,Duque de Caxias,RJ,Funcionário Público,Fundamental,10808.07,0.0,9.05,867,17971.07,21963.53,Sempre,22.16,0.6,Sim,Sim,Sim,Saudável
+358,47,Masculino,Casado,3,Palmas,TO,Advogado,Pós-graduação,9661.95,457.36,38.0,709,1176.41,9114.53,Às vezes,9.42,19.1,Não,Sim,Sim,Em observação
+359,25,Masculino,Casado,0,Londrina,PR,Farmacêutico,Superior,5490.49,0.0,72.56,300,840.0,4156.34,Raramente,0.78,3.1,Sim,Sim,Sim,Em risco
+360,35,Feminino,Solteiro,2,Curitiba,PR,Analista Financeiro,Superior,8185.11,0.0,54.73,707,3981.62,12699.84,Às vezes,7.35,17.0,Sim,Não,Sim,Em observação
+361,54,Feminino,Solteiro,1,Pelotas,RS,Aposentado,Médio,2969.91,0.0,29.12,662,1009.25,3930.79,Frequentemente,1.0,1.4,Não,Sim,Não,Em observação
+362,32,Feminino,Casado,0,Vila Velha,ES,Vendedor,Médio,2635.58,0.0,47.58,576,1609.49,2998.53,Às vezes,5.57,5.2,Não,Não,Sim,Em observação
+363,43,Masculino,Solteiro,1,Joinville,SC,Motoboy,Superior,2791.94,0.0,36.24,549,1516.72,2254.89,Raramente,3.66,22.5,Não,Sim,Sim,Em observação
+364,53,Masculino,Divorciado,4,São Luís,MA,Aposentado,Médio,5019.45,0.0,33.26,580,612.56,7944.56,Raramente,12.0,23.3,Sim,Sim,Não,Em observação
+365,21,Masculino,Solteiro,0,Anápolis,GO,Funcionário Público,Superior,6641.23,0.0,98.0,461,323.44,3999.57,Nunca,1.32,1.0,Não,Sim,Sim,Em risco
+366,50,Masculino,União Estável,1,Maringá,PR,Gerente Comercial,Superior,11437.92,0.0,39.68,602,2697.42,17037.63,Frequentemente,5.21,17.2,Não,Não,Não,Em observação
+367,41,Feminino,Casado,0,Santos,SP,Pedreiro,Fundamental,1746.95,0.0,63.02,346,184.82,353.06,Nunca,0.0,8.5,Sim,Não,Não,Em risco
+368,52,Feminino,Casado,1,Duque de Caxias,RJ,Corretor de Imóveis,Fundamental,2119.33,0.0,66.31,465,58.2,445.18,Nunca,2.03,8.8,Não,Não,Não,Em risco
+369,42,Feminino,Solteiro,4,Curitiba,PR,Motorista,Médio,4098.32,0.0,10.06,813,2713.17,6924.07,Sempre,19.38,18.0,Não,Não,Não,Saudável
+370,38,Masculino,Divorciado,0,Vitória,ES,Professor,Médio,6603.85,0.0,2.31,907,5741.78,14978.01,Sempre,20.91,10.1,Não,Sim,Sim,Saudável
+371,42,Feminino,Casado,2,Brasília,DF,Cabeleireiro,Médio,3972.48,778.34,10.92,885,7856.65,10082.58,Às vezes,22.39,3.3,Não,Não,Sim,Saudável
+372,39,Masculino,Solteiro,1,Natal,RN,Designer Gráfico,Superior,7612.66,0.0,14.09,799,20685.15,22689.09,Frequentemente,21.39,11.4,Não,Sim,Sim,Saudável
+373,57,Feminino,Casado,2,Goiânia,GO,Vendedor,Médio,4880.36,0.0,15.94,700,5523.99,10571.0,Sempre,18.23,26.2,Não,Sim,Não,Saudável
+374,38,Feminino,Casado,2,Juazeiro do Norte,CE,Gerente Comercial,Superior,13262.96,658.55,26.69,599,4097.7,13954.35,Às vezes,8.24,10.2,Não,Sim,Sim,Em observação
+375,40,Feminino,Divorciado,3,Joinville,SC,Corretor de Imóveis,Pós-graduação,14623.24,2350.03,21.42,835,12396.71,44863.73,Às vezes,13.28,9.4,Não,Sim,Sim,Saudável
+376,22,Feminino,Casado,0,São Paulo,SP,Motoboy,Fundamental,3466.03,761.57,10.82,855,9035.8,10717.49,Frequentemente,20.84,1.5,Sim,Não,Não,Saudável
+377,36,Feminino,Casado,0,Juiz de Fora,MG,Técnico em Informática,Pós-graduação,3287.76,0.0,82.35,381,339.6,2492.65,Raramente,0.0,11.7,Sim,Sim,Não,Em risco
+378,48,Feminino,Divorciado,3,Recife,PE,Vendedor,Médio,5316.26,688.91,14.79,804,9649.78,6916.53,Às vezes,23.85,13.8,Não,Sim,Sim,Saudável
+379,32,Feminino,Solteiro,0,Belém,PA,Pedreiro,Pós-graduação,2801.29,153.82,60.42,396,472.72,1011.32,Nunca,0.49,5.3,Não,Sim,Sim,Em risco
+380,23,Masculino,Casado,0,Blumenau,SC,Eletricista,Médio,6372.35,0.0,15.66,874,4916.82,8999.42,Frequentemente,24.53,5.0,Sim,Sim,Não,Saudável
+381,54,Feminino,Casado,0,São Luís,MA,Vendedor,Superior,5259.23,327.0,2.51,916,3516.69,16481.01,Frequentemente,15.94,12.7,Não,Sim,Não,Saudável
+382,39,Feminino,União Estável,0,Palmas,TO,Designer Gráfico,Superior,5805.89,0.0,37.13,703,797.76,4140.58,Raramente,5.51,4.2,Não,Não,Sim,Em observação
+383,18,Feminino,Solteiro,0,Niterói,RJ,Funcionário Público,Fundamental,10587.11,0.0,42.46,630,3366.2,13374.16,Às vezes,6.15,0.0,Não,Não,Sim,Em observação
+384,41,Feminino,Solteiro,1,Maceió,AL,Funcionário Público,Fundamental,6684.55,0.0,76.67,428,1311.72,5428.14,Nunca,0.28,8.9,Não,Não,Não,Em risco
+385,18,Masculino,Casado,0,Joinville,SC,Desenvolvedor de Software,Superior,12555.22,0.0,36.75,656,1942.58,14621.7,Raramente,10.33,0.0,Sim,Sim,Sim,Em observação
+386,36,Feminino,União Estável,1,Salvador,BA,Analista Financeiro,Superior,7305.93,0.0,64.89,364,1417.11,2559.86,Nunca,0.58,0.4,Sim,Não,Sim,Em risco
+387,41,Feminino,Solteiro,2,Brasília,DF,Vendedor,Fundamental,4582.81,0.0,16.66,700,4935.65,11636.77,Sempre,12.78,14.3,Sim,Não,Não,Saudável
+388,46,Feminino,Casado,0,Juazeiro do Norte,CE,Advogado,Pós-graduação,14349.91,0.0,8.18,851,14805.02,37024.93,Frequentemente,17.18,13.6,Não,Sim,Sim,Saudável
+389,50,Masculino,Solteiro,1,Londrina,PR,Farmacêutico,Pós-graduação,3628.7,0.0,59.9,391,24.98,1254.52,Nunca,0.97,0.9,Sim,Não,Não,Em risco
+390,43,Feminino,Casado,0,Joinville,SC,Pedreiro,Fundamental,2224.15,0.0,96.21,309,224.64,1690.21,Frequentemente,0.44,4.3,Sim,Não,Não,Em risco
+391,46,Feminino,Solteiro,1,Florianópolis,SC,Desenvolvedor de Software,Superior,9310.57,517.25,72.26,313,1438.26,1646.62,Às vezes,1.67,6.3,Sim,Não,Sim,Em risco
+392,36,Feminino,Solteiro,1,Maringá,PR,Motoboy,Fundamental,2745.4,0.0,49.54,690,910.08,4276.12,Às vezes,3.3,2.1,Não,Não,Não,Em observação
+393,51,Feminino,Solteiro,3,Natal,RN,Autônomo,Pós-graduação,4821.68,0.0,41.89,620,2690.94,3074.29,Raramente,11.97,32.2,Não,Não,Sim,Em observação
+394,46,Masculino,União Estável,0,Maringá,PR,Enfermeiro,Superior,2859.57,0.0,77.0,464,60.94,907.76,Raramente,1.12,5.9,Sim,Não,Não,Em risco
+395,52,Masculino,Casado,1,Juazeiro do Norte,CE,Motorista,Médio,3455.9,260.56,0.94,803,5876.53,9956.05,Sempre,17.58,12.3,Não,Não,Não,Saudável
+396,39,Feminino,Solteiro,2,Manaus,AM,Analista Financeiro,Superior,5088.19,0.0,75.3,429,948.53,2219.72,Raramente,1.49,7.3,Sim,Sim,Não,Em risco
+397,54,Masculino,Casado,0,Juazeiro do Norte,CE,Engenheiro Civil,Superior,10684.01,0.0,76.51,453,1922.78,2015.11,Raramente,0.8,7.4,Sim,Sim,Não,Em risco
+398,57,Masculino,Casado,2,João Pessoa,PB,Motorista,Pós-graduação,2975.66,60.01,45.61,595,1402.49,2854.23,Às vezes,2.89,2.6,Não,Sim,Não,Em observação
+399,44,Feminino,União Estável,0,Cuiabá,MT,Farmacêutico,Superior,3038.28,0.0,78.68,345,288.81,2378.44,Nunca,1.22,3.1,Não,Não,Sim,Em risco
+400,26,Masculino,Casado,0,Duque de Caxias,RJ,Professor,Superior,3388.28,0.0,68.42,462,653.28,1547.17,Raramente,0.13,0.9,Sim,Não,Não,Em risco
+401,36,Masculino,Divorciado,1,Vila Velha,ES,Eletricista,Médio,5517.97,0.0,18.75,801,7275.82,13500.42,Às vezes,20.7,8.6,Sim,Sim,Não,Saudável
+402,29,Masculino,Casado,0,Brasília,DF,Aposentado,Médio,2294.85,0.0,68.85,360,-30.15,461.89,Raramente,0.92,5.9,Não,Não,Não,Em risco
+403,33,Masculino,Divorciado,1,Brasília,DF,Eletricista,Superior,3929.4,0.0,40.98,641,1890.2,5729.32,Raramente,1.97,9.0,Não,Não,Não,Em observação
+404,69,Masculino,União Estável,0,Santos,SP,Professor,Superior,2341.6,0.0,82.18,402,242.88,1141.99,Nunca,1.38,11.9,Não,Não,Não,Em risco
+405,44,Masculino,Casado,1,Natal,RN,Gerente Comercial,Médio,15780.17,0.0,1.44,714,44069.33,42631.4,Frequentemente,14.63,1.3,Não,Sim,Sim,Saudável
+406,40,Masculino,Solteiro,1,Juiz de Fora,MG,Veterinário,Superior,4124.57,0.0,93.95,357,777.62,1263.27,Às vezes,0.72,12.7,Sim,Não,Sim,Em risco
+407,42,Feminino,Solteiro,1,Guarulhos,SP,Advogado,Pós-graduação,17186.27,0.0,42.21,688,3052.61,8608.06,Frequentemente,12.0,15.8,Sim,Não,Sim,Em observação
+408,30,Masculino,Solteiro,2,Goiânia,GO,Designer Gráfico,Superior,6463.47,0.0,13.61,1000,6313.53,17343.27,Frequentemente,14.84,2.1,Não,Não,Sim,Saudável
+409,19,Masculino,Solteiro,1,Cuiabá,MT,Advogado,Pós-graduação,12580.47,0.0,69.56,425,-353.14,5335.08,Raramente,0.0,0.4,Não,Não,Sim,Em risco
+410,38,Masculino,Solteiro,0,Goiânia,GO,Aposentado,Médio,4949.38,0.0,24.72,832,8612.32,10448.16,Às vezes,20.13,0.3,Não,Não,Não,Saudável
+411,45,Feminino,Casado,1,Manaus,AM,Contador,Superior,7650.88,1366.95,10.46,946,4602.59,23516.56,Às vezes,25.19,7.4,Não,Sim,Sim,Saudável
+412,46,Feminino,Solteiro,0,Belo Horizonte,MG,Analista de TI,Pós-graduação,4254.32,0.0,80.38,391,31.82,2174.65,Nunca,0.07,15.3,Não,Não,Não,Em risco
+413,56,Feminino,Viúvo,3,Teresina,PI,Médico,Pós-graduação,13367.3,0.0,67.66,351,1.57,5873.94,Nunca,0.91,2.9,Não,Não,Não,Em risco
+414,49,Masculino,Casado,0,Vila Velha,ES,Engenheiro de Produção,Superior,11046.96,0.0,37.25,615,6160.77,11526.54,Raramente,9.5,9.7,Sim,Não,Não,Em observação
+415,37,Feminino,Casado,0,Blumenau,SC,Engenheiro de Produção,Superior,9159.13,0.0,25.0,501,5818.15,6531.27,Raramente,9.07,0.2,Sim,Não,Sim,Em observação
+416,65,Masculino,Casado,1,Vila Velha,ES,Engenheiro Civil,Pós-graduação,9540.99,0.0,56.81,586,3838.27,14088.22,Raramente,4.02,7.4,Não,Sim,Sim,Em observação
+417,24,Masculino,Divorciado,1,Fortaleza,CE,Recepcionista,Médio,3011.66,917.44,9.83,822,3514.4,8944.19,Frequentemente,31.28,1.9,Não,Não,Sim,Saudável
+418,32,Masculino,Viúvo,1,Maceió,AL,Enfermeiro,Médio,6029.86,0.0,20.99,901,5226.58,8607.77,Frequentemente,13.29,10.7,Não,Sim,Sim,Saudável
+419,30,Masculino,Divorciado,1,Londrina,PR,Gerente Comercial,Superior,10441.81,565.17,44.48,591,4405.33,9348.27,Às vezes,2.83,8.3,Sim,Não,Sim,Em observação
+420,25,Masculino,Casado,3,Maringá,PR,Gerente Comercial,Superior,6812.67,0.0,71.02,366,1181.61,3548.49,Raramente,0.91,0.4,Não,Não,Sim,Em risco
+421,36,Masculino,Solteiro,0,Campinas,SP,Designer Gráfico,Superior,2508.24,0.0,62.02,450,490.77,1494.74,Nunca,0.65,3.7,Não,Não,Não,Em risco
+422,49,Feminino,Solteiro,2,Teresina,PI,Advogado,Pós-graduação,6867.64,279.56,87.23,436,434.83,4838.48,Raramente,1.33,3.2,Não,Não,Sim,Em risco
+423,27,Feminino,União Estável,0,Olinda,PE,Autônomo,Pós-graduação,9523.01,0.0,7.24,774,25042.27,22254.74,Frequentemente,21.71,2.6,Não,Não,Sim,Saudável
+424,35,Masculino,Solteiro,2,Belém,PA,Farmacêutico,Superior,7134.78,581.61,50.91,540,4222.01,7474.8,Frequentemente,12.0,7.4,Não,Sim,Sim,Em observação
+425,31,Masculino,Divorciado,1,Fortaleza,CE,Pedreiro,Fundamental,3668.68,0.0,16.33,790,8612.76,5128.58,Frequentemente,18.27,4.9,Não,Não,Não,Saudável
+426,32,Feminino,Casado,0,João Pessoa,PB,Designer Gráfico,Superior,6921.65,0.0,56.27,648,2205.92,6021.45,Raramente,7.87,8.3,Não,Não,Sim,Em observação
+427,18,Feminino,Casado,0,Teresina,PI,Pedreiro,Fundamental,2735.04,0.0,37.88,643,1526.97,2119.53,Às vezes,9.37,0.0,Não,Não,Não,Em observação
+428,33,Feminino,Casado,2,Uberlândia,MG,Empresário,Superior,18095.53,0.0,69.48,510,3510.89,9456.96,Às vezes,0.0,1.6,Sim,Não,Não,Em risco
+429,22,Masculino,Divorciado,0,Belo Horizonte,MG,Funcionário Público,Superior,9597.56,572.76,43.95,494,4819.0,7355.59,Raramente,4.01,1.4,Não,Não,Sim,Em observação
+430,22,Feminino,Solteiro,1,Fortaleza,CE,Cabeleireiro,Superior,5679.0,0.0,18.46,896,11010.77,17842.34,Frequentemente,15.76,0.3,Não,Não,Não,Saudável
+431,18,Feminino,Casado,0,João Pessoa,PB,Motoboy,Fundamental,3139.17,1052.51,14.32,809,3625.6,7121.02,Sempre,23.29,0.0,Sim,Não,Sim,Saudável
+432,28,Feminino,Divorciado,4,Maringá,PR,Pedreiro,Superior,1670.99,0.0,93.01,365,73.65,675.47,Nunca,0.0,1.9,Não,Não,Não,Em risco
+433,18,Masculino,Solteiro,0,Olinda,PE,Eletricista,Médio,4768.66,0.0,38.85,544,1108.94,7294.8,Às vezes,4.62,0.0,Sim,Não,Sim,Em observação
+434,31,Feminino,Casado,0,Curitiba,PR,Cozinheiro,Médio,3572.14,249.22,3.28,795,9506.49,6981.76,Sempre,12.38,1.8,Não,Sim,Sim,Saudável
+435,34,Masculino,Solteiro,1,Palmas,TO,Analista Financeiro,Superior,10518.78,0.0,9.6,1000,13563.01,18830.91,Sempre,21.79,3.3,Não,Sim,Não,Saudável
+436,46,Feminino,Solteiro,1,São Luís,MA,Desenvolvedor de Software,Fundamental,10394.56,482.19,25.0,674,4414.93,6305.43,Às vezes,5.32,23.0,Não,Não,Sim,Em observação
+437,49,Feminino,Casado,0,São Luís,MA,Motorista,Médio,4199.98,0.0,20.27,869,10957.97,11741.48,Sempre,11.78,0.3,Não,Não,Não,Saudável
+438,33,Outro,Casado,2,Belém,PA,Eletricista,Médio,2192.6,0.0,82.24,431,-97.58,1582.65,Nunca,0.24,3.5,Não,Não,Não,Em risco
+439,45,Masculino,Casado,1,Maceió,AL,Enfermeiro,Superior,4665.6,0.0,58.0,643,2640.79,4597.49,Nunca,1.0,14.3,Sim,Não,Não,Em observação
+440,44,Masculino,Casado,0,Pelotas,RS,Gerente Comercial,Pós-graduação,16773.99,4805.46,15.22,909,17993.13,21481.78,Frequentemente,13.91,9.1,Sim,Sim,Sim,Saudável
+441,18,Feminino,Casado,0,Rio de Janeiro,RJ,Corretor de Imóveis,Médio,9985.51,3096.33,10.76,885,16865.15,14597.44,Sempre,22.55,0.0,Sim,Sim,Não,Saudável
+442,36,Masculino,Casado,2,Joinville,SC,Aposentado,Médio,2609.05,0.0,88.35,389,483.3,1279.64,Nunca,1.98,9.0,Não,Não,Não,Em risco
+443,63,Masculino,Solteiro,3,Fortaleza,CE,Veterinário,Superior,7288.76,0.0,35.77,553,1859.08,7900.61,Nunca,2.98,28.4,Sim,Sim,Sim,Em observação
+444,50,Masculino,Casado,2,Uberlândia,MG,Jornalista,Superior,6134.63,0.0,25.0,480,3122.22,6986.18,Raramente,2.27,7.5,Sim,Não,Sim,Em observação
+445,22,Masculino,Viúvo,0,Fortaleza,CE,Vendedor,Médio,2558.45,0.0,75.7,355,259.69,544.29,Às vezes,0.95,2.5,Não,Não,Não,Em risco
+446,47,Masculino,Casado,1,Pelotas,RS,Advogado,Pós-graduação,6778.95,0.0,74.98,300,421.12,5670.28,Nunca,0.95,1.3,Sim,Não,Não,Em risco
+447,30,Masculino,Solteiro,0,Anápolis,GO,Veterinário,Superior,3244.95,0.0,80.28,378,-67.43,2726.09,Nunca,0.19,1.5,Sim,Sim,Não,Em risco
+448,33,Masculino,Casado,0,Curitiba,PR,Farmacêutico,Superior,3672.22,0.0,74.5,346,-18.67,2322.23,Raramente,2.24,1.3,Não,Não,Sim,Em risco
+449,31,Masculino,Solteiro,1,Fortaleza,CE,Engenheiro de Produção,Pós-graduação,10571.39,0.0,56.35,583,6651.54,15768.65,Raramente,6.9,13.0,Não,Sim,Sim,Em observação
+450,18,Feminino,Solteiro,0,Florianópolis,SC,Estudante,Pós-graduação,1526.76,154.71,13.29,864,1202.23,3817.18,Sempre,24.22,0.0,Não,Não,Não,Saudável
+451,39,Masculino,Solteiro,1,Manaus,AM,Funcionário Público,Superior,4682.13,0.0,78.71,426,-76.04,2238.32,Às vezes,0.41,16.7,Sim,Não,Sim,Em risco
+452,29,Feminino,Solteiro,4,Campo Grande,MS,Designer Gráfico,Superior,4556.1,0.0,25.0,636,1177.13,3207.85,Às vezes,6.54,8.3,Não,Não,Sim,Em observação
+453,52,Feminino,Casado,0,Cuiabá,MT,Motoboy,Pós-graduação,2658.01,0.0,38.68,565,915.05,3613.54,Às vezes,6.1,31.8,Não,Sim,Não,Em observação
+454,40,Feminino,Solteiro,3,São Paulo,SP,Veterinário,Superior,5035.97,0.0,92.52,412,597.0,3590.56,Raramente,1.59,8.3,Sim,Não,Não,Em risco
+455,41,Feminino,Casado,2,Salvador,BA,Analista Financeiro,Superior,8766.4,1999.72,7.09,885,8548.7,26253.95,Sempre,23.06,11.6,Não,Não,Não,Saudável
+456,36,Feminino,Casado,1,Guarulhos,SP,Autônomo,Médio,5176.96,0.0,48.28,629,716.62,6447.24,Raramente,4.73,1.2,Sim,Sim,Não,Em observação
+457,34,Feminino,Casado,3,Goiânia,GO,Técnico em Informática,Médio,5678.16,1157.91,14.56,911,3526.06,11389.14,Sempre,22.68,9.2,Não,Não,Sim,Saudável
+458,63,Feminino,Casado,3,Vila Velha,ES,Jornalista,Superior,4627.73,0.0,42.54,480,2212.54,3585.82,Às vezes,2.5,14.6,Não,Não,Não,Em observação
+459,35,Masculino,União Estável,0,Palmas,TO,Recepcionista,Médio,2462.32,242.12,9.42,938,1587.91,5931.67,Frequentemente,20.05,5.1,Não,Não,Não,Saudável
+460,18,Masculino,Divorciado,0,Duque de Caxias,RJ,Autônomo,Médio,8922.38,0.0,7.12,935,13695.9,15622.14,Frequentemente,22.23,0.0,Não,Não,Sim,Saudável
+461,27,Feminino,Casado,0,Teresina,PI,Designer Gráfico,Médio,7489.41,0.0,16.87,754,13344.42,12036.01,Às vezes,10.0,4.3,Não,Não,Sim,Saudável
+462,73,Masculino,Casado,0,Manaus,AM,Funcionário Público,Superior,8014.23,1004.94,39.0,500,1066.22,6876.64,Raramente,5.96,18.7,Não,Sim,Sim,Em observação
+463,32,Masculino,Solteiro,1,Juazeiro do Norte,CE,Gerente Comercial,Superior,10301.75,0.0,44.15,585,2095.71,10001.16,Às vezes,5.64,0.2,Sim,Não,Sim,Em observação
+464,39,Feminino,Casado,3,Cuiabá,MT,Motoboy,Fundamental,3160.47,0.0,44.29,522,772.57,3333.86,Às vezes,3.74,1.5,Não,Não,Não,Em observação
+465,49,Feminino,Viúvo,2,Palmas,TO,Contador,Superior,5249.18,0.0,60.01,438,388.07,1938.39,Raramente,1.08,9.1,Sim,Não,Não,Em risco
+466,30,Feminino,Solteiro,2,Olinda,PE,Cozinheiro,Médio,2515.29,0.0,29.25,480,1610.14,2339.73,Nunca,3.35,7.7,Sim,Não,Não,Em observação
+467,30,Masculino,Casado,0,Maceió,AL,Estudante,Superior,1412.0,0.0,11.32,717,1628.24,2184.57,Sempre,22.7,3.0,Não,Não,Sim,Saudável
+468,33,Masculino,Casado,3,Campinas,SP,Designer Gráfico,Superior,2942.5,0.0,74.92,431,-53.57,1262.31,Nunca,1.28,2.4,Sim,Não,Não,Em risco
+469,46,Feminino,Solteiro,3,Belém,PA,Cozinheiro,Médio,3173.66,0.0,6.93,901,5198.02,6955.52,Sempre,31.43,19.4,Sim,Não,Sim,Saudável
+470,43,Feminino,Casado,0,Campinas,SP,Eletricista,Médio,3140.23,0.0,66.39,396,442.47,1038.74,Nunca,0.0,12.9,Não,Não,Não,Em risco
+471,32,Masculino,Solteiro,2,Campo Grande,MS,Cozinheiro,Médio,3768.33,851.1,2.89,920,5098.49,5154.12,Sempre,10.0,1.1,Sim,Não,Sim,Saudável
+472,22,Feminino,Solteiro,0,Joinville,SC,Engenheiro Civil,Superior,8669.55,0.0,89.05,405,1611.59,1554.59,Nunca,2.24,1.3,Sim,Não,Não,Em risco
+473,43,Feminino,Divorciado,3,Anápolis,GO,Advogado,Médio,18794.8,3415.18,9.6,786,39799.99,40665.83,Às vezes,19.82,1.7,Sim,Sim,Sim,Saudável
+474,54,Masculino,Casado,0,Belo Horizonte,MG,Engenheiro de Produção,Superior,9497.57,0.0,75.29,485,1066.29,3753.11,Às vezes,0.0,7.1,Sim,Não,Sim,Em risco
+475,34,Feminino,Solteiro,1,Juiz de Fora,MG,Empresário,Superior,17993.61,0.0,33.95,588,9819.8,22648.05,Às vezes,5.83,5.3,Não,Sim,Sim,Em observação
+476,34,Feminino,Solteiro,1,Palmas,TO,Cabeleireiro,Médio,1765.21,0.0,74.96,391,314.47,1229.23,Raramente,1.22,6.6,Sim,Não,Não,Em risco
+477,43,Feminino,Solteiro,1,Santos,SP,Corretor de Imóveis,Médio,11525.68,3443.35,14.28,1000,20280.08,14711.44,Frequentemente,10.25,4.1,Não,Sim,Sim,Saudável
+478,37,Feminino,Solteiro,2,Fortaleza,CE,Recepcionista,Médio,2664.92,0.0,42.28,548,1576.15,2473.56,Raramente,6.73,7.8,Sim,Não,Não,Em observação
+479,47,Masculino,União Estável,0,Londrina,PR,Aposentado,Superior,3015.49,0.0,70.03,443,-146.76,1644.57,Nunca,0.36,14.0,Sim,Não,Não,Em risco
+480,39,Feminino,Solteiro,1,Salvador,BA,Eletricista,Médio,4613.43,0.0,25.0,682,1911.05,2645.46,Raramente,7.79,6.0,Não,Sim,Não,Em observação
+481,18,Masculino,Casado,0,Feira de Santana,BA,Técnico em Informática,Médio,4709.75,0.0,45.51,667,1904.55,2413.88,Às vezes,10.19,0.0,Sim,Não,Não,Em observação
+482,28,Feminino,Casado,0,Olinda,PE,Jornalista,Superior,5798.52,240.63,34.13,696,1970.49,6917.85,Raramente,6.6,6.4,Sim,Não,Não,Em observação
+483,27,Feminino,Solteiro,0,Blumenau,SC,Contador,Superior,5439.56,0.0,27.34,596,1359.38,7934.69,Às vezes,5.11,5.2,Sim,Não,Não,Em observação
+484,18,Masculino,Solteiro,0,Feira de Santana,BA,Enfermeiro,Superior,4794.82,0.0,31.75,555,2710.83,6277.81,Raramente,6.95,0.0,Sim,Não,Sim,Em observação
+485,32,Feminino,Casado,4,Anápolis,GO,Motoboy,Superior,2770.92,0.0,39.6,601,339.25,2345.61,Às vezes,9.93,12.9,Não,Não,Sim,Em observação
+486,42,Feminino,Casado,1,Juiz de Fora,MG,Enfermeiro,Superior,3182.82,0.0,81.33,372,-54.26,2452.72,Raramente,0.8,6.3,Sim,Não,Não,Em risco
+487,47,Feminino,Solteiro,1,Niterói,RJ,Designer Gráfico,Superior,6570.78,0.0,18.52,760,5940.71,13128.95,Sempre,26.97,18.4,Não,Sim,Sim,Saudável
+488,60,Masculino,Viúvo,0,Porto Alegre,RS,Engenheiro de Produção,Superior,11220.53,0.0,11.2,814,20960.98,31238.03,Frequentemente,23.62,4.7,Não,Sim,Sim,Saudável
+489,31,Masculino,União Estável,1,Feira de Santana,BA,Advogado,Pós-graduação,9590.25,0.0,82.64,300,660.9,5485.29,Frequentemente,0.45,9.0,Não,Não,Não,Em risco
+490,35,Masculino,Casado,1,Pelotas,RS,Vendedor,Médio,2984.12,0.0,85.36,407,51.15,2069.86,Raramente,2.14,3.1,Não,Não,Não,Em risco
+491,58,Feminino,Solteiro,1,Caxias do Sul,RS,Pedreiro,Fundamental,2727.42,247.5,40.77,577,474.93,2852.02,Raramente,12.0,32.6,Sim,Não,Não,Em observação
+492,47,Masculino,Divorciado,1,Juazeiro do Norte,CE,Corretor de Imóveis,Médio,11490.08,0.0,38.25,609,2237.2,9169.77,Raramente,6.86,25.7,Sim,Sim,Sim,Em observação
+493,27,Feminino,Divorciado,1,Uberlândia,MG,Analista de TI,Médio,8078.56,1444.42,7.5,745,16864.09,21038.14,Sempre,18.66,0.0,Não,Não,Não,Saudável
+494,46,Masculino,Casado,1,Joinville,SC,Estudante,Médio,1566.37,0.0,24.74,1000,3668.74,3706.09,Sempre,20.07,1.9,Não,Não,Sim,Saudável
+495,43,Masculino,Divorciado,0,Recife,PE,Contador,Superior,5512.82,532.56,25.0,486,3278.47,8380.05,Às vezes,6.71,10.0,Não,Não,Não,Em observação
+496,58,Feminino,Solteiro,0,Niterói,RJ,Pedreiro,Fundamental,2844.9,0.0,37.03,524,1372.72,3608.75,Às vezes,9.75,32.0,Não,Não,Não,Em observação
+497,30,Feminino,Casado,0,Guarulhos,SP,Cabeleireiro,Pós-graduação,3369.14,0.0,31.2,547,785.71,2311.11,Às vezes,9.36,5.9,Sim,Não,Não,Em observação
+498,51,Feminino,Solteiro,0,Londrina,PR,Cabeleireiro,Pós-graduação,3933.36,0.0,15.45,739,6876.09,9941.21,Frequentemente,13.3,11.4,Não,Sim,Não,Saudável
+499,45,Masculino,Solteiro,2,Londrina,PR,Cabeleireiro,Superior,3211.06,0.0,73.59,464,163.85,979.54,Nunca,1.13,8.8,Sim,Não,Não,Em risco
+500,40,Masculino,Solteiro,0,São Paulo,SP,Enfermeiro,Superior,3738.63,0.0,78.62,400,512.22,924.46,Nunca,1.77,1.8,Não,Não,Não,Em risco
+501,27,Masculino,Solteiro,2,Juazeiro do Norte,CE,Enfermeiro,Superior,4600.74,0.0,52.78,668,990.6,6777.55,Às vezes,8.59,1.8,Sim,Não,Não,Em observação
+502,30,Masculino,Casado,2,João Pessoa,PB,Estudante,Médio,1412.0,0.0,30.01,542,305.27,1688.67,Frequentemente,10.5,6.0,Sim,Não,Não,Em observação
+503,43,Feminino,União Estável,2,Florianópolis,SC,Motorista,Médio,4552.98,1117.12,16.26,906,4751.68,6176.05,Sempre,17.95,4.2,Não,Não,Não,Saudável
+504,53,Feminino,Solteiro,0,Curitiba,PR,Analista Financeiro,Superior,6376.34,0.0,75.94,476,942.67,3551.34,Raramente,0.91,1.3,Sim,Sim,Sim,Em risco
+505,28,Masculino,Solteiro,0,Londrina,PR,Analista de TI,Superior,7602.95,0.0,54.99,480,2996.93,11132.68,Frequentemente,9.54,5.1,Sim,Não,Não,Em observação
+506,28,Feminino,Solteiro,1,Maringá,PR,Engenheiro Civil,Superior,15341.59,0.0,22.04,876,19361.42,23538.12,Frequentemente,10.0,5.9,Não,Sim,Sim,Saudável
+507,43,Masculino,Solteiro,1,Manaus,AM,Farmacêutico,Superior,3230.33,0.0,63.91,316,264.58,1654.65,Às vezes,1.3,7.6,Sim,Não,Não,Em risco
+508,47,Feminino,Divorciado,2,Manaus,AM,Recepcionista,Médio,1698.31,0.0,69.19,341,41.39,607.05,Raramente,1.62,0.0,Sim,Não,Sim,Em risco
+509,30,Feminino,Solteiro,4,Joinville,SC,Contador,Fundamental,5992.65,0.0,58.82,335,372.36,3525.9,Nunca,0.0,4.8,Sim,Não,Não,Em risco
+510,23,Masculino,Solteiro,0,Pelotas,RS,Aposentado,Superior,4163.64,0.0,51.47,480,1481.3,5241.55,Frequentemente,6.59,5.0,Sim,Não,Não,Em observação
+511,33,Feminino,Solteiro,0,São Luís,MA,Analista de TI,Superior,9013.83,0.0,45.6,591,1116.53,7962.15,Raramente,1.0,7.4,Não,Não,Sim,Em observação
+512,58,Masculino,União Estável,1,Pelotas,RS,Desenvolvedor de Software,Superior,10041.14,0.0,41.1,602,2595.8,6791.22,Às vezes,3.67,2.7,Não,Não,Sim,Em observação
+513,36,Masculino,Casado,1,Curitiba,PR,Autônomo,Médio,2947.22,0.0,58.62,433,347.58,596.29,Nunca,0.92,1.4,Não,Não,Sim,Em risco
+514,35,Masculino,Casado,1,Olinda,PE,Corretor de Imóveis,Médio,6122.58,0.0,82.07,331,223.4,2409.71,Nunca,1.1,0.7,Sim,Sim,Não,Em risco
+515,54,Masculino,Solteiro,1,Recife,PE,Designer Gráfico,Superior,7900.44,1785.86,21.21,860,11330.45,14857.17,Frequentemente,31.5,17.4,Não,Não,Sim,Saudável
+516,36,Feminino,Casado,2,Uberlândia,MG,Estudante,Médio,1412.0,0.0,8.32,764,2548.3,2102.51,Às vezes,14.63,15.3,Não,Sim,Não,Saudável
+517,52,Masculino,Solteiro,2,Cuiabá,MT,Designer Gráfico,Superior,5359.73,0.0,34.75,545,2003.29,4702.77,Raramente,1.8,0.7,Sim,Não,Sim,Em observação
+518,39,Masculino,Divorciado,1,Joinville,SC,Jornalista,Superior,3167.45,0.0,70.56,448,36.64,2478.17,Nunca,1.65,12.2,Não,Não,Não,Em risco
+519,35,Feminino,Casado,2,Porto Alegre,RS,Jornalista,Superior,3755.94,0.0,58.96,452,631.19,688.49,Nunca,0.0,4.4,Sim,Não,Não,Em risco
+520,37,Feminino,Casado,1,Niterói,RJ,Funcionário Público,Superior,11224.5,0.0,9.62,801,23335.49,31033.4,Frequentemente,14.27,4.0,Não,Sim,Sim,Saudável
+521,28,Masculino,Casado,3,Rio de Janeiro,RJ,Cabeleireiro,Médio,3130.26,323.72,33.41,604,752.05,2469.17,Nunca,9.9,8.2,Sim,Sim,Sim,Em observação
+522,49,Feminino,Casado,1,Teresina,PI,Motoboy,Fundamental,2324.89,0.0,46.34,676,1444.75,1338.27,Às vezes,1.0,16.3,Sim,Sim,Não,Em observação
+523,40,Feminino,Solteiro,0,Juiz de Fora,MG,Engenheiro Civil,Superior,8490.16,0.0,90.57,300,1372.33,3810.67,Raramente,0.0,9.7,Sim,Não,Não,Em risco
+524,46,Masculino,Solteiro,0,Belo Horizonte,MG,Recepcionista,Médio,1502.76,0.0,63.91,300,133.34,423.22,Raramente,0.25,3.6,Sim,Não,Não,Em risco
+525,28,Masculino,Divorciado,1,Niterói,RJ,Motoboy,Fundamental,2392.61,0.0,68.61,364,458.29,1733.98,Nunca,1.13,0.5,Sim,Não,Não,Em risco
+526,46,Masculino,Casado,0,Florianópolis,SC,Advogado,Pós-graduação,11900.11,0.0,47.28,522,5692.77,16323.41,Raramente,8.66,27.1,Sim,Sim,Sim,Em observação
+527,56,Feminino,Solteiro,0,Santos,SP,Técnico em Informática,Médio,5183.35,0.0,39.57,609,3156.12,3429.23,Frequentemente,2.0,31.0,Não,Sim,Não,Em observação
+528,44,Feminino,Solteiro,1,Campinas,SP,Autônomo,Médio,9911.45,1877.77,7.38,844,14649.52,24092.77,Frequentemente,20.08,18.8,Não,Não,Sim,Saudável
+529,35,Feminino,Casado,0,Porto Alegre,RS,Cozinheiro,Médio,3090.49,634.23,13.05,1000,8148.55,7697.46,Frequentemente,23.12,14.1,Não,Sim,Sim,Saudável
+530,45,Masculino,Divorciado,1,Rio de Janeiro,RJ,Técnico em Informática,Fundamental,4172.76,0.0,97.61,344,655.41,1361.56,Raramente,0.87,11.7,Não,Não,Não,Em risco
+531,53,Masculino,Casado,0,Joinville,SC,Desenvolvedor de Software,Superior,7340.43,0.0,58.18,393,617.74,5063.39,Raramente,1.97,11.9,Sim,Não,Sim,Em risco
+532,47,Masculino,Viúvo,4,Uberlândia,MG,Jornalista,Superior,3455.63,0.0,64.06,364,178.66,2569.54,Nunca,1.08,9.4,Sim,Não,Sim,Em risco
+533,50,Feminino,Solteiro,1,Belém,PA,Designer Gráfico,Pós-graduação,3495.84,0.0,77.62,410,281.07,2808.19,Raramente,0.65,0.1,Não,Não,Não,Em risco
+534,31,Masculino,Solteiro,0,Anápolis,GO,Autônomo,Médio,6675.68,0.0,32.48,675,2704.61,6443.13,Às vezes,3.53,13.0,Sim,Sim,Não,Em observação
+535,39,Feminino,Solteiro,2,Maceió,AL,Advogado,Pós-graduação,5716.3,0.0,76.82,432,756.85,1258.55,Raramente,1.48,5.9,Não,Sim,Não,Em risco
+536,40,Masculino,Casado,2,Londrina,PR,Técnico em Informática,Médio,2200.48,0.0,61.2,435,-56.69,1264.15,Nunca,0.58,1.1,Não,Sim,Não,Em risco
+537,45,Masculino,Casado,1,Caxias do Sul,RS,Farmacêutico,Superior,3298.51,135.74,70.26,387,-162.35,1195.57,Nunca,0.54,14.0,Sim,Não,Não,Em risco
+538,22,Feminino,Solteiro,0,Olinda,PE,Aposentado,Médio,5495.22,0.0,18.78,883,11429.89,10849.0,Frequentemente,10.0,1.7,Sim,Não,Não,Saudável
+539,24,Masculino,Casado,1,Maceió,AL,Autônomo,Médio,6439.9,0.0,46.53,710,3178.27,3996.54,Às vezes,4.94,0.5,Sim,Não,Não,Em observação
+540,36,Feminino,Casado,2,Juiz de Fora,MG,Motorista,Médio,4710.36,0.0,7.18,702,9078.35,8591.71,Sempre,27.81,10.6,Não,Sim,Sim,Saudável
+541,18,Feminino,Divorciado,0,Belo Horizonte,MG,Desenvolvedor de Software,Pós-graduação,9431.52,0.0,68.41,326,409.42,3612.63,Nunca,0.41,0.0,Sim,Sim,Não,Em risco
+542,47,Masculino,Casado,3,Campinas,SP,Vendedor,Médio,3223.68,275.36,47.05,567,783.73,2239.64,Nunca,5.28,0.2,Não,Não,Sim,Em observação
+543,53,Feminino,União Estável,3,Guarulhos,SP,Aposentado,Médio,6676.93,0.0,20.2,716,17133.18,11905.19,Frequentemente,27.74,32.3,Sim,Sim,Sim,Saudável
+544,56,Masculino,Solteiro,0,Santos,SP,Vendedor,Pós-graduação,4051.44,0.0,43.03,644,1318.4,4365.13,Às vezes,5.73,27.1,Sim,Não,Sim,Em observação
+545,20,Feminino,Casado,0,Maceió,AL,Engenheiro de Produção,Fundamental,12699.89,1085.4,44.0,620,3391.46,20081.57,Raramente,9.46,1.3,Sim,Sim,Não,Em observação
+546,54,Masculino,Casado,0,Recife,PE,Vendedor,Superior,3769.01,0.0,58.0,552,1946.74,2825.63,Raramente,10.91,13.0,Sim,Não,Não,Em observação
+547,54,Masculino,Solteiro,0,Fortaleza,CE,Vendedor,Médio,5440.15,1279.89,0.0,741,6390.22,12097.83,Frequentemente,24.34,9.2,Sim,Sim,Não,Saudável
+548,27,Feminino,Solteiro,1,João Pessoa,PB,Vendedor,Médio,2758.71,0.0,39.84,617,1366.09,1600.78,Frequentemente,5.12,8.5,Não,Não,Não,Em observação
+549,29,Feminino,Solteiro,0,Teresina,PI,Cozinheiro,Médio,3051.27,0.0,58.0,689,358.59,3100.8,Frequentemente,12.0,7.5,Sim,Não,Não,Em observação
+550,51,Feminino,Viúvo,0,Vitória,ES,Técnico em Informática,Médio,2760.43,0.0,75.74,320,21.94,2155.84,Raramente,0.45,11.2,Sim,Não,Não,Em risco
+551,35,Feminino,Casado,1,Anápolis,GO,Gerente Comercial,Superior,11622.78,0.0,30.93,592,2711.95,8168.08,Nunca,2.57,7.7,Não,Não,Sim,Em observação
+552,34,Feminino,Solteiro,1,Belém,PA,Advogado,Pós-graduação,9205.75,0.0,98.0,388,990.54,3321.97,Nunca,0.65,3.0,Não,Não,Não,Em risco
+553,30,Masculino,Solteiro,0,Maceió,AL,Estudante,Médio,1412.0,57.54,33.64,626,271.04,750.2,Às vezes,4.12,4.3,Não,Sim,Não,Em observação
+554,39,Masculino,Solteiro,1,Juiz de Fora,MG,Gerente Comercial,Superior,8843.09,957.38,41.36,698,4728.61,6306.12,Raramente,7.2,7.3,Não,Não,Sim,Em observação
+555,42,Masculino,Solteiro,2,Belém,PA,Empresário,Superior,9138.08,0.0,91.01,319,629.45,3405.97,Nunca,0.99,2.8,Não,Não,Sim,Em risco
+556,25,Feminino,Casado,3,Pelotas,RS,Motorista,Médio,2344.41,0.0,47.62,592,1360.6,1388.83,Às vezes,12.0,5.4,Não,Não,Não,Em observação
+557,37,Feminino,Solteiro,1,Vila Velha,ES,Veterinário,Superior,8358.19,0.0,7.91,862,6644.7,25446.19,Frequentemente,19.7,16.6,Não,Sim,Sim,Saudável
+558,18,Masculino,Divorciado,0,Maringá,PR,Desenvolvedor de Software,Superior,10358.88,0.0,3.12,750,20324.17,15407.62,Frequentemente,19.04,0.0,Sim,Não,Sim,Saudável
+559,32,Masculino,União Estável,2,Cuiabá,MT,Desenvolvedor de Software,Médio,5235.71,0.0,73.42,425,46.71,4114.12,Nunca,1.01,3.3,Não,Sim,Não,Em risco
+560,18,Feminino,Casado,0,Campo Grande,MS,Analista Financeiro,Superior,9169.49,485.27,58.0,552,3005.18,6932.16,Às vezes,3.8,0.0,Não,Não,Sim,Em observação
+561,27,Masculino,Solteiro,1,Porto Alegre,RS,Veterinário,Superior,6516.83,0.0,44.61,523,3177.85,9746.48,Às vezes,6.61,9.0,Não,Não,Não,Em observação
+562,58,Feminino,Divorciado,1,São Paulo,SP,Engenheiro de Produção,Fundamental,11132.6,0.0,17.06,781,9137.73,27470.34,Sempre,27.58,33.5,Não,Não,Sim,Saudável
+563,51,Feminino,Casado,1,Joinville,SC,Cabeleireiro,Médio,4463.36,0.0,8.94,830,7241.91,14260.56,Frequentemente,25.52,17.4,Sim,Não,Não,Saudável
+564,46,Feminino,Viúvo,3,Porto Alegre,RS,Autônomo,Superior,6745.13,0.0,18.63,839,13639.22,15451.24,Às vezes,25.99,14.7,Não,Não,Não,Saudável
+565,22,Feminino,Solteiro,0,Anápolis,GO,Aposentado,Médio,5524.34,0.0,39.71,561,2346.87,6470.09,Raramente,3.87,3.9,Não,Sim,Sim,Em observação
+566,31,Feminino,Casado,0,Salvador,BA,Designer Gráfico,Superior,5529.15,0.0,42.16,490,2927.79,7876.24,Raramente,8.9,1.5,Não,Não,Sim,Em observação
+567,40,Feminino,União Estável,1,Duque de Caxias,RJ,Gerente Comercial,Pós-graduação,10116.49,0.0,33.93,480,2928.07,12778.29,Às vezes,6.16,22.0,Não,Sim,Não,Em observação
+568,57,Feminino,União Estável,2,Fortaleza,CE,Cabeleireiro,Médio,4795.48,0.0,31.32,579,1143.64,4351.19,Nunca,10.02,17.7,Não,Não,Não,Em observação
+569,24,Feminino,Divorciado,1,Guarulhos,SP,Cozinheiro,Médio,2272.33,158.41,55.0,382,291.95,1033.47,Nunca,1.02,1.6,Sim,Não,Não,Em risco
+570,28,Feminino,Divorciado,0,Teresina,PI,Cabeleireiro,Médio,5847.81,0.0,17.55,700,6679.67,7122.7,Frequentemente,26.35,6.7,Sim,Sim,Não,Saudável
+571,18,Feminino,Solteiro,0,Recife,PE,Advogado,Pós-graduação,15532.56,952.79,46.62,570,5423.18,16529.3,Às vezes,10.12,0.0,Sim,Sim,Sim,Em observação
+572,62,Masculino,Casado,1,São Luís,MA,Farmacêutico,Superior,5404.34,0.0,65.61,416,647.04,4115.36,Nunca,2.28,15.8,Sim,Sim,Não,Em risco
+573,39,Feminino,Solteiro,0,Juazeiro do Norte,CE,Motorista,Pós-graduação,3253.38,0.0,34.68,532,1421.3,4267.62,Às vezes,5.85,9.0,Não,Não,Não,Em observação
+574,28,Feminino,Casado,1,Blumenau,SC,Aposentado,Médio,4433.48,0.0,35.56,593,698.95,6402.48,Raramente,10.99,1.3,Não,Não,Sim,Em observação
+575,47,Feminino,União Estável,1,Curitiba,PR,Advogado,Pós-graduação,10355.06,0.0,80.54,373,399.36,8120.09,Às vezes,1.45,9.9,Não,Não,Sim,Em risco
+576,37,Masculino,Casado,0,Maceió,AL,Pedreiro,Fundamental,1601.28,0.0,78.12,404,-24.21,1110.87,Raramente,0.88,3.7,Sim,Não,Não,Em risco
+577,28,Feminino,Solteiro,0,Rio de Janeiro,RJ,Farmacêutico,Superior,8289.16,0.0,13.48,813,8762.04,20702.13,Sempre,24.8,9.6,Não,Não,Não,Saudável
+578,33,Feminino,Casado,3,Belém,PA,Advogado,Médio,12431.52,241.38,64.01,374,282.02,7214.5,Às vezes,0.0,7.6,Não,Não,Sim,Em risco
+579,69,Masculino,Solteiro,1,Juiz de Fora,MG,Analista de TI,Superior,7888.12,0.0,50.7,585,4064.76,10458.8,Raramente,7.65,31.3,Não,Sim,Não,Em observação
+580,40,Feminino,União Estável,1,Santos,SP,Eletricista,Médio,5358.58,0.0,20.15,1000,8761.87,6944.37,Sempre,10.0,13.5,Não,Sim,Sim,Saudável
+581,47,Feminino,União Estável,0,Joinville,SC,Recepcionista,Médio,2239.82,97.65,30.85,607,455.83,1822.78,Às vezes,8.83,7.4,Não,Não,Não,Em observação
+582,33,Feminino,Divorciado,0,Teresina,PI,Empresário,Superior,15111.71,0.0,55.0,411,2302.55,12504.97,Nunca,0.66,2.3,Não,Não,Sim,Em risco
+583,59,Masculino,Casado,0,Feira de Santana,BA,Técnico em Informática,Fundamental,4310.04,0.0,51.24,606,2237.51,6765.75,Nunca,5.61,6.8,Sim,Sim,Sim,Em observação
+584,24,Masculino,Viúvo,2,Vitória,ES,Gerente Comercial,Médio,13671.6,2211.25,17.13,713,27272.13,26363.02,Sempre,18.93,4.3,Não,Sim,Sim,Saudável
+585,37,Feminino,Solteiro,0,Duque de Caxias,RJ,Funcionário Público,Superior,11373.83,566.06,53.84,480,4763.2,16661.19,Frequentemente,10.29,0.3,Sim,Sim,Sim,Em observação
+586,61,Feminino,Casado,0,João Pessoa,PB,Motorista,Superior,4347.2,0.0,17.3,943,3066.1,8762.74,Sempre,14.17,27.8,Não,Não,Não,Saudável
+587,34,Masculino,Casado,2,Niterói,RJ,Designer Gráfico,Pós-graduação,6944.32,0.0,0.0,775,4255.26,12513.08,Sempre,16.21,3.4,Não,Não,Não,Saudável
+588,40,Masculino,Solteiro,0,Caxias do Sul,RS,Enfermeiro,Superior,4692.3,0.0,15.36,746,10936.04,8811.54,Sempre,27.73,4.0,Sim,Sim,Não,Saudável
+589,52,Feminino,Solteiro,2,Guarulhos,SP,Professor,Superior,4779.71,1590.22,7.08,750,11031.86,11432.37,Frequentemente,11.34,4.1,Não,Não,Não,Saudável
+590,49,Masculino,Solteiro,1,Joinville,SC,Desenvolvedor de Software,Superior,12799.82,0.0,13.31,865,21935.16,16015.96,Sempre,15.6,16.8,Não,Sim,Sim,Saudável
+591,22,Masculino,União Estável,0,Niterói,RJ,Estudante,Superior,2066.82,0.0,6.8,798,5126.0,4428.65,Sempre,32.0,0.6,Não,Não,Não,Saudável
+592,38,Feminino,Casado,2,Duque de Caxias,RJ,Motoboy,Fundamental,2475.74,228.72,33.94,546,1356.05,2888.5,Frequentemente,7.23,2.3,Sim,Não,Sim,Em observação
+593,39,Feminino,Solteiro,1,Porto Alegre,RS,Motoboy,Pós-graduação,3429.68,460.49,23.44,806,5451.12,7845.48,Às vezes,23.34,8.2,Não,Sim,Não,Saudável
+594,42,Masculino,Solteiro,0,Rio de Janeiro,RJ,Recepcionista,Fundamental,3391.21,250.84,29.54,790,6602.21,5106.4,Às vezes,26.29,3.2,Sim,Sim,Não,Saudável
+595,54,Masculino,Casado,1,Fortaleza,CE,Analista de TI,Médio,6132.14,0.0,79.97,463,45.99,944.38,Raramente,0.57,22.8,Sim,Sim,Sim,Em risco
+596,67,Feminino,Casado,1,Manaus,AM,Cabeleireiro,Médio,3414.61,79.55,39.02,542,1908.63,3285.95,Às vezes,8.08,30.2,Não,Sim,Sim,Em observação
+597,33,Feminino,União Estável,0,Pelotas,RS,Cozinheiro,Pós-graduação,2209.84,0.0,53.19,592,1025.19,1861.01,Raramente,5.42,10.9,Sim,Sim,Não,Em observação
+598,44,Feminino,Solteiro,3,Maceió,AL,Contador,Superior,10394.04,0.0,7.69,975,18974.79,30204.17,Frequentemente,15.38,13.1,Não,Sim,Não,Saudável
+599,34,Masculino,Casado,0,Niterói,RJ,Funcionário Público,Superior,11710.65,3911.0,10.27,900,26095.18,24548.54,Sempre,12.95,7.8,Não,Sim,Sim,Saudável
+600,49,Feminino,Solteiro,0,Vitória,ES,Vendedor,Superior,3436.04,0.0,13.65,933,6707.89,9959.15,Frequentemente,27.64,11.5,Não,Não,Não,Saudável
+601,43,Masculino,Solteiro,1,Palmas,TO,Eletricista,Médio,4804.09,0.0,0.77,908,10027.69,9194.87,Frequentemente,21.96,25.0,Não,Sim,Não,Saudável
+602,40,Masculino,Casado,4,Campinas,SP,Pedreiro,Fundamental,3758.63,0.0,15.89,700,6939.28,5633.32,Frequentemente,13.14,0.4,Não,Sim,Sim,Saudável
+603,57,Masculino,União Estável,1,Blumenau,SC,Vendedor,Médio,3901.17,0.0,7.89,986,10273.72,10239.74,Frequentemente,23.98,1.4,Não,Sim,Não,Saudável
+604,42,Masculino,União Estável,0,Vitória,ES,Engenheiro Civil,Superior,16135.56,0.0,5.83,916,12839.81,47156.15,Sempre,24.93,2.3,Sim,Sim,Sim,Saudável
+605,75,Feminino,União Estável,1,Niterói,RJ,Jornalista,Superior,5587.84,0.0,18.35,856,8371.08,9765.78,Às vezes,10.0,34.9,Não,Sim,Sim,Saudável
+606,55,Feminino,União Estável,1,Rio de Janeiro,RJ,Professor,Superior,4718.53,0.0,47.16,615,2533.87,2566.95,Raramente,6.41,11.0,Sim,Não,Não,Em observação
+607,45,Masculino,Solteiro,2,Juiz de Fora,MG,Analista Financeiro,Superior,8973.87,2573.71,9.37,700,18331.01,22284.27,Frequentemente,21.72,12.1,Sim,Não,Não,Saudável
+608,38,Masculino,Casado,2,Niterói,RJ,Analista de TI,Pós-graduação,7171.61,0.0,47.02,676,788.78,9285.14,Frequentemente,1.87,9.4,Sim,Não,Não,Em observação
+609,26,Masculino,Casado,0,Feira de Santana,BA,Médico,Pós-graduação,19529.09,2675.44,29.31,630,2170.07,24173.81,Às vezes,3.87,7.8,Sim,Não,Sim,Em observação
+610,18,Feminino,Divorciado,0,Vila Velha,ES,Técnico em Informática,Médio,5086.1,0.0,51.87,621,2388.73,3954.01,Raramente,2.93,0.0,Não,Não,Não,Em observação
+611,27,Masculino,Casado,3,Campinas,SP,Professor,Superior,6606.46,2194.14,11.79,1000,18163.38,16412.15,Às vezes,26.97,9.0,Não,Não,Não,Saudável
+612,41,Feminino,Casado,1,Cuiabá,MT,Gerente Comercial,Superior,5997.47,0.0,67.21,428,-107.61,2012.91,Raramente,0.0,9.0,Sim,Não,Não,Em risco
+613,55,Masculino,União Estável,2,Recife,PE,Empresário,Superior,15150.38,351.87,45.33,529,7434.49,18593.21,Nunca,5.02,8.7,Não,Sim,Sim,Em observação
+614,18,Feminino,Casado,0,Teresina,PI,Motoboy,Médio,3883.37,0.0,0.0,700,8332.86,11982.31,Frequentemente,10.0,0.0,Não,Não,Sim,Saudável
+615,24,Masculino,Casado,3,Curitiba,PR,Recepcionista,Médio,1985.62,0.0,80.66,348,334.7,535.54,Nunca,0.19,2.9,Sim,Não,Não,Em risco
+616,40,Masculino,Viúvo,3,Olinda,PE,Motorista,Médio,2042.04,156.57,88.81,396,355.21,698.88,Nunca,0.59,7.3,Sim,Não,Não,Em risco
+617,25,Masculino,Solteiro,0,Vitória,ES,Motorista,Médio,3148.29,0.0,16.36,742,2850.17,5667.11,Frequentemente,20.96,6.5,Não,Não,Sim,Saudável
+618,29,Masculino,Casado,0,Rio de Janeiro,RJ,Designer Gráfico,Superior,7380.41,1986.9,0.0,732,15215.14,12016.08,Frequentemente,19.26,6.6,Sim,Sim,Sim,Saudável
+619,43,Feminino,Solteiro,1,Blumenau,SC,Eletricista,Médio,3045.96,0.0,65.99,427,194.15,1216.33,Às vezes,1.88,6.3,Sim,Sim,Não,Em risco
+620,31,Feminino,Divorciado,0,Uberlândia,MG,Enfermeiro,Superior,5668.18,0.0,25.0,544,2330.76,4783.5,Raramente,7.54,5.6,Não,Não,Sim,Em observação
+621,49,Feminino,União Estável,3,Palmas,TO,Autônomo,Superior,6485.06,669.22,9.9,803,3953.44,11334.22,Frequentemente,26.08,4.3,Não,Sim,Não,Saudável
+622,44,Masculino,Casado,2,Vitória,ES,Farmacêutico,Médio,7254.2,893.92,22.45,779,20014.55,13775.51,Sempre,29.63,6.5,Não,Não,Sim,Saudável
+623,36,Masculino,Casado,0,Cuiabá,MT,Corretor de Imóveis,Médio,6545.78,0.0,47.44,681,2832.94,8231.27,Raramente,4.67,0.8,Não,Não,Não,Em observação
+624,36,Feminino,Casado,1,Manaus,AM,Contador,Superior,8222.67,0.0,39.78,640,3933.65,7031.17,Às vezes,3.66,8.6,Sim,Não,Sim,Em observação
+625,41,Feminino,Casado,1,Blumenau,SC,Cozinheiro,Superior,2713.17,0.0,50.33,577,379.9,1651.36,Às vezes,3.07,22.2,Sim,Não,Não,Em observação
+626,60,Feminino,União Estável,1,Manaus,AM,Designer Gráfico,Superior,6793.37,0.0,42.48,543,3196.56,3454.67,Às vezes,5.21,22.0,Sim,Não,Sim,Em observação
+627,38,Masculino,União Estável,3,Campo Grande,MS,Técnico em Informática,Médio,4771.6,0.0,52.12,614,1064.75,4715.81,Às vezes,1.0,18.8,Não,Não,Sim,Em observação
+628,35,Masculino,Solteiro,1,Campinas,SP,Analista Financeiro,Superior,11378.4,0.0,42.19,579,3060.02,17017.5,Frequentemente,3.32,1.5,Sim,Não,Sim,Em observação
+629,36,Feminino,Casado,0,Vila Velha,ES,Gerente Comercial,Superior,16981.75,0.0,12.26,749,32973.65,45039.2,Frequentemente,23.44,11.5,Não,Sim,Sim,Saudável
+630,23,Feminino,Solteiro,0,Belém,PA,Recepcionista,Médio,3324.08,0.0,13.92,893,4142.1,6752.56,Sempre,19.83,3.3,Não,Sim,Não,Saudável
+631,46,Masculino,Solteiro,1,Pelotas,RS,Motorista,Médio,3711.88,0.0,36.87,514,457.02,4298.59,Frequentemente,2.31,21.5,Sim,Não,Não,Em observação
+632,43,Masculino,Casado,0,Anápolis,GO,Professor,Superior,2773.02,0.0,66.08,406,385.78,630.6,Raramente,0.22,14.1,Sim,Sim,Não,Em risco
+633,34,Masculino,União Estável,1,Campo Grande,MS,Autônomo,Médio,6651.7,0.0,31.33,640,1109.71,9253.02,Às vezes,7.57,7.2,Sim,Não,Não,Em observação
+634,45,Feminino,Casado,2,Belém,PA,Técnico em Informática,Médio,4558.26,0.0,40.58,663,2614.22,6398.94,Raramente,12.0,11.6,Não,Sim,Não,Em observação
+635,53,Feminino,Solteiro,1,Maceió,AL,Eletricista,Médio,4273.06,1180.7,9.96,791,3382.02,7577.5,Sempre,10.0,22.7,Sim,Não,Não,Saudável
+636,37,Feminino,Viúvo,2,Pelotas,RS,Recepcionista,Médio,2696.53,286.61,40.3,557,1433.05,3361.45,Às vezes,5.69,6.7,Não,Não,Não,Em observação
+637,38,Feminino,Solteiro,2,Palmas,TO,Desenvolvedor de Software,Superior,9588.99,0.0,52.96,561,5118.39,8501.46,Raramente,9.6,8.1,Sim,Não,Sim,Em observação
+638,35,Masculino,Solteiro,1,Manaus,AM,Jornalista,Superior,6404.74,0.0,11.54,821,8674.34,13044.78,Sempre,29.66,12.9,Não,Não,Sim,Saudável
+639,55,Masculino,Casado,1,Duque de Caxias,RJ,Analista de TI,Superior,12931.59,3832.11,1.33,979,15427.85,18108.61,Frequentemente,17.14,0.6,Não,Não,Sim,Saudável
+640,29,Feminino,Viúvo,1,João Pessoa,PB,Técnico em Informática,Médio,5100.57,0.0,41.26,636,3311.48,6082.97,Às vezes,4.7,4.3,Não,Não,Não,Em observação
+641,27,Feminino,União Estável,0,Vila Velha,ES,Designer Gráfico,Superior,6167.88,0.0,9.11,914,10948.13,10093.98,Às vezes,10.82,5.0,Não,Sim,Não,Saudável
+642,29,Masculino,Solteiro,2,Campo Grande,MS,Corretor de Imóveis,Médio,9849.1,2178.85,11.6,754,15969.19,30082.6,Sempre,12.72,1.6,Sim,Sim,Sim,Saudável
+643,26,Masculino,União Estável,4,Campinas,SP,Estudante,Médio,1444.04,331.7,9.11,757,1521.33,2896.03,Às vezes,30.06,2.3,Não,Não,Sim,Saudável
+644,37,Masculino,Casado,1,Niterói,RJ,Médico,Médio,23453.18,6415.38,19.86,746,29900.46,50435.01,Frequentemente,24.04,12.5,Não,Sim,Sim,Saudável
+645,25,Feminino,Solteiro,4,Juazeiro do Norte,CE,Aposentado,Pós-graduação,6427.28,638.85,3.73,788,11397.78,18741.89,Sempre,18.16,3.2,Sim,Não,Não,Saudável
+646,61,Feminino,Casado,0,Duque de Caxias,RJ,Aposentado,Pós-graduação,2608.81,0.0,76.11,326,-96.41,410.01,Nunca,1.39,1.6,Sim,Não,Não,Em risco
+647,29,Masculino,Viúvo,2,Olinda,PE,Desenvolvedor de Software,Fundamental,9077.47,844.3,36.53,649,4235.51,13233.97,Frequentemente,8.81,5.2,Não,Não,Não,Em observação
+648,36,Masculino,Solteiro,1,Juazeiro do Norte,CE,Pedreiro,Fundamental,2353.99,0.0,27.96,518,706.19,2144.04,Sempre,4.85,2.2,Não,Não,Sim,Em observação
+649,32,Feminino,Casado,1,Pelotas,RS,Funcionário Público,Superior,4618.2,0.0,70.13,356,833.74,2815.74,Nunca,1.66,5.5,Não,Não,Não,Em risco
+650,54,Masculino,União Estável,1,Teresina,PI,Empresário,Médio,13450.86,0.0,38.09,673,2035.52,9280.06,Nunca,7.33,31.0,Não,Não,Não,Em observação
+651,31,Masculino,Solteiro,3,Londrina,PR,Engenheiro Civil,Superior,18147.35,5032.21,18.76,739,32126.94,34726.63,Sempre,21.01,12.7,Não,Sim,Sim,Saudável
+652,38,Masculino,União Estável,1,Campinas,SP,Analista Financeiro,Superior,8042.72,813.72,38.47,570,3612.81,11597.03,Às vezes,10.01,3.6,Sim,Sim,Não,Em observação
+653,34,Feminino,Casado,1,Campo Grande,MS,Empresário,Superior,21064.43,0.0,35.99,480,5533.57,12085.31,Frequentemente,5.97,2.1,Não,Sim,Não,Em observação
+654,28,Masculino,Divorciado,2,Porto Alegre,RS,Motorista,Fundamental,3113.5,0.0,55.72,576,1898.01,3622.99,Raramente,5.91,10.0,Não,Não,Não,Em observação
+655,42,Feminino,Solteiro,4,Maceió,AL,Engenheiro Civil,Superior,11174.16,1488.58,43.22,494,5357.03,12538.76,Nunca,5.38,9.7,Sim,Sim,Não,Em observação
+656,27,Feminino,Solteiro,0,Belo Horizonte,MG,Motorista,Médio,3419.89,0.0,10.78,784,4101.76,7859.97,Sempre,25.97,1.3,Não,Sim,Não,Saudável
+657,41,Masculino,União Estável,1,Fortaleza,CE,Eletricista,Médio,6286.69,2139.63,13.96,788,6485.82,14435.75,Frequentemente,25.09,2.4,Não,Sim,Não,Saudável
+658,34,Feminino,Casado,0,Belo Horizonte,MG,Designer Gráfico,Superior,6889.99,0.0,34.27,639,2461.99,5529.52,Raramente,5.69,9.0,Sim,Sim,Sim,Em observação
+659,18,Feminino,Divorciado,1,Londrina,PR,Farmacêutico,Superior,4951.43,0.0,45.68,612,1358.28,6039.44,Nunca,5.5,0.0,Sim,Não,Não,Em observação
+660,50,Feminino,União Estável,4,Palmas,TO,Cozinheiro,Médio,2619.33,354.06,38.19,565,1161.31,1519.08,Frequentemente,7.46,2.3,Sim,Não,Não,Em observação
+661,29,Masculino,Casado,1,Belo Horizonte,MG,Vendedor,Médio,3178.07,271.13,39.15,661,1268.5,4654.39,Às vezes,3.75,10.2,Sim,Não,Sim,Em observação
+662,20,Masculino,Casado,0,Juiz de Fora,MG,Funcionário Público,Superior,3811.43,0.0,90.54,411,579.78,998.44,Nunca,0.76,1.4,Sim,Não,Não,Em risco
+663,34,Feminino,Casado,4,São Luís,MA,Autônomo,Médio,7606.37,0.0,51.9,700,4653.65,7387.13,Raramente,8.97,14.7,Não,Sim,Sim,Em observação
+664,24,Masculino,Casado,3,Maceió,AL,Corretor de Imóveis,Médio,9203.9,0.0,10.12,792,20996.72,21738.03,Frequentemente,20.25,1.5,Sim,Sim,Sim,Saudável
+665,50,Masculino,Casado,0,Blumenau,SC,Enfermeiro,Superior,5288.6,481.89,25.88,861,5343.2,8220.7,Sempre,26.3,21.8,Não,Sim,Sim,Saudável
+666,47,Masculino,Solteiro,1,Vila Velha,ES,Eletricista,Médio,4485.23,373.69,8.73,743,10783.08,14313.34,Às vezes,25.51,24.1,Não,Não,Não,Saudável
+667,30,Masculino,União Estável,0,São Paulo,SP,Estudante,Médio,2107.0,0.0,0.0,791,4107.51,3676.85,Frequentemente,32.0,1.5,Sim,Não,Não,Saudável
+668,27,Masculino,Casado,4,Teresina,PI,Funcionário Público,Superior,13678.11,1402.72,13.62,1000,9057.4,16821.62,Às vezes,17.72,4.3,Não,Sim,Sim,Saudável
+669,49,Feminino,Solteiro,0,Blumenau,SC,Empresário,Pós-graduação,23133.95,0.0,23.78,796,45851.53,53080.27,Frequentemente,13.72,19.6,Não,Sim,Sim,Saudável
+670,18,Feminino,Viúvo,0,Niterói,RJ,Cozinheiro,Médio,4182.15,0.0,17.59,942,2858.9,10083.41,Frequentemente,26.82,0.0,Sim,Não,Não,Saudável
+671,29,Masculino,Casado,1,Recife,PE,Desenvolvedor de Software,Superior,12902.41,0.0,10.97,1000,14366.45,39771.91,Frequentemente,11.56,5.4,Não,Não,Sim,Saudável
+672,50,Feminino,Divorciado,0,Curitiba,PR,Jornalista,Superior,4978.73,0.0,60.94,410,188.98,1557.43,Raramente,1.51,25.3,Sim,Não,Não,Em risco
+673,62,Feminino,Solteiro,0,Blumenau,SC,Técnico em Informática,Médio,4161.39,0.0,11.32,823,9681.49,9034.34,Frequentemente,11.56,19.3,Sim,Sim,Não,Saudável
+674,36,Masculino,Divorciado,3,Feira de Santana,BA,Jornalista,Superior,5209.57,0.0,26.74,580,3300.48,6431.98,Às vezes,5.34,10.2,Não,Não,Não,Em observação
+675,45,Masculino,Divorciado,4,Maceió,AL,Farmacêutico,Pós-graduação,5960.89,0.0,25.0,569,3142.92,5415.82,Nunca,6.68,17.1,Sim,Sim,Não,Em observação
+676,25,Feminino,Divorciado,1,Vitória,ES,Médico,Médio,17731.36,0.0,89.63,385,3501.36,5314.9,Nunca,0.0,4.2,Sim,Sim,Sim,Em risco
+677,37,Feminino,União Estável,1,Guarulhos,SP,Aposentado,Médio,4709.77,0.0,10.47,827,9034.22,6552.88,Frequentemente,25.94,11.8,Não,Sim,Não,Saudável
+678,35,Masculino,União Estável,0,Niterói,RJ,Aposentado,Fundamental,4815.06,0.0,44.02,683,1411.63,4070.01,Às vezes,8.98,7.6,Sim,Sim,Sim,Em observação
+679,37,Masculino,Solteiro,1,Pelotas,RS,Engenheiro de Produção,Superior,6655.6,0.0,80.38,435,-145.41,5247.58,Nunca,1.32,14.1,Sim,Não,Sim,Em risco
+680,55,Feminino,Casado,0,Palmas,TO,Pedreiro,Fundamental,1960.62,0.0,75.03,376,299.99,508.08,Raramente,2.45,4.3,Sim,Não,Não,Em risco
+681,43,Feminino,Divorciado,2,Porto Alegre,RS,Farmacêutico,Superior,3472.2,147.46,55.0,362,375.96,642.88,Raramente,1.72,10.3,Sim,Não,Não,Em risco
+682,36,Feminino,Solteiro,3,Brasília,DF,Técnico em Informática,Médio,5652.04,0.0,8.14,843,9947.92,16965.93,Frequentemente,18.19,9.5,Não,Não,Não,Saudável
+683,45,Feminino,União Estável,0,Fortaleza,CE,Corretor de Imóveis,Médio,12731.62,0.0,6.73,845,32042.95,36348.29,Frequentemente,22.8,4.4,Não,Sim,Sim,Saudável
+684,40,Feminino,Solteiro,4,Natal,RN,Motoboy,Fundamental,2214.64,56.83,55.09,573,1405.46,1455.16,Raramente,7.07,13.2,Sim,Não,Não,Em observação
+685,37,Feminino,Casado,2,Belém,PA,Cabeleireiro,Médio,3430.9,0.0,79.5,510,57.76,2065.89,Frequentemente,0.0,10.3,Sim,Não,Não,Em risco
+686,18,Feminino,Solteiro,0,Uberlândia,MG,Corretor de Imóveis,Médio,9243.67,1282.3,38.16,563,955.32,9785.79,Sempre,5.05,0.0,Não,Não,Não,Em observação
+687,28,Feminino,Casado,1,Fortaleza,CE,Farmacêutico,Superior,5563.88,0.0,35.87,621,3586.26,7542.23,Raramente,4.04,2.4,Sim,Sim,Não,Em observação
+688,56,Masculino,Solteiro,0,Manaus,AM,Estudante,Médio,1814.63,0.0,17.62,725,2583.2,3165.02,Às vezes,16.34,29.9,Não,Sim,Sim,Saudável
+689,28,Feminino,Solteiro,0,Belém,PA,Autônomo,Médio,5205.93,0.0,83.23,368,176.89,1270.07,Nunca,1.27,4.1,Não,Não,Não,Em risco
+690,44,Feminino,União Estável,2,Niterói,RJ,Autônomo,Médio,10770.58,1189.44,4.49,793,29910.36,16321.49,Frequentemente,24.93,11.7,Não,Sim,Não,Saudável
+691,60,Feminino,Divorciado,1,Goiânia,GO,Aposentado,Superior,5164.38,0.0,2.47,834,3242.44,6209.69,Frequentemente,18.54,6.7,Sim,Não,Sim,Saudável
+692,27,Masculino,Casado,2,Niterói,RJ,Analista Financeiro,Superior,7651.68,0.0,35.94,627,1681.46,5986.8,Raramente,5.69,6.8,Não,Não,Não,Em observação
+693,24,Feminino,Casado,1,Maceió,AL,Autônomo,Médio,6348.82,0.0,39.63,653,3712.34,7266.97,Às vezes,10.24,4.7,Sim,Não,Sim,Em observação
+694,46,Feminino,Casado,0,Porto Alegre,RS,Estudante,Médio,2160.46,0.0,18.29,824,1874.96,5161.23,Frequentemente,20.28,15.7,Sim,Não,Sim,Saudável
+695,46,Feminino,Solteiro,0,Juazeiro do Norte,CE,Técnico em Informática,Médio,5683.14,0.0,15.83,835,14430.78,14079.4,Frequentemente,20.74,2.2,Não,Sim,Não,Saudável
+696,58,Masculino,Solteiro,1,Blumenau,SC,Gerente Comercial,Superior,11309.94,0.0,25.0,660,3937.44,13164.87,Frequentemente,4.77,31.2,Não,Sim,Sim,Em observação
+697,27,Masculino,Casado,0,Santos,SP,Desenvolvedor de Software,Superior,10531.27,0.0,5.27,865,23357.42,30743.81,Sempre,13.79,3.1,Sim,Sim,Sim,Saudável
+698,39,Masculino,Casado,0,Florianópolis,SC,Analista de TI,Superior,6538.88,0.0,47.32,696,1428.3,8461.97,Frequentemente,6.92,16.4,Sim,Não,Não,Em observação
+699,25,Feminino,Solteiro,2,Vila Velha,ES,Aposentado,Médio,6744.5,0.0,0.0,722,8276.98,14231.59,Frequentemente,17.64,5.9,Não,Sim,Não,Saudável
+700,30,Masculino,Casado,2,Maringá,PR,Corretor de Imóveis,Superior,8148.02,530.07,47.54,619,2254.48,4997.35,Nunca,7.93,7.6,Sim,Sim,Sim,Em observação
+701,28,Masculino,Divorciado,0,Feira de Santana,BA,Professor,Superior,5456.38,0.0,49.13,553,1177.11,5856.87,Frequentemente,10.38,1.9,Não,Não,Não,Em observação
+702,56,Masculino,Divorciado,2,Goiânia,GO,Recepcionista,Médio,3155.41,300.51,16.23,826,3690.43,8548.15,Sempre,13.22,30.7,Sim,Sim,Não,Saudável
+703,18,Feminino,Solteiro,0,Olinda,PE,Analista Financeiro,Superior,11477.91,994.28,8.53,908,8362.21,26634.95,Às vezes,25.99,0.0,Não,Não,Não,Saudável
+704,43,Masculino,Solteiro,0,Niterói,RJ,Corretor de Imóveis,Médio,10189.48,2430.69,15.04,781,16606.14,16976.69,Frequentemente,15.61,19.5,Não,Não,Sim,Saudável
+705,21,Masculino,Solteiro,0,Rio de Janeiro,RJ,Advogado,Pós-graduação,19662.64,0.0,11.63,790,13021.13,28985.4,Às vezes,13.3,2.6,Sim,Sim,Sim,Saudável
+706,34,Feminino,Solteiro,1,Vila Velha,ES,Analista de TI,Superior,5889.41,0.0,79.6,475,509.0,3470.87,Às vezes,1.28,4.0,Sim,Não,Sim,Em risco
+707,30,Feminino,Solteiro,3,Belo Horizonte,MG,Veterinário,Superior,9980.35,1940.25,0.0,890,8978.15,16974.04,Frequentemente,21.83,0.5,Não,Não,Sim,Saudável
+708,21,Feminino,Divorciado,1,Rio de Janeiro,RJ,Vendedor,Médio,2406.61,0.0,63.79,510,141.38,1302.23,Nunca,0.62,0.1,Não,Não,Não,Em risco
+709,35,Masculino,Solteiro,1,Duque de Caxias,RJ,Médico,Pós-graduação,24958.36,0.0,0.0,841,67765.66,51262.78,Frequentemente,18.98,9.9,Sim,Sim,Sim,Saudável
+710,27,Feminino,Solteiro,1,Uberlândia,MG,Autônomo,Médio,5804.11,0.0,37.54,651,3513.63,5459.66,Raramente,2.11,8.5,Sim,Não,Não,Em observação
+711,35,Feminino,União Estável,3,Juiz de Fora,MG,Professor,Superior,2422.34,111.83,61.04,374,409.89,1257.82,Nunca,0.0,8.8,Sim,Não,Não,Em risco
+712,41,Masculino,Casado,1,Curitiba,PR,Aposentado,Médio,4981.17,319.86,39.08,609,2320.54,6395.77,Frequentemente,2.29,1.8,Sim,Não,Não,Em observação
+713,56,Masculino,Solteiro,2,Juiz de Fora,MG,Cabeleireiro,Médio,4468.25,0.0,50.07,552,726.83,2646.75,Raramente,12.0,33.4,Sim,Não,Não,Em observação
+714,22,Masculino,Solteiro,0,Porto Alegre,RS,Professor,Médio,4833.57,0.0,40.61,677,2645.01,6597.54,Frequentemente,11.64,4.0,Não,Não,Sim,Em observação
+715,37,Feminino,Casado,0,Campo Grande,MS,Analista Financeiro,Superior,11231.25,0.0,20.38,802,17274.31,34580.59,Frequentemente,22.42,8.8,Não,Sim,Sim,Saudável
+716,35,Masculino,Casado,0,Fortaleza,CE,Gerente Comercial,Superior,9276.68,0.0,91.69,425,-332.53,2494.67,Nunca,2.18,3.7,Sim,Não,Sim,Em risco
+717,41,Feminino,Viúvo,0,Niterói,RJ,Vendedor,Médio,2466.55,0.0,55.0,419,56.93,1096.46,Raramente,1.64,10.1,Não,Não,Sim,Em risco
+718,32,Masculino,Casado,0,Cuiabá,MT,Enfermeiro,Fundamental,3757.52,0.0,57.03,382,-154.85,1006.59,Raramente,0.92,2.7,Sim,Não,Não,Em risco
+719,37,Feminino,União Estável,1,Olinda,PE,Engenheiro de Produção,Superior,11149.02,0.0,10.62,806,29751.33,28829.34,Sempre,14.78,0.9,Não,Não,Sim,Saudável
+720,36,Feminino,Casado,4,Manaus,AM,Enfermeiro,Superior,5970.94,0.0,44.55,567,2454.33,7171.31,Às vezes,4.83,18.0,Sim,Não,Não,Em observação
+721,18,Masculino,Casado,1,Pelotas,RS,Estudante,Médio,1412.0,0.0,88.11,429,-69.36,251.36,Nunca,2.35,0.0,Sim,Não,Não,Em risco
+722,43,Feminino,Casado,2,Cuiabá,MT,Professor,Superior,5831.72,0.0,25.91,868,14271.23,11966.7,Frequentemente,20.81,14.6,Sim,Não,Não,Saudável
+723,36,Outro,Casado,0,Goiânia,GO,Cabeleireiro,Médio,4999.95,661.85,17.0,908,6170.33,7943.18,Sempre,16.06,11.4,Não,Não,Não,Saudável
+724,41,Feminino,Viúvo,0,São Luís,MA,Empresário,Superior,19336.14,0.0,45.39,598,10621.97,23569.15,Frequentemente,7.49,6.6,Não,Sim,Sim,Em observação
+725,25,Feminino,Solteiro,4,Joinville,SC,Jornalista,Superior,6383.64,0.0,46.66,514,1888.6,4384.43,Raramente,4.79,7.0,Não,Sim,Sim,Em observação
+726,32,Feminino,Solteiro,0,São Paulo,SP,Motorista,Médio,2777.53,0.0,55.0,448,130.0,2184.05,Às vezes,1.92,1.9,Sim,Sim,Não,Em risco
+727,46,Feminino,Casado,4,Manaus,AM,Funcionário Público,Superior,10410.36,0.0,30.0,797,7767.34,23981.89,Às vezes,20.73,5.0,Sim,Sim,Não,Saudável
+728,45,Feminino,Casado,1,Belém,PA,Empresário,Fundamental,14162.84,0.0,62.12,356,-383.68,3237.5,Raramente,0.0,11.3,Não,Não,Sim,Em risco
+729,23,Feminino,Solteiro,0,Maceió,AL,Eletricista,Médio,6289.32,579.12,6.97,1000,11293.59,8793.18,Frequentemente,25.7,2.4,Sim,Sim,Não,Saudável
+730,41,Feminino,Casado,2,Niterói,RJ,Funcionário Público,Médio,10504.35,0.0,25.38,910,15990.14,18851.12,Frequentemente,24.86,1.1,Sim,Sim,Sim,Saudável
+731,52,Feminino,União Estável,4,Manaus,AM,Cozinheiro,Médio,4138.97,0.0,12.1,792,3145.22,9675.41,Frequentemente,26.27,34.0,Não,Não,Sim,Saudável
+732,73,Masculino,Casado,3,Rio de Janeiro,RJ,Enfermeiro,Superior,4044.59,0.0,80.75,388,662.64,2518.16,Nunca,0.96,10.2,Sim,Não,Não,Em risco
+733,49,Feminino,Casado,4,Pelotas,RS,Desenvolvedor de Software,Superior,11882.52,0.0,44.17,581,2718.03,11324.63,Às vezes,8.77,8.7,Sim,Sim,Sim,Em observação
+734,43,Feminino,Casado,4,Belo Horizonte,MG,Aposentado,Médio,5494.38,277.69,41.78,653,2586.92,4778.39,Raramente,8.83,12.6,Não,Não,Não,Em observação
+735,22,Feminino,Solteiro,0,Londrina,PR,Médico,Pós-graduação,20009.14,495.31,31.09,625,5582.71,24712.5,Às vezes,3.76,4.0,Não,Sim,Sim,Em observação
+736,32,Feminino,Casado,2,São Paulo,SP,Engenheiro Civil,Superior,8060.98,0.0,63.56,504,446.05,6028.09,Raramente,1.11,3.9,Sim,Não,Não,Em risco
+737,35,Feminino,Solteiro,1,João Pessoa,PB,Gerente Comercial,Superior,8992.61,821.98,48.66,538,1358.47,9608.43,Raramente,9.9,15.0,Não,Não,Não,Em observação
+738,47,Masculino,Casado,0,Uberlândia,MG,Analista Financeiro,Superior,6143.89,0.0,75.9,427,460.93,1365.85,Nunca,0.0,15.5,Sim,Não,Sim,Em risco
+739,19,Masculino,Solteiro,0,Belo Horizonte,MG,Jornalista,Superior,5086.98,0.0,58.0,603,1019.85,4285.12,Às vezes,5.74,0.8,Não,Não,Não,Em observação
+740,27,Feminino,Divorciado,0,Feira de Santana,BA,Funcionário Público,Superior,8373.89,0.0,25.73,630,2846.78,9160.56,Raramente,11.53,5.0,Sim,Não,Sim,Em observação
+741,42,Feminino,Casado,0,São Luís,MA,Pedreiro,Fundamental,3521.46,0.0,48.13,566,850.7,3238.28,Raramente,8.14,8.0,Sim,Não,Sim,Em observação
+742,42,Feminino,Viúvo,0,Goiânia,GO,Desenvolvedor de Software,Superior,9786.1,0.0,14.75,759,18082.38,29345.37,Sempre,32.0,19.1,Não,Sim,Sim,Saudável
+743,32,Feminino,Solteiro,1,Goiânia,GO,Engenheiro Civil,Superior,10453.57,1061.03,54.66,521,6156.58,5858.69,Raramente,3.85,7.2,Não,Sim,Sim,Em observação
+744,32,Feminino,Solteiro,1,São Luís,MA,Recepcionista,Médio,2951.95,0.0,25.0,613,492.55,2174.09,Nunca,4.89,13.8,Sim,Não,Sim,Em observação
+745,44,Masculino,Viúvo,2,São Paulo,SP,Desenvolvedor de Software,Fundamental,11866.58,3350.17,8.73,752,9936.99,36432.22,Frequentemente,12.88,10.6,Não,Não,Sim,Saudável
+746,44,Feminino,Solteiro,2,Joinville,SC,Designer Gráfico,Superior,5412.56,0.0,79.73,356,931.38,2280.35,Raramente,1.39,3.5,Não,Não,Não,Em risco
+747,34,Masculino,Solteiro,0,Guarulhos,SP,Técnico em Informática,Pós-graduação,5181.13,292.48,29.03,667,2392.53,5902.52,Às vezes,3.86,4.0,Não,Não,Sim,Em observação
+748,20,Feminino,Casado,0,Pelotas,RS,Empresário,Superior,13343.18,0.0,45.11,548,7680.8,16867.64,Nunca,11.38,0.3,Não,Não,Não,Em observação
+749,61,Feminino,Casado,3,Rio de Janeiro,RJ,Cozinheiro,Médio,1726.02,0.0,79.02,378,221.04,713.05,Às vezes,0.0,8.5,Sim,Não,Não,Em risco
+750,54,Feminino,Casado,1,Santos,SP,Engenheiro Civil,Superior,15397.3,0.0,42.21,641,1932.27,17008.42,Às vezes,8.74,9.0,Não,Sim,Sim,Em observação
+751,31,Masculino,Casado,3,Guarulhos,SP,Autônomo,Médio,10108.39,0.0,9.44,864,7915.67,30633.51,Frequentemente,10.0,4.2,Não,Sim,Sim,Saudável
+752,52,Masculino,Solteiro,1,Recife,PE,Jornalista,Superior,5339.91,73.09,68.93,386,638.84,2978.53,Raramente,1.06,1.7,Não,Não,Não,Em risco
+753,45,Feminino,Solteiro,2,Florianópolis,SC,Analista de TI,Superior,6659.05,0.0,34.69,545,1971.28,7732.39,Às vezes,6.07,12.0,Sim,Sim,Sim,Em observação
+754,38,Masculino,Divorciado,0,Olinda,PE,Analista Financeiro,Superior,11093.5,0.0,17.24,832,10408.36,16268.1,Frequentemente,20.43,6.2,Não,Sim,Não,Saudável
+755,28,Feminino,União Estável,3,Campo Grande,MS,Estudante,Médio,1542.84,0.0,6.67,948,1752.05,2012.43,Sempre,10.0,2.2,Sim,Não,Não,Saudável
+756,56,Feminino,Casado,1,Maceió,AL,Jornalista,Médio,5387.93,176.86,63.0,398,736.42,1222.53,Nunca,0.0,0.6,Sim,Não,Não,Em risco
+757,25,Feminino,Casado,0,Belém,PA,Analista de TI,Superior,10267.57,0.0,58.0,665,5815.12,13625.16,Às vezes,9.75,5.5,Não,Não,Sim,Em observação
+758,47,Masculino,Casado,2,São Paulo,SP,Contador,Superior,7656.93,0.0,58.0,709,2658.6,5863.97,Nunca,6.65,17.7,Não,Não,Sim,Em observação
+759,22,Feminino,Divorciado,0,Olinda,PE,Médico,Pós-graduação,16915.76,0.0,69.57,383,2860.25,7792.35,Nunca,2.36,1.5,Não,Sim,Sim,Em risco
+760,18,Masculino,Casado,0,Belém,PA,Estudante,Médio,1412.0,0.0,86.36,410,110.24,992.08,Nunca,0.96,0.0,Sim,Não,Não,Em risco
+761,43,Feminino,União Estável,0,Niterói,RJ,Desenvolvedor de Software,Pós-graduação,11107.39,0.0,4.43,919,18868.01,23874.84,Às vezes,25.26,6.4,Não,Não,Não,Saudável
+762,24,Masculino,Solteiro,0,Goiânia,GO,Aposentado,Fundamental,4571.48,0.0,10.05,959,5904.03,6259.91,Frequentemente,21.71,1.6,Não,Sim,Não,Saudável
+763,31,Feminino,Solteiro,0,Natal,RN,Advogado,Pós-graduação,21593.53,6191.34,15.58,755,56163.83,61665.52,Às vezes,23.55,3.8,Não,Sim,Sim,Saudável
+764,29,Feminino,União Estável,2,Campo Grande,MS,Cozinheiro,Médio,3160.6,0.0,42.42,533,723.78,2250.44,Às vezes,3.49,9.8,Sim,Sim,Não,Em observação
+765,37,Feminino,União Estável,2,Uberlândia,MG,Vendedor,Médio,4406.29,0.0,9.7,845,9999.11,6968.26,Frequentemente,15.23,15.4,Não,Não,Não,Saudável
+766,36,Masculino,Divorciado,2,Manaus,AM,Corretor de Imóveis,Superior,11720.88,0.0,45.84,531,2606.62,15003.15,Nunca,3.31,13.2,Não,Sim,Sim,Em observação
+767,53,Masculino,Viúvo,4,Feira de Santana,BA,Vendedor,Médio,2733.7,0.0,82.76,398,408.81,653.47,Nunca,1.22,3.7,Sim,Não,Sim,Em risco
+768,26,Masculino,Solteiro,0,Campo Grande,MS,Médico,Pós-graduação,15348.4,0.0,68.6,354,-93.97,4957.88,Às vezes,1.07,2.3,Sim,Não,Sim,Em risco
+769,37,Feminino,Solteiro,2,Florianópolis,SC,Contador,Superior,10969.56,0.0,8.31,976,29821.27,31406.62,Frequentemente,11.83,2.6,Não,Sim,Sim,Saudável
+770,34,Feminino,Casado,1,Porto Alegre,RS,Aposentado,Médio,2887.2,0.0,60.81,413,-74.89,1010.55,Raramente,0.83,8.4,Sim,Não,Não,Em risco
+771,25,Masculino,Casado,2,Belo Horizonte,MG,Professor,Superior,6913.35,0.0,4.32,891,11145.33,19114.61,Frequentemente,11.53,7.0,Não,Não,Sim,Saudável
+772,18,Masculino,União Estável,0,Cuiabá,MT,Desenvolvedor de Software,Superior,7180.59,0.0,77.69,358,96.05,5696.26,Raramente,1.03,0.0,Sim,Não,Não,Em risco
+773,42,Masculino,Casado,1,Juiz de Fora,MG,Professor,Superior,4942.79,1675.28,10.73,798,11813.18,12046.54,Sempre,16.73,9.4,Não,Não,Sim,Saudável
+774,33,Masculino,Solteiro,1,Santos,SP,Recepcionista,Médio,2957.51,0.0,44.83,689,1604.65,3874.76,Frequentemente,5.46,2.8,Sim,Sim,Sim,Em observação
+775,40,Feminino,Solteiro,0,Londrina,PR,Analista de TI,Pós-graduação,7742.06,0.0,61.51,303,1343.69,1541.74,Frequentemente,1.7,2.7,Sim,Não,Não,Em risco
+776,32,Feminino,Solteiro,3,Teresina,PI,Vendedor,Médio,3522.55,627.8,10.14,914,9845.29,9534.75,Sempre,20.46,14.0,Não,Não,Sim,Saudável
+777,58,Feminino,Solteiro,1,Uberlândia,MG,Médico,Pós-graduação,34049.08,0.0,4.05,700,61271.95,92977.96,Sempre,20.6,6.8,Não,Sim,Sim,Saudável
+778,27,Masculino,Solteiro,0,Caxias do Sul,RS,Advogado,Pós-graduação,11662.69,0.0,31.14,599,2380.84,10465.71,Frequentemente,3.77,9.0,Sim,Não,Sim,Em observação
+779,35,Feminino,Casado,1,Niterói,RJ,Cozinheiro,Médio,3242.06,0.0,40.93,578,1387.68,3406.65,Sempre,8.23,16.4,Não,Não,Não,Em observação
+780,27,Masculino,Solteiro,4,Rio de Janeiro,RJ,Analista de TI,Médio,6921.68,0.0,33.92,555,2027.27,5111.2,Às vezes,8.45,6.6,Sim,Sim,Sim,Em observação
+781,35,Masculino,Viúvo,0,Vila Velha,ES,Gerente Comercial,Superior,11983.4,0.0,32.07,544,3894.06,12898.59,Raramente,8.91,2.8,Sim,Não,Sim,Em observação
+782,31,Feminino,Solteiro,3,Juazeiro do Norte,CE,Médico,Pós-graduação,15750.89,0.0,30.48,519,7402.24,18075.11,Raramente,10.69,6.9,Não,Não,Sim,Em observação
+783,38,Feminino,Divorciado,3,Curitiba,PR,Cabeleireiro,Médio,5913.23,0.0,15.7,924,6288.25,13548.09,Às vezes,16.32,19.6,Não,Sim,Não,Saudável
+784,26,Feminino,Casado,0,Manaus,AM,Estudante,Médio,1958.75,0.0,13.66,812,4397.56,3453.67,Raramente,11.96,8.0,Não,Não,Não,Saudável
+785,43,Masculino,Casado,3,Londrina,PR,Designer Gráfico,Superior,7908.75,2139.59,23.93,738,18368.6,14183.65,Frequentemente,13.48,21.2,Não,Sim,Não,Saudável
+786,23,Masculino,Solteiro,0,Feira de Santana,BA,Aposentado,Fundamental,2384.28,0.0,79.83,403,102.06,1435.83,Nunca,0.66,2.8,Não,Não,Não,Em risco
+787,19,Feminino,Casado,0,Palmas,TO,Vendedor,Médio,3189.8,0.0,25.0,600,1315.17,2820.96,Às vezes,4.82,0.9,Não,Não,Não,Em observação
+788,22,Feminino,Solteiro,0,Teresina,PI,Estudante,Médio,1510.16,0.0,48.67,518,779.44,2137.99,Frequentemente,5.03,4.0,Não,Sim,Sim,Em observação
+789,41,Feminino,Casado,1,Uberlândia,MG,Empresário,Superior,16241.82,0.0,35.37,582,4772.73,21952.26,Nunca,6.41,19.6,Não,Não,Não,Em observação
+790,47,Feminino,Solteiro,0,João Pessoa,PB,Vendedor,Médio,2214.62,0.0,55.0,380,200.37,1004.03,Nunca,1.48,5.5,Não,Não,Sim,Em risco
+791,54,Feminino,Solteiro,0,Campinas,SP,Autônomo,Superior,9756.03,0.0,11.67,873,15903.29,29040.3,Sempre,30.06,28.5,Não,Não,Sim,Saudável
+792,34,Feminino,Solteiro,0,Blumenau,SC,Designer Gráfico,Superior,4874.65,0.0,48.62,704,3132.06,4804.73,Às vezes,5.67,9.2,Não,Não,Sim,Em observação
+793,41,Feminino,Viúvo,3,Londrina,PR,Analista de TI,Superior,10641.52,1511.95,34.7,594,2091.06,14757.99,Frequentemente,1.0,10.4,Não,Não,Sim,Em observação
+794,53,Masculino,União Estável,0,Feira de Santana,BA,Desenvolvedor de Software,Pós-graduação,12836.35,0.0,39.29,664,4625.98,18127.69,Às vezes,5.23,33.2,Sim,Sim,Não,Em observação
+795,38,Feminino,Solteiro,1,Campo Grande,MS,Vendedor,Fundamental,3768.84,418.97,0.0,825,8877.31,8811.32,Sempre,11.8,14.5,Não,Não,Não,Saudável
+796,32,Masculino,Divorciado,0,Pelotas,RS,Motorista,Médio,2767.25,0.0,77.4,439,-135.26,1386.01,Raramente,1.26,3.3,Sim,Não,Não,Em risco
+797,26,Feminino,Solteiro,0,Santos,SP,Jornalista,Médio,3236.3,0.0,79.86,490,192.59,2243.34,Raramente,0.0,0.3,Sim,Sim,Sim,Em risco
+798,38,Masculino,União Estável,3,Anápolis,GO,Designer Gráfico,Médio,5405.78,369.25,38.22,541,951.13,3489.5,Raramente,4.59,6.4,Sim,Não,Não,Em observação
+799,18,Feminino,Solteiro,1,Campo Grande,MS,Contador,Superior,8998.56,0.0,35.73,512,2700.78,5777.13,Às vezes,5.06,0.0,Sim,Sim,Sim,Em observação
+800,48,Feminino,Casado,4,Campinas,SP,Corretor de Imóveis,Médio,7002.4,0.0,79.87,420,981.21,3614.81,Às vezes,1.35,16.7,Não,Não,Sim,Em risco
+801,39,Feminino,Solteiro,2,Maringá,PR,Farmacêutico,Pós-graduação,7343.69,0.0,46.08,620,2212.72,6128.14,Nunca,9.3,1.9,Não,Não,Sim,Em observação
+802,47,Feminino,Divorciado,0,Londrina,PR,Estudante,Médio,1412.0,252.67,12.35,786,973.01,3424.58,Sempre,20.18,16.6,Não,Não,Não,Saudável
+803,44,Masculino,Divorciado,1,Cuiabá,MT,Vendedor,Médio,4465.02,0.0,28.0,709,690.76,4101.72,Às vezes,7.33,1.1,Não,Não,Sim,Em observação
+804,35,Masculino,Casado,2,Juazeiro do Norte,CE,Cabeleireiro,Médio,3448.7,0.0,45.84,544,620.98,4877.33,Raramente,1.0,16.1,Sim,Não,Não,Em observação
+805,36,Masculino,Solteiro,1,Juazeiro do Norte,CE,Corretor de Imóveis,Médio,6517.7,0.0,28.5,609,3412.13,10206.16,Às vezes,4.43,0.8,Sim,Não,Sim,Em observação
+806,45,Masculino,Solteiro,3,Fortaleza,CE,Desenvolvedor de Software,Superior,13086.82,0.0,37.48,621,7893.3,20555.69,Raramente,1.0,2.3,Sim,Sim,Sim,Em observação
+807,29,Feminino,Solteiro,2,Juiz de Fora,MG,Jornalista,Superior,3181.65,0.0,73.2,445,434.51,965.08,Nunca,0.5,3.2,Não,Não,Não,Em risco
+808,57,Masculino,Solteiro,1,Goiânia,GO,Professor,Superior,2287.01,0.0,71.19,455,92.39,1835.82,Raramente,0.73,9.3,Não,Não,Não,Em risco
+809,37,Feminino,União Estável,1,Manaus,AM,Cozinheiro,Médio,3235.6,0.0,28.4,588,942.39,3040.96,Raramente,1.59,9.0,Não,Não,Não,Em observação
+810,37,Masculino,Solteiro,1,Uberlândia,MG,Engenheiro Civil,Pós-graduação,13562.17,0.0,7.0,795,17955.47,32500.22,Às vezes,24.95,8.3,Não,Sim,Sim,Saudável
+811,53,Masculino,Solteiro,0,Blumenau,SC,Pedreiro,Fundamental,2527.09,0.0,98.0,375,130.84,1261.01,Nunca,1.32,1.0,Não,Sim,Não,Em risco
+812,35,Feminino,União Estável,3,Teresina,PI,Corretor de Imóveis,Superior,7013.54,0.0,90.23,331,1299.98,3665.6,Raramente,0.52,4.8,Sim,Não,Sim,Em risco
+813,36,Feminino,Casado,1,Campo Grande,MS,Farmacêutico,Superior,8711.13,1363.14,1.39,756,19290.8,27784.21,Sempre,21.08,9.2,Não,Não,Não,Saudável
+814,33,Feminino,Divorciado,3,Recife,PE,Advogado,Pós-graduação,11620.59,629.54,72.46,502,554.4,8586.64,Raramente,0.9,6.4,Não,Sim,Sim,Em risco
+815,37,Masculino,Solteiro,1,São Luís,MA,Autônomo,Fundamental,5665.93,0.0,93.4,472,188.06,1947.2,Raramente,0.0,12.1,Sim,Sim,Não,Em risco
+816,23,Feminino,Casado,0,Fortaleza,CE,Cabeleireiro,Médio,4105.19,0.0,43.57,683,2121.83,4842.67,Às vezes,6.56,5.0,Sim,Não,Não,Em observação
+817,20,Masculino,Solteiro,0,Duque de Caxias,RJ,Cabeleireiro,Médio,3746.75,0.0,42.19,619,1785.32,2768.36,Sempre,8.77,2.0,Não,Não,Não,Em observação
+818,39,Feminino,Casado,1,Rio de Janeiro,RJ,Vendedor,Médio,3335.88,0.0,29.96,654,532.77,4573.18,Raramente,5.99,4.1,Sim,Não,Não,Em observação
+819,38,Feminino,Casado,0,Niterói,RJ,Farmacêutico,Superior,8747.03,878.47,19.55,939,23610.94,16994.32,Sempre,15.68,17.0,Sim,Não,Sim,Saudável
+820,29,Feminino,Solteiro,1,Salvador,BA,Engenheiro de Produção,Superior,16965.24,909.38,9.2,1000,44300.64,37527.29,Frequentemente,27.78,3.2,Não,Sim,Sim,Saudável
+821,38,Feminino,Casado,0,Salvador,BA,Gerente Comercial,Superior,11062.09,803.29,67.28,370,1143.52,2400.26,Nunca,0.0,13.9,Sim,Não,Sim,Em risco
+822,43,Masculino,Solteiro,0,Anápolis,GO,Aposentado,Médio,6655.29,0.0,5.58,798,17039.61,15888.51,Sempre,25.42,2.9,Não,Sim,Sim,Saudável
+823,26,Outro,Solteiro,0,Blumenau,SC,Motoboy,Fundamental,3349.35,0.0,12.86,700,7697.35,7480.13,Frequentemente,28.82,0.2,Não,Não,Não,Saudável
+824,37,Masculino,Solteiro,1,Duque de Caxias,RJ,Farmacêutico,Superior,7815.01,0.0,37.73,680,4374.01,10256.54,Raramente,1.0,9.6,Sim,Não,Não,Em observação
+825,20,Masculino,Divorciado,0,Caxias do Sul,RS,Engenheiro Civil,Superior,9817.63,0.0,58.0,585,2943.66,11707.76,Às vezes,8.35,2.0,Sim,Sim,Sim,Em observação
+826,56,Masculino,Divorciado,3,Guarulhos,SP,Enfermeiro,Superior,2923.39,0.0,67.46,405,65.99,2133.02,Raramente,0.2,4.8,Não,Não,Não,Em risco
+827,22,Feminino,Solteiro,0,Duque de Caxias,RJ,Professor,Superior,6106.91,0.0,26.74,730,8950.2,8938.71,Frequentemente,14.25,3.2,Não,Não,Sim,Saudável
+828,54,Feminino,Casado,1,Curitiba,PR,Analista Financeiro,Superior,10733.5,0.0,12.59,769,14435.37,17692.51,Frequentemente,23.21,20.3,Não,Não,Não,Saudável
+829,18,Masculino,Casado,0,Niterói,RJ,Contador,Superior,5914.94,0.0,53.95,657,2231.24,7404.31,Às vezes,5.7,0.0,Não,Não,Sim,Em observação
+830,51,Feminino,Casado,1,Joinville,SC,Corretor de Imóveis,Médio,6056.63,0.0,48.16,511,1989.95,5588.89,Às vezes,4.97,20.6,Não,Sim,Não,Em observação
+831,31,Masculino,Casado,1,Curitiba,PR,Eletricista,Médio,6227.04,1128.39,15.72,851,10146.11,8628.93,Sempre,23.21,1.0,Sim,Não,Sim,Saudável
+832,37,Feminino,Solteiro,0,Juazeiro do Norte,CE,Engenheiro de Produção,Pós-graduação,9554.29,0.0,38.94,642,3333.43,10100.88,Nunca,7.83,5.2,Sim,Não,Não,Em observação
+833,19,Feminino,Divorciado,0,Maceió,AL,Motorista,Médio,4320.94,881.01,22.7,867,11347.93,9809.46,Frequentemente,21.45,1.0,Não,Não,Sim,Saudável
+834,25,Masculino,Casado,0,Duque de Caxias,RJ,Desenvolvedor de Software,Superior,10128.19,0.0,10.69,792,23029.76,21985.73,Frequentemente,26.29,2.8,Sim,Sim,Não,Saudável
+835,37,Feminino,Solteiro,1,Blumenau,SC,Advogado,Pós-graduação,10524.8,1283.06,34.5,646,5195.06,15555.09,Frequentemente,1.0,7.8,Não,Não,Não,Em observação
+836,53,Feminino,Solteiro,1,Niterói,RJ,Enfermeiro,Pós-graduação,5136.54,770.35,35.03,501,973.71,2807.55,Às vezes,5.89,7.2,Não,Não,Não,Em observação
+837,28,Outro,Solteiro,2,Campinas,SP,Engenheiro de Produção,Superior,8103.17,0.0,59.99,435,947.58,6063.97,Às vezes,1.36,1.3,Sim,Não,Não,Em risco
+838,24,Masculino,Divorciado,1,Niterói,RJ,Estudante,Superior,1412.0,0.0,47.4,556,341.46,1584.18,Às vezes,4.15,0.5,Sim,Não,Não,Em observação
+839,51,Masculino,Casado,2,Joinville,SC,Estudante,Superior,1412.0,154.6,39.15,636,206.22,1906.84,Nunca,4.42,10.3,Não,Não,Não,Em observação
+840,55,Masculino,Solteiro,3,Maceió,AL,Autônomo,Médio,6723.59,0.0,28.26,562,2417.22,9787.77,Às vezes,9.64,0.7,Não,Sim,Não,Em observação
+841,45,Feminino,Casado,1,Goiânia,GO,Engenheiro Civil,Superior,15393.98,4789.05,23.46,823,39388.27,32997.52,Sempre,20.27,18.8,Sim,Sim,Sim,Saudável
+842,35,Feminino,Casado,0,Florianópolis,SC,Motorista,Médio,3344.27,0.0,37.25,570,2048.31,3596.05,Nunca,6.24,1.4,Sim,Não,Não,Em observação
+843,18,Feminino,Solteiro,0,Santos,SP,Advogado,Fundamental,20200.11,1829.56,7.81,700,22162.6,50074.8,Frequentemente,26.22,0.0,Não,Sim,Sim,Saudável
+844,60,Feminino,Casado,0,Brasília,DF,Gerente Comercial,Superior,6211.64,0.0,82.99,459,1060.34,1235.87,Nunca,0.94,3.5,Sim,Não,Não,Em risco
+845,44,Masculino,Solteiro,1,Campo Grande,MS,Vendedor,Médio,4575.6,0.0,18.84,831,8880.99,7241.28,Frequentemente,16.75,12.6,Não,Não,Sim,Saudável
+846,33,Feminino,Solteiro,0,João Pessoa,PB,Empresário,Pós-graduação,22980.97,0.0,42.35,551,11132.22,36755.88,Às vezes,10.98,15.0,Não,Sim,Sim,Em observação
+847,38,Masculino,Solteiro,1,Pelotas,RS,Estudante,Médio,1412.0,211.85,1.64,944,2243.11,3087.18,Frequentemente,10.0,1.0,Sim,Sim,Não,Saudável
+848,31,Feminino,Divorciado,0,Guarulhos,SP,Funcionário Público,Superior,9289.6,0.0,80.75,346,207.95,4798.9,Nunca,1.76,1.7,Sim,Não,Sim,Em risco
+849,28,Masculino,Solteiro,1,São Luís,MA,Recepcionista,Médio,3053.11,90.21,56.23,532,722.68,2798.41,Frequentemente,3.56,2.2,Não,Não,Não,Em observação
+850,18,Feminino,Casado,0,Vila Velha,ES,Engenheiro Civil,Médio,14421.16,0.0,47.95,558,2144.22,21616.88,Às vezes,7.13,0.0,Não,Sim,Sim,Em observação
+851,31,Masculino,União Estável,4,Maringá,PR,Advogado,Pós-graduação,21618.46,1119.46,1.84,922,55426.35,34020.3,Frequentemente,17.17,6.5,Não,Sim,Sim,Saudável
+852,52,Feminino,Solteiro,4,Vitória,ES,Engenheiro de Produção,Médio,11500.36,0.0,25.0,626,2135.88,8144.11,Frequentemente,5.89,28.0,Sim,Sim,Sim,Em observação
+853,21,Masculino,Casado,1,Salvador,BA,Contador,Fundamental,10069.02,1049.52,12.55,879,20859.92,28842.97,Frequentemente,26.95,2.5,Não,Sim,Sim,Saudável
+854,21,Feminino,Solteiro,0,Teresina,PI,Autônomo,Médio,3138.31,0.0,82.09,363,224.39,1365.04,Raramente,1.89,2.3,Sim,Não,Não,Em risco
+855,58,Masculino,Casado,3,João Pessoa,PB,Aposentado,Fundamental,6126.3,0.0,0.0,876,12994.19,11343.89,Sempre,25.22,7.6,Não,Não,Sim,Saudável
+856,37,Feminino,Casado,2,Palmas,TO,Cozinheiro,Médio,2827.99,653.49,13.99,753,1774.04,4362.36,Sempre,23.0,4.7,Sim,Não,Não,Saudável
+857,46,Feminino,Viúvo,0,Belém,PA,Advogado,Pós-graduação,17824.22,0.0,17.67,735,48975.77,38791.06,Às vezes,22.73,17.0,Não,Sim,Sim,Saudável
+858,35,Feminino,Casado,1,Duque de Caxias,RJ,Cabeleireiro,Médio,3299.87,0.0,25.0,568,1354.0,2476.4,Às vezes,9.42,8.8,Sim,Não,Não,Em observação
+859,54,Masculino,União Estável,1,Recife,PE,Veterinário,Superior,6394.47,0.0,34.58,581,653.6,6022.37,Raramente,9.34,23.8,Não,Não,Sim,Em observação
+860,49,Masculino,Divorciado,0,Belém,PA,Motorista,Médio,4598.33,0.0,15.1,722,5305.73,9809.09,Sempre,24.15,26.4,Sim,Sim,Não,Saudável
+861,36,Feminino,Divorciado,1,Cuiabá,MT,Estudante,Médio,1412.0,0.0,84.43,342,227.61,405.3,Às vezes,1.1,6.1,Sim,Não,Não,Em risco
+862,42,Masculino,Solteiro,2,Juiz de Fora,MG,Eletricista,Médio,4819.13,0.0,54.43,571,1761.63,4295.08,Raramente,2.73,5.4,Não,Não,Não,Em observação
+863,62,Feminino,Viúvo,0,Guarulhos,SP,Autônomo,Superior,6752.25,0.0,50.58,593,3366.61,6683.73,Nunca,6.9,1.2,Não,Não,Sim,Em observação
+864,37,Masculino,Casado,1,Santos,SP,Analista Financeiro,Superior,8087.89,0.0,40.72,480,2757.71,7237.08,Às vezes,5.01,19.0,Sim,Não,Sim,Em observação
+865,51,Feminino,Casado,1,Goiânia,GO,Analista de TI,Superior,7013.01,0.0,39.38,561,1834.54,9894.92,Às vezes,9.4,21.4,Não,Não,Não,Em observação
+866,30,Masculino,Solteiro,2,Olinda,PE,Motorista,Fundamental,3226.73,0.0,41.57,511,1412.46,4178.34,Às vezes,7.44,11.1,Não,Sim,Não,Em observação
+867,37,Feminino,Casado,1,Caxias do Sul,RS,Advogado,Pós-graduação,16296.86,0.0,25.88,796,10726.59,21448.73,Sempre,27.59,13.8,Não,Sim,Não,Saudável
+868,49,Masculino,Solteiro,1,Fortaleza,CE,Motorista,Fundamental,3322.83,457.24,15.12,857,7289.67,7078.78,Às vezes,21.32,12.0,Sim,Não,Não,Saudável
+869,50,Masculino,Solteiro,2,Porto Alegre,RS,Cabeleireiro,Pós-graduação,3161.62,0.0,70.29,485,-88.94,1925.72,Às vezes,3.0,6.5,Sim,Não,Não,Em risco
+870,66,Feminino,Solteiro,0,Goiânia,GO,Farmacêutico,Superior,5418.91,0.0,85.27,444,601.0,1737.31,Nunca,1.74,7.8,Não,Sim,Sim,Em risco
+871,51,Masculino,Viúvo,3,Rio de Janeiro,RJ,Enfermeiro,Pós-graduação,5837.77,516.87,35.04,629,1269.96,4634.77,Raramente,4.16,10.9,Não,Sim,Não,Em observação
+872,40,Masculino,Solteiro,0,João Pessoa,PB,Motoboy,Fundamental,3416.42,645.7,19.19,929,7696.77,10538.02,Frequentemente,23.62,12.7,Sim,Sim,Sim,Saudável
+873,32,Feminino,Solteiro,2,Maringá,PR,Farmacêutico,Superior,6608.31,740.7,28.26,543,1718.78,4245.7,Frequentemente,6.98,3.0,Não,Sim,Não,Em observação
+874,53,Feminino,Solteiro,2,Santos,SP,Cabeleireiro,Médio,4208.92,456.78,43.64,710,2123.96,3354.52,Raramente,11.14,10.8,Não,Não,Não,Em observação
+875,52,Masculino,Divorciado,1,Goiânia,GO,Farmacêutico,Superior,7083.08,1647.66,10.28,814,11491.51,22348.75,Sempre,14.36,0.9,Não,Não,Sim,Saudável
+876,44,Feminino,Casado,3,Belo Horizonte,MG,Recepcionista,Médio,2778.17,346.45,16.69,786,2542.72,3478.43,Frequentemente,23.04,6.5,Não,Não,Sim,Saudável
+877,40,Feminino,Solteiro,0,Cuiabá,MT,Aposentado,Médio,3106.95,0.0,39.59,480,1498.13,4347.72,Às vezes,5.41,14.2,Sim,Sim,Não,Em observação
+878,25,Masculino,União Estável,2,Campo Grande,MS,Técnico em Informática,Médio,3810.22,366.79,45.51,574,2099.49,1944.82,Nunca,7.75,6.1,Não,Não,Não,Em observação
+879,34,Masculino,Solteiro,2,Salvador,BA,Analista Financeiro,Fundamental,11365.9,851.97,8.99,845,28132.54,29722.7,Frequentemente,10.0,5.1,Não,Sim,Sim,Saudável
+880,18,Feminino,Casado,0,Anápolis,GO,Desenvolvedor de Software,Superior,10169.01,0.0,0.86,767,22616.66,20373.51,Às vezes,27.74,0.0,Não,Não,Sim,Saudável
+881,59,Feminino,Solteiro,2,Porto Alegre,RS,Veterinário,Superior,10074.62,3292.47,10.84,840,14093.21,17269.55,Sempre,10.0,15.0,Não,Sim,Não,Saudável
+882,40,Feminino,Divorciado,1,Porto Alegre,RS,Motorista,Médio,2425.01,0.0,45.44,667,660.08,2237.26,Frequentemente,5.49,15.3,Não,Não,Sim,Em observação
+883,43,Feminino,Solteiro,0,São Paulo,SP,Estudante,Médio,1754.7,0.0,0.0,914,2019.84,3408.05,Às vezes,32.0,23.3,Não,Não,Não,Saudável
+884,40,Feminino,União Estável,0,São Paulo,SP,Vendedor,Médio,4819.27,0.0,16.71,773,9740.01,9990.22,Frequentemente,11.36,7.9,Não,Não,Não,Saudável
+885,21,Masculino,Solteiro,0,Olinda,PE,Corretor de Imóveis,Superior,4379.09,0.0,72.68,399,83.65,2400.22,Nunca,0.0,0.1,Sim,Não,Não,Em risco
+886,32,Feminino,Casado,2,Anápolis,GO,Veterinário,Superior,8309.35,2109.77,9.99,858,6171.54,13166.86,Às vezes,20.93,11.9,Não,Não,Sim,Saudável
+887,26,Masculino,Solteiro,0,Florianópolis,SC,Enfermeiro,Superior,5430.75,0.0,30.52,563,924.4,7509.66,Às vezes,1.0,4.5,Não,Não,Não,Em observação
+888,46,Feminino,Solteiro,0,Manaus,AM,Cozinheiro,Médio,3589.96,0.0,12.86,912,3337.21,7496.98,Às vezes,24.48,4.6,Não,Não,Sim,Saudável
+889,47,Feminino,Solteiro,1,Goiânia,GO,Técnico em Informática,Médio,4186.0,0.0,8.78,833,4874.06,9742.64,Às vezes,21.37,27.8,Não,Não,Sim,Saudável
+890,36,Masculino,Casado,1,Olinda,PE,Recepcionista,Médio,3493.31,350.6,11.59,700,3483.05,9432.52,Frequentemente,20.18,6.6,Não,Não,Não,Saudável
+891,38,Masculino,Casado,0,Feira de Santana,BA,Pedreiro,Fundamental,2711.87,0.0,34.98,632,332.44,1569.34,Raramente,6.97,5.6,Sim,Sim,Sim,Em observação
+892,33,Feminino,União Estável,2,Olinda,PE,Engenheiro de Produção,Superior,10040.77,0.0,69.85,315,943.21,7284.86,Raramente,0.33,6.2,Não,Não,Sim,Em risco
+893,33,Feminino,Solteiro,0,Santos,SP,Gerente Comercial,Pós-graduação,10774.36,0.0,85.27,396,-454.14,4413.68,Nunca,0.51,7.3,Sim,Sim,Não,Em risco
+894,32,Masculino,Solteiro,2,Uberlândia,MG,Analista Financeiro,Superior,8856.61,0.0,34.25,569,2442.23,5901.17,Frequentemente,3.67,7.3,Não,Não,Sim,Em observação
+895,55,Masculino,Solteiro,2,Recife,PE,Motorista,Pós-graduação,2921.46,0.0,42.43,540,904.62,3770.92,Frequentemente,12.0,32.7,Sim,Não,Não,Em observação
+896,36,Masculino,Solteiro,0,Guarulhos,SP,Cozinheiro,Médio,3691.34,1148.17,20.09,856,6482.27,6876.18,Sempre,24.77,14.1,Não,Não,Não,Saudável
+897,43,Masculino,União Estável,0,Caxias do Sul,RS,Recepcionista,Médio,3106.43,0.0,11.32,917,8048.6,3755.06,Raramente,25.18,0.8,Não,Não,Sim,Saudável
+898,29,Masculino,Solteiro,0,Brasília,DF,Funcionário Público,Superior,5344.8,0.0,74.47,412,1052.01,3764.95,Frequentemente,0.0,3.8,Não,Sim,Não,Em risco
+899,38,Masculino,Divorciado,0,Teresina,PI,Engenheiro Civil,Superior,18111.25,0.0,21.71,700,45349.03,36867.94,Sempre,18.79,8.0,Não,Sim,Sim,Saudável
+900,27,Masculino,Solteiro,3,Salvador,BA,Analista Financeiro,Médio,10409.38,0.0,10.27,888,9719.81,24294.46,Sempre,21.29,5.3,Não,Não,Não,Saudável
+901,43,Feminino,União Estável,1,Juazeiro do Norte,CE,Pedreiro,Fundamental,2751.33,436.87,16.31,817,5818.31,3708.73,Frequentemente,19.6,1.6,Sim,Sim,Não,Saudável
+902,36,Feminino,Solteiro,2,Olinda,PE,Empresário,Superior,18442.57,4002.2,12.92,756,51262.88,50045.01,Sempre,15.17,16.5,Não,Sim,Não,Saudável
+903,46,Masculino,Casado,3,Campo Grande,MS,Enfermeiro,Superior,7148.9,1416.42,0.96,775,17700.83,17807.46,Às vezes,10.0,0.5,Não,Não,Sim,Saudável
+904,55,Feminino,Solteiro,1,Santos,SP,Veterinário,Superior,6046.71,0.0,38.8,578,1592.66,4580.19,Frequentemente,7.52,8.3,Não,Sim,Não,Em observação
+905,49,Feminino,União Estável,1,Palmas,TO,Professor,Superior,5502.89,775.54,40.65,583,1856.43,6630.88,Frequentemente,1.66,14.5,Sim,Sim,Não,Em observação
+906,37,Feminino,Divorciado,2,Belo Horizonte,MG,Veterinário,Superior,4583.22,0.0,81.45,508,111.73,2562.73,Nunca,2.2,0.6,Sim,Não,Não,Em risco
+907,57,Feminino,Casado,2,Belém,PA,Desenvolvedor de Software,Médio,7238.34,0.0,93.06,398,813.55,1340.93,Raramente,1.01,26.4,Não,Não,Não,Em risco
+908,63,Feminino,Viúvo,3,Maringá,PR,Contador,Superior,8639.05,0.0,0.44,766,18179.0,15761.63,Sempre,17.4,22.6,Não,Sim,Sim,Saudável
+909,40,Outro,Casado,2,Florianópolis,SC,Advogado,Pós-graduação,13175.56,0.0,16.34,946,30471.53,36103.98,Frequentemente,23.88,22.0,Não,Sim,Não,Saudável
+910,50,Feminino,União Estável,0,Niterói,RJ,Estudante,Médio,1412.0,0.0,29.91,480,642.52,909.56,Às vezes,3.73,26.6,Não,Não,Não,Em observação
+911,40,Feminino,União Estável,0,Fortaleza,CE,Pedreiro,Fundamental,3394.07,0.0,25.0,531,1673.18,3769.43,Raramente,8.93,10.4,Não,Não,Não,Em observação
+912,18,Feminino,Casado,0,Porto Alegre,RS,Jornalista,Médio,6819.65,0.0,17.88,938,4780.74,12803.82,Frequentemente,26.57,0.0,Sim,Sim,Não,Saudável
+913,33,Feminino,Casado,1,Niterói,RJ,Advogado,Pós-graduação,15937.77,0.0,42.0,600,3233.93,21681.96,Frequentemente,8.18,10.9,Não,Sim,Sim,Em observação
+914,41,Masculino,Divorciado,0,Manaus,AM,Empresário,Pós-graduação,14933.46,1331.53,41.35,617,3888.81,20469.08,Frequentemente,2.7,4.3,Sim,Sim,Não,Em observação
+915,33,Feminino,Solteiro,0,Maceió,AL,Engenheiro de Produção,Fundamental,13050.04,0.0,40.93,561,3642.33,9916.36,Frequentemente,8.04,10.5,Não,Sim,Sim,Em observação
+916,19,Masculino,Casado,0,João Pessoa,PB,Engenheiro de Produção,Superior,9233.75,627.11,29.92,698,5567.87,4984.41,Raramente,2.42,1.0,Sim,Não,Não,Em observação
+917,44,Masculino,União Estável,4,Pelotas,RS,Vendedor,Médio,5013.65,1613.37,1.82,766,3079.75,13104.12,Sempre,16.31,17.2,Sim,Não,Não,Saudável
+918,40,Feminino,Solteiro,1,Uberlândia,MG,Médico,Pós-graduação,13985.52,0.0,75.87,445,507.05,7210.97,Nunca,1.47,4.7,Sim,Sim,Não,Em risco
+919,42,Feminino,Casado,0,Curitiba,PR,Professor,Superior,4435.23,0.0,75.14,326,729.1,1828.46,Nunca,0.18,7.0,Sim,Não,Sim,Em risco
+920,55,Feminino,Casado,0,Florianópolis,SC,Analista Financeiro,Superior,9522.89,0.0,15.56,824,16801.83,29500.77,Às vezes,12.72,18.4,Não,Sim,Não,Saudável
+921,23,Feminino,Solteiro,0,Vitória,ES,Motoboy,Fundamental,2271.05,0.0,90.66,382,160.38,1070.72,Às vezes,0.0,3.0,Sim,Não,Não,Em risco
+922,50,Masculino,Solteiro,0,Blumenau,SC,Designer Gráfico,Médio,5687.58,0.0,38.87,572,2608.37,7274.23,Às vezes,8.0,13.3,Não,Não,Não,Em observação
+923,27,Masculino,Solteiro,0,Manaus,AM,Analista de TI,Superior,7216.25,0.0,90.3,509,125.27,4106.81,Nunca,0.99,1.9,Sim,Não,Sim,Em risco
+924,50,Masculino,Casado,2,Uberlândia,MG,Engenheiro de Produção,Médio,7758.64,0.0,59.74,319,-83.73,4925.22,Nunca,0.3,19.9,Não,Não,Não,Em risco
+925,35,Feminino,Divorciado,0,Guarulhos,SP,Autônomo,Superior,8544.92,0.0,42.08,658,2009.7,10606.4,Nunca,8.37,3.1,Não,Não,Sim,Em observação
+926,37,Feminino,Casado,0,Palmas,TO,Desenvolvedor de Software,Superior,11841.14,2607.8,6.65,755,28352.05,18453.47,Às vezes,11.24,8.5,Não,Sim,Sim,Saudável
+927,18,Masculino,União Estável,0,Duque de Caxias,RJ,Pedreiro,Fundamental,4180.51,0.0,3.99,797,5417.67,5828.08,Frequentemente,13.17,0.0,Não,Não,Não,Saudável
+928,50,Masculino,Casado,0,Belém,PA,Aposentado,Médio,3833.24,0.0,31.02,485,836.39,2407.69,Frequentemente,9.23,20.6,Sim,Não,Não,Em observação
+929,24,Masculino,Casado,0,Joinville,SC,Corretor de Imóveis,Médio,6405.08,0.0,58.0,622,2561.1,7109.0,Às vezes,7.37,4.8,Sim,Sim,Não,Em observação
+930,46,Feminino,Solteiro,1,São Paulo,SP,Enfermeiro,Superior,6343.79,1523.23,21.37,962,15163.22,7946.04,Frequentemente,10.86,15.8,Não,Não,Não,Saudável
+931,27,Feminino,Casado,0,João Pessoa,PB,Motorista,Médio,4734.09,0.0,11.86,816,9503.43,10734.58,Sempre,22.5,0.0,Não,Não,Não,Saudável
+932,49,Masculino,Casado,1,Belém,PA,Farmacêutico,Fundamental,6238.7,0.0,75.27,342,-26.87,4848.14,Raramente,0.0,20.6,Sim,Não,Sim,Em risco
+933,61,Masculino,Casado,2,Duque de Caxias,RJ,Estudante,Médio,1412.0,0.0,75.58,386,25.02,254.64,Nunca,1.0,17.7,Sim,Não,Não,Em risco
+934,55,Masculino,Casado,2,Salvador,BA,Farmacêutico,Superior,6847.94,994.6,51.83,605,2951.26,10946.52,Raramente,1.64,12.1,Não,Não,Sim,Em observação
+935,39,Feminino,Solteiro,0,Belém,PA,Enfermeiro,Superior,4794.68,0.0,7.91,839,11471.23,9811.05,Sempre,23.51,12.6,Não,Não,Não,Saudável
+936,18,Feminino,Casado,0,Porto Alegre,RS,Corretor de Imóveis,Superior,8536.23,1439.94,15.38,947,6550.89,16193.15,Sempre,20.35,0.0,Não,Não,Sim,Saudável
+937,43,Masculino,Solteiro,0,São Paulo,SP,Recepcionista,Médio,2821.15,166.86,11.99,824,7533.16,8301.84,Frequentemente,18.38,0.2,Não,Sim,Sim,Saudável
+938,30,Masculino,Casado,0,São Luís,MA,Recepcionista,Médio,1665.61,0.0,80.17,443,215.85,656.22,Raramente,1.0,8.1,Sim,Não,Não,Em risco
+939,19,Feminino,Casado,1,Natal,RN,Professor,Fundamental,6410.67,0.0,20.07,748,8036.42,15093.31,Frequentemente,15.11,1.0,Não,Sim,Não,Saudável
+940,44,Masculino,Casado,1,Caxias do Sul,RS,Aposentado,Superior,4667.6,0.0,34.75,684,662.51,7061.34,Frequentemente,7.52,13.0,Não,Não,Sim,Em observação
+941,48,Masculino,União Estável,0,Santos,SP,Médico,Fundamental,24024.31,0.0,11.9,783,31019.43,46809.58,Frequentemente,10.0,22.8,Não,Sim,Sim,Saudável
+942,67,Feminino,Solteiro,1,Goiânia,GO,Gerente Comercial,Superior,13834.68,0.0,49.35,590,5534.02,19594.81,Às vezes,8.56,31.7,Não,Não,Não,Em observação
+943,39,Masculino,Solteiro,2,Belo Horizonte,MG,Médico,Fundamental,17878.65,2235.82,26.46,516,6442.48,22350.02,Às vezes,7.34,19.8,Sim,Sim,Sim,Em observação
+944,39,Masculino,Solteiro,1,Uberlândia,MG,Recepcionista,Médio,1752.72,0.0,59.26,420,287.44,1360.44,Raramente,2.03,6.0,Não,Não,Não,Em risco
+945,18,Feminino,Casado,0,Vila Velha,ES,Eletricista,Médio,5258.64,0.0,6.56,1000,7352.65,12758.59,Sempre,18.99,0.0,Não,Sim,Não,Saudável
+946,26,Feminino,Solteiro,0,Goiânia,GO,Farmacêutico,Superior,6087.92,1952.07,20.77,996,14743.96,16943.18,Sempre,22.27,4.0,Não,Não,Não,Saudável
+947,40,Masculino,União Estável,1,Manaus,AM,Aposentado,Médio,5721.53,307.0,8.59,787,10001.92,16219.94,Frequentemente,18.91,4.7,Não,Sim,Não,Saudável
+948,39,Feminino,Solteiro,1,Joinville,SC,Gerente Comercial,Superior,8844.15,0.0,65.86,403,1411.75,5798.41,Nunca,0.45,4.7,Sim,Não,Não,Em risco
+949,41,Masculino,Casado,2,Curitiba,PR,Médico,Pós-graduação,19483.14,0.0,78.76,330,857.07,15156.72,Nunca,1.75,15.0,Não,Não,Não,Em risco
+950,32,Feminino,Solteiro,1,Curitiba,PR,Médico,Pós-graduação,20423.77,0.0,25.0,658,5379.6,15013.38,Às vezes,7.46,13.5,Não,Sim,Não,Em observação
+951,65,Feminino,Casado,0,São Luís,MA,Recepcionista,Médio,2291.94,0.0,43.64,672,1166.78,2635.96,Às vezes,6.05,34.0,Sim,Não,Sim,Em observação
+952,44,Masculino,Solteiro,2,Brasília,DF,Eletricista,Médio,4709.28,0.0,27.8,557,1408.69,7200.11,Frequentemente,6.6,4.2,Sim,Não,Sim,Em observação
+953,31,Masculino,Solteiro,4,Uberlândia,MG,Estudante,Fundamental,1794.14,0.0,10.77,828,2855.14,3342.46,Sempre,16.51,9.3,Não,Sim,Não,Saudável
+954,31,Masculino,Solteiro,0,Vila Velha,ES,Desenvolvedor de Software,Superior,4863.54,0.0,94.58,428,139.75,1287.23,Nunca,1.79,2.7,Sim,Não,Não,Em risco
+955,59,Feminino,Solteiro,1,São Paulo,SP,Corretor de Imóveis,Médio,6461.71,0.0,41.05,611,941.72,7805.78,Frequentemente,5.65,16.5,Não,Sim,Sim,Em observação
+956,54,Masculino,Casado,2,Juazeiro do Norte,CE,Funcionário Público,Superior,10786.6,0.0,45.03,495,5491.87,11010.76,Raramente,6.61,24.4,Não,Não,Sim,Em observação
+957,22,Masculino,Solteiro,0,Duque de Caxias,RJ,Empresário,Superior,22606.89,1495.2,46.56,526,13326.32,35353.41,Nunca,3.07,2.7,Sim,Sim,Sim,Em observação
+958,42,Masculino,Casado,0,Brasília,DF,Recepcionista,Médio,3383.95,858.04,0.0,818,8685.1,9920.21,Frequentemente,25.86,23.3,Não,Não,Não,Saudável
+959,43,Feminino,Solteiro,4,Teresina,PI,Motoboy,Fundamental,3064.21,238.94,20.89,922,3762.87,5501.31,Frequentemente,25.45,20.5,Sim,Não,Não,Saudável
+960,44,Feminino,Casado,1,Curitiba,PR,Funcionário Público,Pós-graduação,8568.84,0.0,49.75,586,4781.39,5276.18,Raramente,9.6,15.9,Não,Não,Sim,Em observação
+961,46,Feminino,Casado,1,Rio de Janeiro,RJ,Jornalista,Superior,8693.22,1806.93,5.61,849,6962.58,13975.11,Às vezes,13.55,2.5,Não,Sim,Não,Saudável
+962,33,Feminino,Casado,3,Feira de Santana,BA,Desenvolvedor de Software,Superior,7564.28,0.0,41.83,605,3028.36,11751.82,Às vezes,9.95,5.7,Não,Não,Não,Em observação
+963,46,Feminino,Solteiro,1,Anápolis,GO,Autônomo,Fundamental,9623.45,0.0,0.0,822,19383.67,13531.29,Sempre,25.04,22.6,Não,Não,Sim,Saudável
+964,44,Feminino,Casado,4,São Luís,MA,Aposentado,Médio,3641.62,0.0,40.32,540,1033.13,1964.25,Frequentemente,8.28,17.1,Não,Não,Sim,Em observação
+965,47,Masculino,Divorciado,2,Fortaleza,CE,Médico,Fundamental,31367.15,7503.22,18.49,909,63742.15,62631.12,Às vezes,19.04,16.3,Não,Sim,Sim,Saudável
+966,22,Masculino,Casado,0,Belém,PA,Desenvolvedor de Software,Superior,8222.45,511.39,40.95,666,4305.17,6127.99,Às vezes,4.88,4.0,Sim,Não,Não,Em observação
+967,49,Masculino,Casado,4,Niterói,RJ,Gerente Comercial,Superior,12126.96,0.0,45.65,649,5680.75,15840.55,Raramente,7.17,4.7,Sim,Sim,Sim,Em observação
+968,30,Masculino,Casado,2,Olinda,PE,Motoboy,Fundamental,3029.84,650.18,19.78,936,7918.26,9079.05,Sempre,30.64,12.0,Não,Não,Sim,Saudável
+969,19,Feminino,Solteiro,0,Florianópolis,SC,Contador,Superior,7957.37,599.34,36.24,654,4439.16,12515.59,Às vezes,3.68,0.6,Sim,Sim,Sim,Em observação
+970,45,Feminino,Casado,0,Caxias do Sul,RS,Veterinário,Superior,6729.49,0.0,32.26,594,1035.44,9216.44,Às vezes,3.15,11.7,Não,Sim,Sim,Em observação
+971,59,Feminino,Divorciado,2,Palmas,TO,Eletricista,Médio,4814.28,0.0,58.0,610,694.11,6085.66,Raramente,2.98,30.2,Sim,Não,Sim,Em observação
+972,38,Masculino,Casado,4,Vila Velha,ES,Médico,Pós-graduação,10773.86,0.0,69.13,475,876.83,2302.87,Raramente,1.05,10.4,Sim,Não,Não,Em risco
+973,32,Masculino,União Estável,0,São Paulo,SP,Contador,Superior,7238.59,0.0,27.8,526,2737.6,8445.25,Nunca,3.84,12.3,Não,Não,Sim,Em observação
+974,20,Feminino,Casado,0,Recife,PE,Técnico em Informática,Médio,4050.72,0.0,25.23,903,5897.58,10950.07,Frequentemente,24.74,0.5,Não,Não,Não,Saudável
+975,29,Masculino,Viúvo,1,Guarulhos,SP,Motoboy,Fundamental,3123.38,388.3,0.0,869,7000.91,4504.22,Frequentemente,10.0,4.3,Não,Não,Não,Saudável
+976,38,Masculino,Solteiro,2,Belém,PA,Médico,Pós-graduação,28523.69,5249.34,0.0,776,72535.38,66234.79,Frequentemente,24.31,17.2,Não,Sim,Sim,Saudável
+977,56,Feminino,Solteiro,2,Belo Horizonte,MG,Cabeleireiro,Médio,2831.28,0.0,25.0,617,284.91,2295.16,Às vezes,4.45,27.2,Não,Não,Não,Em observação
+978,37,Masculino,Viúvo,1,Maringá,PR,Corretor de Imóveis,Médio,10603.64,0.0,24.5,830,25123.36,24386.7,Frequentemente,17.03,5.4,Não,Não,Sim,Saudável
+979,48,Masculino,Solteiro,1,Guarulhos,SP,Cabeleireiro,Médio,4150.05,0.0,49.81,697,1862.07,2598.4,Às vezes,4.35,20.3,Não,Sim,Sim,Em observação
+980,19,Feminino,Divorciado,0,Belo Horizonte,MG,Jornalista,Pós-graduação,5962.78,0.0,33.35,591,1223.27,8195.52,Frequentemente,5.95,1.0,Não,Não,Sim,Em observação
+981,30,Feminino,Casado,0,Natal,RN,Advogado,Fundamental,20271.96,0.0,4.64,801,55231.27,34144.96,Sempre,10.0,2.9,Não,Sim,Sim,Saudável
+982,45,Feminino,Divorciado,0,Santos,SP,Técnico em Informática,Pós-graduação,3707.24,0.0,90.73,375,724.59,1541.16,Raramente,1.89,17.6,Sim,Não,Sim,Em risco
+983,47,Masculino,Solteiro,1,Londrina,PR,Corretor de Imóveis,Médio,8639.61,0.0,17.06,700,11819.1,13177.14,Frequentemente,18.92,27.6,Sim,Sim,Sim,Saudável
+984,64,Masculino,Solteiro,0,Uberlândia,MG,Médico,Pós-graduação,34653.79,0.0,16.24,811,32048.37,43410.02,Sempre,19.67,32.3,Não,Não,Sim,Saudável
+985,18,Masculino,Casado,1,Fortaleza,CE,Funcionário Público,Pós-graduação,9822.33,0.0,35.54,628,1775.68,7393.35,Raramente,6.93,0.0,Sim,Sim,Sim,Em observação
+986,26,Feminino,Casado,3,Pelotas,RS,Motorista,Médio,2970.53,0.0,40.85,580,535.16,2236.78,Às vezes,4.1,4.2,Sim,Não,Não,Em observação
+987,53,Feminino,Casado,1,Recife,PE,Aposentado,Médio,3759.11,0.0,34.62,587,2214.94,4734.35,Raramente,5.66,31.2,Não,Não,Sim,Em observação
+988,33,Feminino,Casado,3,Natal,RN,Enfermeiro,Superior,5892.7,0.0,46.71,596,2144.7,6866.06,Às vezes,1.0,3.8,Não,Sim,Não,Em observação
+989,40,Masculino,Casado,2,Teresina,PI,Pedreiro,Fundamental,2971.54,908.67,7.04,804,2274.91,6806.08,Sempre,13.75,17.0,Não,Não,Não,Saudável
+990,70,Masculino,Casado,2,Recife,PE,Recepcionista,Médio,1694.43,0.0,63.6,494,298.21,1302.58,Nunca,1.14,7.4,Sim,Não,Não,Em risco
+991,41,Masculino,Casado,4,Londrina,PR,Funcionário Público,Superior,6116.57,0.0,55.0,450,449.72,4586.75,Nunca,1.34,1.3,Sim,Não,Não,Em risco
+992,29,Feminino,Casado,4,Belo Horizonte,MG,Jornalista,Superior,6208.09,0.0,28.43,648,922.84,8085.75,Às vezes,12.0,10.8,Não,Não,Não,Em observação
+993,26,Feminino,Divorciado,0,São Luís,MA,Recepcionista,Superior,2510.7,0.0,13.35,841,4274.63,4865.22,Às vezes,18.54,2.9,Não,Não,Não,Saudável
+994,18,Masculino,Solteiro,0,Vitória,ES,Gerente Comercial,Superior,9740.57,395.94,47.79,632,1952.51,6115.81,Frequentemente,8.88,0.0,Não,Não,Sim,Em observação
+995,33,Feminino,Solteiro,1,Anápolis,GO,Advogado,Pós-graduação,12834.29,998.12,40.05,582,6623.34,11625.37,Às vezes,4.71,6.8,Sim,Não,Não,Em observação
+996,44,Outro,Casado,1,Feira de Santana,BA,Jornalista,Superior,7730.75,0.0,12.92,1000,19503.13,20815.91,Frequentemente,25.11,17.3,Não,Sim,Sim,Saudável
+997,53,Feminino,Casado,0,Juiz de Fora,MG,Farmacêutico,Superior,3340.61,0.0,74.44,411,123.25,2827.48,Nunca,0.48,14.3,Sim,Sim,Não,Em risco
+998,18,Masculino,União Estável,0,Porto Alegre,RS,Jornalista,Superior,5879.45,1186.77,8.34,962,10893.93,7275.52,Sempre,32.0,0.0,Não,Não,Não,Saudável
+999,31,Masculino,Solteiro,1,Vila Velha,ES,Médico,Pós-graduação,19053.21,0.0,78.04,363,1863.33,15783.33,Nunca,1.09,6.7,Não,Sim,Sim,Em risco
+1000,34,Feminino,Casado,0,Teresina,PI,Veterinário,Superior,8256.73,0.0,46.63,642,4389.78,5146.63,Raramente,7.0,7.1,Não,Não,Não,Em observação

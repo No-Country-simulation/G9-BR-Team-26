@@ -1,147 +1,69 @@
-# 📊 Smart Finance - Módulo de Data Science & API FastAPI
+# Data Science — Smart Finance
 
-Este diretório contém os componentes de **Machine Learning**, notebooks de treinamento e a **API FastAPI** responsável por servir os modelos de Inteligência Artificial para o backend Spring Boot do projeto **Smart Finance**.
+Módulo responsável por treinar, avaliar e serializar os modelos de Machine Learning usados pelo backend Spring Boot do projeto **Smart Finance**.
 
----
+## Modelos
 
-## 🏗️ Arquitetura de Pastas de Data Science
+| Modelo | Objetivo | Algoritmo | Artefatos gerados |
+|---|---|---|---|
+| **Modelo 1 — Categoria** | Classificar a categoria de uma transação a partir da descrição textual (ex: "Uber" → `Transporte`) | TF-IDF + Multinomial Naive Bayes | `modelo_categoria.joblib`, `tfidf.joblib` |
+| **Modelo 2 — Perfil Financeiro** | Classificar o perfil financeiro do usuário (`Saudável` / `Em observação` / `Em risco`) a partir de dados socioeconômicos e financeiros | One-Hot Encoding + Random Forest (via `Pipeline`) | `modelo_perfil.joblib`, `feature_importance.csv` |
 
-O módulo foi estruturado para separar o fluxo de **Exploração/Treinamento**, **Serialização de Artefatos** e **Serviço de Inferência (API)**:
+## Estrutura de pastas
 
-```bash
+```
 data-science/
-├── notebooks/                # Jupyter Notebooks de EDA e treinamento (.ipynb)
-│   ├── 01_treino_classificador_categoria.ipynb
-│   └── 02_treino_perfil_financeiro.ipynb
-├── models/                   # Artefatos serializados (.joblib) e metadados
+├── data/
+│   ├── eda.ipynb              # Exploração e verificação de qualidade dos dados brutos
+│   ├── raw/                   # Datasets originais (usuarios.csv, transacoes.csv)
+│   └── processed/             # Dados tratados, features derivadas e datasets prontos para treino
+├── notebooks/
+│   ├── sandbox/                # Tratamento de variáveis e engenharia de atributos
+│   │   ├── TratamentoVariaveis.ipynb
+│   │   └── EngenhariaAtributos.ipynb
+│   └── training/                # Treinamento, avaliação e serialização dos modelos
+│       ├── TreinamentoCategoria.ipynb
+│       └── TreinamentoPerfil.ipynb
+├── models/                    # Artefatos serializados (.joblib) consumidos pela API
 │   ├── modelo_categoria.joblib
+│   ├── tfidf.joblib
 │   ├── modelo_perfil.joblib
-│   └── classes.json
-├── api/                      # Aplicação FastAPI em Python
-│   ├── main.py               # Instância do FastAPI, rotas e eventos de startup
-│   ├── schemas.py            # Modelos de entrada/saída (Pydantic)
-│   ├── predictor.py          # Carregador de artefatos .joblib e lógica de inferência
-│   └── rules.py              # Motor de regras de recomendação financeira
-├── requirements.txt          # Dependências Python (fastapi, uvicorn, scikit-learn, joblib, pydantic)
-├── FLUXO.md                  # Documentação detalhada dos fluxos de dados
-├── PLANOS.md                 # Planejamento das fases de desenvolvimento de ML
-└── README.md                 # Visão geral deste módulo
+│   └── feature_importance.csv
+├── api/                       # Serviço FastAPI que expõe os modelos ao backend Spring Boot
+│   ├── main.py
+│   ├── config            # Configurações da API
+│   ├── controller        # Controllers da API
+│   ├── dto               # DTOs da API
+│   ├── security          # Segurança da API
+│   ├── service           # Serviços da API
+│   └── scripts           # Scripts da API
+└── requirements.txt
 ```
 
----
+## Fluxo do pipeline
 
-## 🔄 Fluxo de Integração: Entrada (Spring) ➔ FastAPI ➔ Modelo IA ➔ Saída (Spring)
+1. `data/eda.ipynb` — exploração inicial e verificação de qualidade dos dados brutos.
+2. `notebooks/sandbox/TratamentoVariaveis.ipynb` — limpeza e tratamento de tipos/inconsistências.
+3. `notebooks/sandbox/EngenhariaAtributos.ipynb` — criação de atributos derivados e geração dos datasets prontos para treino (`data/processed/dataset_modelo_categoria.csv`, `data/processed/dataset_modelo_perfil.csv`).
+4. `notebooks/training/TreinamentoCategoria.ipynb` — treino, avaliação e serialização do Modelo 1.
+5. `notebooks/training/TreinamentoPerfil.ipynb` — treino, avaliação e serialização do Modelo 2.
+6. `api/scripts/predictor.py` — carrega os artefatos de `models/` e expõe as funções de predição consumidas pela API.
 
-A API FastAPI atua como uma ponte de alta performance entre as requisições enviadas pelo backend Spring Boot e a inferência dos modelos `.joblib`.
+## Métricas obtidas
 
-```mermaid
-graph TD
-    Spring[Spring Boot Backend] -->|1. HTTP POST Request| FastAPI[FastAPI REST API (api/main.py)]
-    FastAPI -->|2. Valida payload Pydantic| Schemas[Schemas (api/schemas.py)]
-    Schemas -->|3. Passa dados numéricos/texto| Predictor[Predictor (api/predictor.py)]
-    Predictor -->|4. Executa predict()| ML[Modelos ML (.joblib)]
-    Predictor -->|5. Se perfil: avalia regras| Rules[Rules Engine (api/rules.py)]
-    Predictor -->|6. Retorna predição| FastAPI
-    FastAPI -->|7. Resposta JSON estruturada| Spring
-```
+- **Modelo 1 (Categoria):** Accuracy ≈ 98,4% · F1-macro ≈ 98,4% (validação cruzada: F1-macro médio ≈ 98,1%, desvio padrão ≈ 0,001).
+- **Modelo 2 (Perfil Financeiro):** Accuracy ≈ 100% · F1-macro ≈ 100%.
 
----
+> **Observação importante sobre o Modelo 2:** as variáveis mais relevantes identificadas (`nivel_endividamento`, `score_credito`, `percentual_renda_investida`) são as mesmas utilizadas na definição original do rótulo `perfil_financeiro` no dataset sintético. Ou seja, o modelo reproduz com alta fidelidade a lógica de negócio que já originou o rótulo, e não necessariamente descobre um padrão novo e independente. Isso é esperado dado como o dataset foi construído, e fica registrado aqui como limitação/transparência do experimento — não é um bug do pipeline.
 
-## 📌 Detalhamento dos Endpoints FastAPI
-
-### 1. Endpoint: `POST /classificar`
-- **Consumido por**: Endpoint Spring `POST /transacoes/classificar`
-- **Objetivo**: Classificar a descrição de uma transação individual em uma categoria financeira.
-
-#### Fluxo Entrada ➔ FastAPI ➔ Modelo:
-1. Spring Boot envia: `{"descricao": "Ifood Burger King", "valor": 45.90}`.
-2. `api/main.py` recebe a requisição e valida via `TransacaoInput` (em `api/schemas.py`).
-3. `api/predictor.py` aplica o vetorizador **TF-IDF** na descrição e executa o modelo de classificação (`modelo_categoria.joblib`).
-4. Retorna a categoria identificada (ex: `alimentacao`) e o nível de confiança (ex: `0.95`).
-
-#### Exemplo de Payload (Request / Response):
-**Requisição (Spring -> FastAPI):**
-```json
-{
-  "descricao": "Uber Trip",
-  "valor": 28.50
-}
-```
-
-**Resposta (FastAPI -> Spring):**
-```json
-{
-  "categoria": "transporte",
-  "confianca": 0.94
-}
-```
-
----
-
-### 2. Endpoint: `POST /analise-financeira`
-- **Consumido por**: Endpoint Spring `POST /analise-financeira`
-- **Objetivo**: Avaliar o comportamento global do usuário, predizer seu perfil financeiro (`Saudavel`, `Em observacao`, `Em risco`) e fornecer recomendações.
-
-#### Fluxo Entrada ➔ FastAPI ➔ Modelo:
-1. Spring Boot busca as transações do usuário no MySQL, consolida os totais por categoria e envia os dados consolidados.
-2. `api/main.py` valida o payload via `AnaliseInput` (em `api/schemas.py`).
-3. `api/predictor.py` passa as features agregadas ao modelo de perfil (`modelo_perfil.joblib`), obtendo a classe e a probabilidade de risco.
-4. `api/rules.py` combina a classe predita com a proporção de despesas para gerar uma lista de recomendações personalizadas.
-5. Retorna o perfil, probabilidade, resumo de gastos e recomendações.
-
-#### Exemplo de Payload (Request / Response):
-**Requisição (Spring -> FastAPI):**
-```json
-{
-  "renda_mensal": 4500.0,
-  "nivel_endividamento": 25.0,
-  "frequencia_poupanca": "Media",
-  "gasto_alimentacao": 420.0,
-  "gasto_transporte": 300.0,
-  "gasto_lazer": 150.0,
-  "gasto_moradia": 1200.0,
-  "gasto_saude": 0.0,
-  "gasto_educacao": 0.0,
-  "gasto_servicos": 50.0,
-  "gasto_outros": 0.0
-}
-```
-
-**Resposta (FastAPI -> Spring):**
-```json
-{
-  "perfil_financeiro": "Em observacao",
-  "probabilidade": 0.82,
-  "resumo_gastos": {
-    "alimentacao": 420.0,
-    "transporte": 300.0,
-    "lazer": 150.0,
-    "moradia": 1200.0,
-    "saude": 0.0,
-    "educacao": 0.0,
-    "servicos": 50.0,
-    "outros": 0.0
-  },
-  "recomendacoes": [
-    "Monitorar gastos recorrentes com lazer para aumentar a margem mensal.",
-    "Criar ou expandir uma reserva de emergência equivalente a 3 meses de despesas."
-  ]
-}
-```
-
----
-
-## 🛠️ Como Executar a API Localmente
+## Como rodar localmente
 
 ```bash
-# 1. Navegue até este diretório
 cd data-science
 
-# 2. Instale as dependências
 pip install -r requirements.txt
 
-# 3. Inicie o servidor FastAPI
-uvicorn api.main:app --reload --port 8000
+.\.venv\Scripts\activate.bat
 ```
 
-A documentação interativa OpenAPI (Swagger UI) estará disponível em: `http://localhost:8000/docs`.
+Os notebooks usam caminhos relativos partindo da própria pasta onde estão (`../../data`, `../../models`), então devem ser executados a partir de dentro de `notebooks/sandbox/` ou `notebooks/training/`, respectivamente, com Jupyter/VS Code apontando o kernel para o ambiente onde as dependências foram instaladas.
