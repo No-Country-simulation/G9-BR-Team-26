@@ -31,9 +31,12 @@ data-science/
 │   └── feature_importance.csv
 ├── api/                       # Serviço FastAPI que expõe os modelos ao backend Spring Boot
 │   ├── main.py
-│   ├── schemas.py
-│   ├── predictor.py
-│   └── rules.py
+│   ├── config            # Configurações da API
+│   ├── controller        # Controllers da API
+│   ├── dto               # DTOs da API
+│   ├── security          # Segurança da API
+│   ├── service           # Serviços da API
+│   └── scripts           # Scripts da API
 └── requirements.txt
 ```
 
@@ -44,7 +47,7 @@ data-science/
 3. `notebooks/sandbox/EngenhariaAtributos.ipynb` — criação de atributos derivados e geração dos datasets prontos para treino (`data/processed/dataset_modelo_categoria.csv`, `data/processed/dataset_modelo_perfil.csv`).
 4. `notebooks/training/TreinamentoCategoria.ipynb` — treino, avaliação e serialização do Modelo 1.
 5. `notebooks/training/TreinamentoPerfil.ipynb` — treino, avaliação e serialização do Modelo 2.
-6. `api/predictor.py` — carrega os artefatos de `models/` e expõe as funções de predição consumidas pela API.
+6. `api/scripts/predictor.py` — carrega os artefatos de `models/` e expõe as funções de predição consumidas pela API.
 
 ## Métricas obtidas
 
@@ -56,7 +59,11 @@ data-science/
 ## Como rodar localmente
 
 ```bash
+cd data-science
+
 pip install -r requirements.txt
+
+.\.venv\Scripts\activate.bat
 ```
 
 Os notebooks usam caminhos relativos partindo da própria pasta onde estão (`../../data`, `../../models`), então devem ser executados a partir de dentro de `notebooks/sandbox/` ou `notebooks/training/`, respectivamente, com Jupyter/VS Code apontando o kernel para o ambiente onde as dependências foram instaladas.

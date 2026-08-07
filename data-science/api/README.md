@@ -75,7 +75,7 @@ SMART_FINANCE_API_TOKEN=G9-BR-TEAM-26
 
 Entre na pasta da API:
 
-```bash
+```
 cd data-science/api
 ```
 
