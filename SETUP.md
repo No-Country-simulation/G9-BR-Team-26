@@ -88,4 +88,70 @@ Resultado esperado: `Todos os testes passaram!` (11 de 11).
 ## Notas sobre documentação do repositório
 
 - `docs/PLANO-ENDPOINTS.md` está **desatualizado** (categorias antigas, formato de resposta diferente do implementado) — confirmado obsoleto pelo time em 03/08. Não usar como referência.
-- A fonte de verdade atual para contratos de API é o `README.md` da raiz do repositório e o `data-science/README.md`.
+- A fonte de verdade atual para contratos de API é o `README.md` da raiz do repositório e o `data-science/README.md`.                                                           
+
+## Pipeline de CI
+
+O projeto tem integração contínua configurada em `.github/workflows/ci.yml`. A cada push ou Pull Request:
+1. Compila o projeto e roda os testes JUnit
+2. Sobe um MySQL temporário e roda o `smoke-test.ps1` completo
+
+Resultado visível na aba "Actions" do repositório no GitHub.
+
+## Infraestrutura OCI (Oracle Cloud Infrastructure)
+
+### Status: Fases 1-4 concluídas (Compartment, Rede, Segurança, Object Storage)
+
+### Recursos criados
+
+| Recurso | Nome | Detalhes |
+|---|---|---|
+| Compartment | `finance-ai` | Organiza todos os recursos do projeto |
+| VCN | `finance-ai-vcn` | `10.0.0.0/16`, região `sa-saopaulo-1` |
+| Internet Gateway | `finance-ai-igw` | Acesso de/para internet |
+| NAT Gateway | `finance-ai-natgw` | Saída de internet para subnet privada |
+| Subnet pública | `finance-ai-subnet-public` | `10.0.1.0/24` — onde o Spring Boot vai rodar |
+| Subnet privada | `finance-ai-subnet-private` | `10.0.2.0/24` — onde a API FastAPI vai rodar |
+| Route Table pública | Default Route Table | Aponta para o Internet Gateway |
+| Route Table privada | `finance-ai-rt-private` | Aponta para o NAT Gateway, associada à subnet privada |
+| Bucket Object Storage | `finance-ai-modelos` | Armazena os modelos `.joblib` do Data Science |
+
+### Portas liberadas (Security Lists)
+
+Todas na Default Security List (associada às duas subnets):
+
+| Porta | Origem permitida | Uso |
+|---|---|---|
+| 8080 | `0.0.0.0/0` (qualquer lugar) | Spring Boot — API pública |
+| 22 | `0.0.0.0/0` | SSH — acesso administrativo |
+| 8000 | `10.0.1.0/24` (só subnet pública) | FastAPI — acesso interno apenas, não exposto à internet |
+
+### Configuração local — OCI CLI
+
+O OCI CLI foi instalado e configurado localmente para gerenciar recursos via linha de comando.
+
+**Credenciais:**
+- Chave privada API: `oci-keys/oci_api_key.pem` (protegida no `.gitignore`, nunca commitada)
+- Arquivo de configuração: `~/.oci/config` (fora do repositório, específico de cada máquina)
+
+**Testar se está funcionando:**
+```powershell
+oci os ns get
+```
+Deve retornar o namespace da conta em JSON, sem erros.
+
+### Problemas comuns enfrentados (já resolvidos)
+
+| Sintoma | Causa | Solução |
+|---|---|---|
+| Erro ao criar segunda subnet: "DNS Label is a duplicate" | Nomes de subnet parecidos geram o mesmo DNS Label automático | Definir o DNS Label manualmente, diferente para cada subnet (ex: `subpublic`, `subprivate`) |
+| Instalação do OCI CLI falha com erro de caminho de arquivo | Windows não tem suporte a "long paths" habilitado por padrão | Habilitar via registro (`LongPathsEnabled=1` em `HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem`), como Administrador, e **reiniciar o computador** |
+| `oci os ns get` não encontra o arquivo de config | Notepad salvou como `config.txt` em vez de `config` (extensão escondida) | Mesmo problema já visto com o `Dockerfile` — sempre confirmar com `dir` que o nome do arquivo não ganhou `.txt` sem querer |
+| `WARNING: Permissions ... are too open` | Limitação conhecida do OCI CLI no Windows (o sistema de permissões dele foi pensado para Linux/Mac) | Cosmético, não afeta funcionamento. Silenciar com `$Env:OCI_CLI_SUPPRESS_FILE_PERMISSIONS_WARNING="True"` (vale só para a sessão atual) |
+| `Move-Item`/`Rename-Item` não encontra o arquivo | Nome do arquivo baixado tinha espaço extra e extensão duplicada (`oci_api_key .pem.pem`) | Sempre conferir o nome exato com `dir` antes de tentar mover/renomear |
+
+### Próximos passos (dependem do Data Science)
+
+- Deploy da API FastAPI na subnet privada (bloqueado até o Data Science expor o serviço)
+- Deploy do Spring Boot na subnet pública
+- Integração entre os dois serviços pela rede interna da VCN
