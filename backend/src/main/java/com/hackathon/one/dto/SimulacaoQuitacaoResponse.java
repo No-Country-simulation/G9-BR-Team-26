@@ -1,0 +1,17 @@
+package com.hackathon.one.dto;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.math.BigDecimal;
+
+@Schema(name = "SimulacaoQuitacaoResponse", description = "Resultado da simulação de quitação de dívida")
+public record SimulacaoQuitacaoResponse(
+
+        @Schema(example = "5000.00") BigDecimal valorDivida,
+        @Schema(example = "500.00") BigDecimal valorMensal,
+        @Schema(example = "10", description = "Número de meses necessários para quitar a dívida")
+        Integer meses,
+        @Schema(example = "5000.00", description = "Valor total pago ao final (meses x valor mensal)")
+        BigDecimal valorTotalPago
+
+) {}

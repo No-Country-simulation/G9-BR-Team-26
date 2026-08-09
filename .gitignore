@@ -19,3 +19,11 @@ Thumbs.db
 *.log
 
 .github/*
+
+# Chaves e credenciais OCI (NUNCA versionar)
+oci-keys/
+*.pem
+install.ps1
+
+# Arquivos de build acidentalmente salvos como .txt pelo Notepad
+data-science/Dockerfile.txt
