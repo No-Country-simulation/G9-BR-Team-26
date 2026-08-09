@@ -13,6 +13,7 @@ Thumbs.db
 # Arquivos de teste temporários
 *.csv
 !src/**/*.csv
+!data-science/**/*.csv
 
 # Logs
 *.log
@@ -23,3 +24,4 @@ oci-keys/
 .oci/
 
 install.ps1
+.github/*

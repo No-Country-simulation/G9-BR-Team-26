@@ -1,97 +1,69 @@
-# 📊 Smart Finance - Ciência de Dados (ML Pipeline)
+# Data Science — Smart Finance
 
+Módulo responsável por treinar, avaliar e serializar os modelos de Machine Learning usados pelo backend Spring Boot do projeto **Smart Finance**.
 
-Este diretório contém o planejamento e a documentação para o módulo de **Ciência de Dados** do projeto Smart Finance. O objetivo deste módulo é classificar despesas a partir de descrições textuais, identificar perfis financeiros com base no comportamento de gastos e fornecer recomendações automatizadas personalizadas.
+## Modelos
 
----
+| Modelo | Objetivo | Algoritmo | Artefatos gerados |
+|---|---|---|---|
+| **Modelo 1 — Categoria** | Classificar a categoria de uma transação a partir da descrição textual (ex: "Uber" → `Transporte`) | TF-IDF + Multinomial Naive Bayes | `modelo_categoria.joblib`, `tfidf.joblib` |
+| **Modelo 2 — Perfil Financeiro** | Classificar o perfil financeiro do usuário (`Saudável` / `Em observação` / `Em risco`) a partir de dados socioeconômicos e financeiros | One-Hot Encoding + Random Forest (via `Pipeline`) | `modelo_perfil.joblib`, `feature_importance.csv` |
 
-## 🏗️ Desenho do Pipeline de Machine Learning
+## Estrutura de pastas
 
-O fluxo de dados e modelagem é planejado em 5 macro-etapas:
-
-```mermaid
-graph LR
-    Raw[Dados Sintéticos / Entrada] --> Pre[Pré-processamento & TF-IDF]
-    Pre --> ModelCat[Modelo 1: Categorias]
-    Pre --> Eng[Engenharia de Atributos]
-    Eng --> ModelProf[Modelo 2: Perfil Financeiro]
-    ModelCat --> Inference[Inferencia FastAPI]
-    ModelProf --> Inference
-    Inference --> API[JSON Response]
+```
+data-science/
+├── data/
+│   ├── eda.ipynb              # Exploração e verificação de qualidade dos dados brutos
+│   ├── raw/                   # Datasets originais (usuarios.csv, transacoes.csv)
+│   └── processed/             # Dados tratados, features derivadas e datasets prontos para treino
+├── notebooks/
+│   ├── sandbox/                # Tratamento de variáveis e engenharia de atributos
+│   │   ├── TratamentoVariaveis.ipynb
+│   │   └── EngenhariaAtributos.ipynb
+│   └── training/                # Treinamento, avaliação e serialização dos modelos
+│       ├── TreinamentoCategoria.ipynb
+│       └── TreinamentoPerfil.ipynb
+├── models/                    # Artefatos serializados (.joblib) consumidos pela API
+│   ├── modelo_categoria.joblib
+│   ├── tfidf.joblib
+│   ├── modelo_perfil.joblib
+│   └── feature_importance.csv
+├── api/                       # Serviço FastAPI que expõe os modelos ao backend Spring Boot
+│   ├── main.py
+│   ├── config            # Configurações da API
+│   ├── controller        # Controllers da API
+│   ├── dto               # DTOs da API
+│   ├── security          # Segurança da API
+│   ├── service           # Serviços da API
+│   └── scripts           # Scripts da API
+└── requirements.txt
 ```
 
-### 1. Modelagem do Dataset (Sintético)
-Será construído um dataset simulando comportamentos de usuários:
-*   **Campos de Transações**: `descricao` (ex: "Supermercado Compre Bem", "Posto Ipiranga"), `valor` (float).
-*   **Campos de Perfil do Usuário**: `renda_mensal` (float), `nivel_endividamento` (% da renda comprometida com dívidas), `frequencia_poupanca` (Baixa/Média/Alta).
-*   **Classes de Perfil Financeiro (Target 2)**:
-    *   `Saudavel`: Baixo endividamento, frequência de poupança Média/Alta, boa reserva.
-    *   `Em observacao`: Endividamento moderado, poupança Média/Baixa, alguns gastos supérfluos.
-    *   `Em risco`: Alto nível de endividamento, não poupa dinheiro, alto percentual de renda gasto em categorias não essenciais.
+## Fluxo do pipeline
 
-### 2. Engenharia de Atributos (Feature Engineering)
-Serão criadas métricas derivadas a partir das transações agregadas por usuário para alimentar o classificador de perfil:
-*   **Razão Gasto/Renda**: Somatório de despesas dividido por `renda_mensal`.
-*   **Percentuais de Gastos por Categorias**: Proporção de despesas essenciais (ex: alimentação, saúde) vs. não essenciais (ex: entretenimento, lazer).
-*   **Taxa de Endividamento Efetivo**: Cruzamento do endividamento autodeclarado com o perfil de faturamento e gasto atual.
-*   **Encoding Categórico**: Transformação da `frequencia_poupanca` em valores ordinais (Baixa: 0, Média: 1, Alta: 2).
+1. `data/eda.ipynb` — exploração inicial e verificação de qualidade dos dados brutos.
+2. `notebooks/sandbox/TratamentoVariaveis.ipynb` — limpeza e tratamento de tipos/inconsistências.
+3. `notebooks/sandbox/EngenhariaAtributos.ipynb` — criação de atributos derivados e geração dos datasets prontos para treino (`data/processed/dataset_modelo_categoria.csv`, `data/processed/dataset_modelo_perfil.csv`).
+4. `notebooks/training/TreinamentoCategoria.ipynb` — treino, avaliação e serialização do Modelo 1.
+5. `notebooks/training/TreinamentoPerfil.ipynb` — treino, avaliação e serialização do Modelo 2.
+6. `api/scripts/predictor.py` — carrega os artefatos de `models/` e expõe as funções de predição consumidas pela API.
 
-### 3. Modelagem e Algoritmos Propostos
+## Métricas obtidas
 
-#### Modelo 1: Classificador de Categoria de Despesas
-*   **Objetivo**: Classificar a `descricao` da transação (ex: "McDonalds") em categorias (Alimentação, Transporte, Saúde, Lazer, etc.).
-*   **Abordagem**: Pré-processamento de texto (remoção de acentos, letras minúsculas, stopwords) + Representação vetorial **TF-IDF** + Algoritmo **Naive Bayes (MultinomialNB)** ou **SVM (Support Vector Classifier)**.
+- **Modelo 1 (Categoria):** Accuracy ≈ 98,4% · F1-macro ≈ 98,4% (validação cruzada: F1-macro médio ≈ 98,1%, desvio padrão ≈ 0,001).
+- **Modelo 2 (Perfil Financeiro):** Accuracy ≈ 100% · F1-macro ≈ 100%.
 
-#### Modelo 2: Classificador de Perfil Financeiro
-*   **Objetivo**: Predizer a classe de risco do usuário (`Saudavel`, `Em observacao`, `Em risco`).
-*   **Abordagem**: Algoritmo **Random Forest Classifier** ou **Regressão Logística**, gerando a probabilidade associada à classe predita (enviada no campo `probabilidade` do JSON).
+> **Observação importante sobre o Modelo 2:** as variáveis mais relevantes identificadas (`nivel_endividamento`, `score_credito`, `percentual_renda_investida`) são as mesmas utilizadas na definição original do rótulo `perfil_financeiro` no dataset sintético. Ou seja, o modelo reproduz com alta fidelidade a lógica de negócio que já originou o rótulo, e não necessariamente descobre um padrão novo e independente. Isso é esperado dado como o dataset foi construído, e fica registrado aqui como limitação/transparência do experimento — não é um bug do pipeline.
 
----
+## Como rodar localmente
 
-## 🚀 Estrutura da API de Inferência (FastAPI)
+```bash
+cd data-science
 
-Os modelos serializados via `joblib` serão expostos utilizando **FastAPI** por sua performance e facilidade na criação de documentação automática com OpenAPI/Swagger.
+pip install -r requirements.txt
 
-### Contrato de Dados Planejado (Pydantic Models)
-
-```python
-from pydantic import BaseModel
-from typing import List
-
-class TransacaoInput(BaseModel):
-    descricao: str
-    valor: float
-
-class AnaliseInput(BaseModel):
-    renda_mensal: float
-    nivel_endividamento: float
-    frequencia_poupanca: str  # "Baixa", "Media", "Alta"
-    transacoes: List[TransacaoInput]
-
-class ResumoGastos(BaseModel):
-    alimentacao: float = 0.0
-    transporte: float = 0.0
-    entretenimento: float = 0.0
-    outros: float = 0.0
-
-class AnaliseOutput(BaseModel):
-    perfil_financeiro: str  # "Saudavel", "Em observacao", "Em risco"
-    probabilidade: float
-    resumo_gastos: ResumoGastos
-    recomendacoes: List[str]
+.\.venv\Scripts\activate.bat
 ```
 
-### Lógica de Recomendações (Motor de Regras Associado)
-Após a inferência dos modelos, um módulo auxiliar aplica regras de recomendação personalizadas:
-*   *Se perfil == "Em risco"* ➔ Sugerir renegociação de dívidas e cortes em entretenimento.
-*   *Se gasto com entretenimento > 20% da renda* ➔ Adicionar alerta de economia de gastos supérfluos.
-*   *Se poupança == "Baixa"* ➔ Recomendar a criação de uma reserva de emergência equivalente a 3 meses de renda.
-
----
-
-## ☁️ OCI Object Storage Integration
-
-Para garantir conformidade com os requisitos da OCI, o pipeline automatizará:
-1.  **Versionamento do Modelo**: Salvamento dos arquivos `.joblib` treinados no OCI Object Storage.
-2.  **Download do Modelo**: A API FastAPI poderá baixar o modelo mais recente do Storage durante o bootstrapping da aplicação.
-3.  **Logs de Inferência**: Envio de relatórios consolidados em formato CSV ou JSON contendo a distribuição dos perfis analisados.
+Os notebooks usam caminhos relativos partindo da própria pasta onde estão (`../../data`, `../../models`), então devem ser executados a partir de dentro de `notebooks/sandbox/` ou `notebooks/training/`, respectivamente, com Jupyter/VS Code apontando o kernel para o ambiente onde as dependências foram instaladas.
