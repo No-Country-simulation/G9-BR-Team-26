@@ -56,14 +56,45 @@ data-science/
 
 > **Observação importante sobre o Modelo 2:** as variáveis mais relevantes identificadas (`nivel_endividamento`, `score_credito`, `percentual_renda_investida`) são as mesmas utilizadas na definição original do rótulo `perfil_financeiro` no dataset sintético. Ou seja, o modelo reproduz com alta fidelidade a lógica de negócio que já originou o rótulo, e não necessariamente descobre um padrão novo e independente. Isso é esperado dado como o dataset foi construído, e fica registrado aqui como limitação/transparência do experimento — não é um bug do pipeline.
 
-## Como rodar localmente
+## Como executar a API
 
-```bash
-cd data-science
+### 🐳 Via Docker (Recomendado — Porta 7070)
 
-pip install -r requirements.txt
+A partir do diretório `data-science`:
 
-.\.venv\Scripts\activate.bat
-```
+1. **Gerar a imagem Docker:**
+   ```bash
+   docker build -t smart-finance-ds .
+   ```
+
+2. **Subir o container:**
+   ```bash
+   docker run -d -p 7070:7070 --name datascience-api smart-finance-ds
+   ```
+
+3. **Acessar a documentação Swagger:**
+   ```text
+   http://localhost:7070/docs
+   ```
+
+### 🐍 Via Python (Ambiente Local)
+
+1. **Instalar dependências:**
+   ```bash
+   cd data-science
+   pip install -r requirements.txt
+   ```
+
+2. **Executar o servidor:**
+   ```bash
+   cd api
+   uvicorn main:app --host 0.0.0.0 --port 7070 --reload
+   ```
+
+3. **Acessar a documentação Swagger:**
+   ```text
+   http://localhost:7070/docs
+   ```
 
 Os notebooks usam caminhos relativos partindo da própria pasta onde estão (`../../data`, `../../models`), então devem ser executados a partir de dentro de `notebooks/sandbox/` ou `notebooks/training/`, respectivamente, com Jupyter/VS Code apontando o kernel para o ambiente onde as dependências foram instaladas.
+

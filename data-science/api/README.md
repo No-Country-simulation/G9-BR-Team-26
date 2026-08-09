@@ -55,42 +55,36 @@ O fluxo é simples e segue esta ordem:
 
 ## Como compilar e executar a API
 
-### 1. Instalar dependências
+### 🐳 Via Docker (Recomendado — Porta 7070)
 
 A partir da pasta `data-science`:
 
 ```bash
-pip install -r requirements.txt
+# 1. Gerar a imagem Docker
+docker build -t smart-finance-ds .
+
+# 2. Executar o container na porta 7070
+docker run -d -p 7070:7070 --name datascience-api smart-finance-ds
 ```
 
-### 2. Configurar o ambiente
+### 🐍 Via Python Local
 
-Crie um arquivo `.env` dentro de `data-science/api` com a variável:
+1. Instalar dependências (a partir da pasta `data-science`):
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```env
-SMART_FINANCE_API_TOKEN=G9-BR-TEAM-26
-```
+2. Executar a API na porta 7070 (a partir da pasta `data-science/api`):
+   ```bash
+   uvicorn main:app --host 0.0.0.0 --port 7070 --reload
+   ```
 
-### 3. Executar a API
+### Documentação Swagger
 
-Entre na pasta da API:
-
-```
-cd data-science/api
-```
-
-E execute:
-
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-### 4. Acessar a documentação Swagger
-
-Após subir a aplicação, abra:
+Após subir a aplicação, acesse:
 
 ```text
-http://127.0.0.1:8000/docs
+http://localhost:7070/docs
 ```
 
 ## Observações importantes
