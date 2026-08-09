@@ -30,6 +30,12 @@ public class MetaFinanceira {
     @Column(name = "endividamento_alvo", nullable = false)
     private Integer endividamentoAlvo;
 
+    // Endividamento do usuário no momento em que a meta foi criada.
+    // Usado como base estável para calcular o progresso (não oscila
+    // se o endividamento piorar entre duas análises futuras).
+    @Column(name = "endividamento_inicial", nullable = true)
+    private Integer endividamentoInicial;
+
     @Column(name = "data_alvo", nullable = false)
     private LocalDate dataAlvo;
 

@@ -43,6 +43,11 @@ public class AnaliseFinanceira {
     @Column(nullable = false)
     private Double probabilidade;
 
+    // Score de saúde financeira (0-100), calculado por regra determinística
+    // (não é mock, ver AnaliseFinanceiraService.calcularScore).
+    @Column(nullable = true)
+    private Integer score;
+
     @Column(name = "criado_em")
     private LocalDateTime criadoEm;
 

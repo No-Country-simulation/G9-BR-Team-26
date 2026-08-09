@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDateTime;
 
 // Compara a análise financeira mais recente do usuário com a anterior,
-// mostrando a evolução do perfil e do nível de endividamento ao longo do tempo.
+// mostrando a evolução do perfil, score e nível de endividamento ao longo do tempo.
 @Schema(name = "EvolucaoFinanceiraResponse", description = "Comparação entre a análise mais recente e a anterior")
 public record EvolucaoFinanceiraResponse(
 
@@ -16,6 +16,14 @@ public record EvolucaoFinanceiraResponse(
         @JsonProperty("perfil_anterior")
         @Schema(example = "Em risco", description = "Null se não houver análise anterior")
         String perfilAnterior,
+
+        @JsonProperty("score_atual")
+        @Schema(example = "85", description = "Null se não houver análise anterior")
+        Integer scoreAtual,
+
+        @JsonProperty("score_anterior")
+        @Schema(example = "70", description = "Null se não houver análise anterior")
+        Integer scoreAnterior,
 
         @JsonProperty("data_analise_atual")
         @Schema(example = "2026-08-08T15:00:00") LocalDateTime dataAnaliseAtual,

@@ -50,6 +50,7 @@ public class AnaliseFinanceiraService {
         Double probabilidade = 0.75;
         List<String> recomendacoes = gerarRecomendacoesMock(perfilFinanceiro);
 
+        // Score não é mock — regra determinística real, agora persistida.
         Integer score = calcularScore(request);
 
         AnaliseFinanceira analise = AnaliseFinanceira.builder()
@@ -59,6 +60,7 @@ public class AnaliseFinanceiraService {
                 .frequenciaPoupanca(request.frequenciaPoupanca())
                 .perfilFinanceiro(perfilFinanceiro)
                 .probabilidade(probabilidade)
+                .score(score)
                 .build();
 
         recomendacoes.forEach(analise::adicionarRecomendacao);
@@ -135,6 +137,8 @@ public class AnaliseFinanceiraService {
             return new EvolucaoFinanceiraResponse(
                     atual.getPerfilFinanceiro(),
                     null,
+                    atual.getScore(),
+                    null,
                     atual.getCriadoEm(),
                     null,
                     null,
@@ -157,6 +161,8 @@ public class AnaliseFinanceiraService {
         return new EvolucaoFinanceiraResponse(
                 atual.getPerfilFinanceiro(),
                 anterior.getPerfilFinanceiro(),
+                atual.getScore(),
+                anterior.getScore(),
                 atual.getCriadoEm(),
                 anterior.getCriadoEm(),
                 variacao,
@@ -177,6 +183,7 @@ public class AnaliseFinanceiraService {
                 analise.getFrequenciaPoupanca(),
                 analise.getPerfilFinanceiro(),
                 analise.getProbabilidade(),
+                analise.getScore(),
                 textosRecomendacoes
         );
     }

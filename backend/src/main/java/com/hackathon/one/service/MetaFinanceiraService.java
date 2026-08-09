@@ -19,7 +19,9 @@ import java.util.List;
 /**
  * Metas financeiras: o usuário define um nível de endividamento desejado
  * e uma data limite. O progresso é calculado comparando o endividamento
- * da análise financeira mais recente com o alvo da meta.
+ * ATUAL (última análise) com o endividamento INICIAL (capturado no momento
+ * da criação da meta) e o alvo — isso mantém o progresso estável, sem
+ * oscilar caso o endividamento piore entre duas análises.
  */
 @Service
 @RequiredArgsConstructor
@@ -35,19 +37,23 @@ public class MetaFinanceiraService {
         Usuario usuario = usuarioRepository.findByEmail(emailUsuario)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario", emailUsuario));
 
+        Integer endividamentoAtual = buscarEndividamentoAtual(usuario.getId());
+
         MetaFinanceira meta = MetaFinanceira.builder()
                 .usuario(usuario)
                 .descricao(request.descricao())
                 .endividamentoAlvo(request.endividamentoAlvo())
+                .endividamentoInicial(endividamentoAtual) // capturado no momento da criação
                 .dataAlvo(request.dataAlvo())
                 .concluida(false)
                 .build();
 
         metaFinanceiraRepository.save(meta);
 
-        log.info("Meta financeira criada para usuário: {} | alvo: {}%", emailUsuario, request.endividamentoAlvo());
+        log.info("Meta financeira criada para usuário: {} | alvo: {}% | inicial: {}%",
+                emailUsuario, request.endividamentoAlvo(), endividamentoAtual);
 
-        return toResponse(meta, buscarEndividamentoAtual(usuario.getId()));
+        return toResponse(meta, endividamentoAtual);
     }
 
     @Transactional(readOnly = true)
@@ -63,29 +69,42 @@ public class MetaFinanceiraService {
                 .toList();
     }
 
-    // Busca o endividamento da análise mais recente do usuário, se houver.
     private Integer buscarEndividamentoAtual(Long usuarioId) {
         List<AnaliseFinanceira> analises = analiseFinanceiraRepository
                 .findByUsuarioIdOrderByCriadoEmDesc(usuarioId);
         return analises.isEmpty() ? null : analises.get(0).getNivelEndividamento();
     }
 
-    // Calcula o progresso percentual em direção à meta.
-    // Retorna null se o usuário ainda não fez nenhuma análise.
-    private Double calcularProgresso(Integer endividamentoAtual, Integer endividamentoAlvo) {
+    // Progresso calculado com base no endividamento INICIAL (capturado na criação
+    // da meta), não no "atual" a cada chamada — assim o percentual só aumenta
+    // conforme o usuário realmente se aproxima do alvo, sem oscilar para trás
+    // por causa de uma análise pontualmente pior.
+    private Double calcularProgresso(Integer endividamentoInicial, Integer endividamentoAtual, Integer endividamentoAlvo) {
         if (endividamentoAtual == null) {
             return null;
         }
+        // Se não havia análise no momento da criação da meta, usa o atual como base
+        // (fallback, evita divisão por dado ausente).
+        int base = endividamentoInicial != null ? endividamentoInicial : endividamentoAtual;
+
         if (endividamentoAtual <= endividamentoAlvo) {
             return 100.0;
         }
-        // Quanto mais perto do alvo, maior o progresso. Base de comparação: o próprio valor atual.
-        double progresso = 100.0 - ((double) (endividamentoAtual - endividamentoAlvo) / endividamentoAtual * 100.0);
+        if (base <= endividamentoAlvo) {
+            // Base já era igual/menor que o alvo (situação rara/inconsistente) — evita divisão por zero.
+            return 100.0;
+        }
+
+        double progresso = ((double) (base - endividamentoAtual) / (base - endividamentoAlvo)) * 100.0;
         return Math.max(0.0, Math.min(100.0, progresso));
     }
 
     private MetaFinanceiraResponse toResponse(MetaFinanceira meta, Integer endividamentoAtual) {
-        Double progresso = calcularProgresso(endividamentoAtual, meta.getEndividamentoAlvo());
+        Double progresso = calcularProgresso(
+                meta.getEndividamentoInicial(),
+                endividamentoAtual,
+                meta.getEndividamentoAlvo()
+        );
 
         return new MetaFinanceiraResponse(
                 meta.getId(),
