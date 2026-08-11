@@ -10,6 +10,8 @@ import { FinancialAnalysisPage } from '../pages/FinancialAnalysis/FinancialAnaly
 import { AIPage } from '../pages/AI/AIPage';
 import { ReportsPage } from '../pages/Reports/ReportsPage';
 import { SettingsPage } from '../pages/Settings/SettingsPage';
+import { GoalsPage } from '../pages/Goals/GoalsPage';
+import { DebtSimulationPage } from '../pages/DebtSimulation/DebtSimulationPage';
 import { NotFoundPage } from '../pages/NotFound/NotFoundPage';
 import { Loader2 } from 'lucide-react';
 
@@ -49,6 +51,8 @@ export const AppRouter: React.FC = () => {
         >
           <Route path={ROUTES.DASHBOARD} element={<DashboardPage />} />
           <Route path={ROUTES.TRANSACTIONS} element={<TransactionsPage />} />
+          <Route path={ROUTES.GOALS} element={<GoalsPage />} />
+          <Route path={ROUTES.DEBT_SIMULATION} element={<DebtSimulationPage />} />
           <Route path={ROUTES.ANALYSIS} element={<FinancialAnalysisPage />} />
           <Route path={ROUTES.AI} element={<AIPage />} />
           <Route path={ROUTES.REPORTS} element={<ReportsPage />} />

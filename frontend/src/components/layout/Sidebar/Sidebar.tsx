@@ -10,6 +10,8 @@ import {
   User,
   LogOut,
   Bot,
+  Target,
+  Calculator,
   X,
   Menu
 } from 'lucide-react';
@@ -44,7 +46,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   };
 
   const isDashboardActive = location.pathname === ROUTES.DASHBOARD;
-  const isTransactionsActive = location.pathname === ROUTES.TRANSACTIONS && !location.search.includes('tab=import') && !location.search.includes('new=true');
+  const isTransactionsActive = location.pathname === ROUTES.TRANSACTIONS;
   const isNewTxActive = location.pathname === ROUTES.TRANSACTIONS && location.search.includes('new=true');
   const isImportCSVActive = location.pathname === ROUTES.TRANSACTIONS && location.search.includes('tab=import');
   const isAIActive = location.pathname === ROUTES.AI;
@@ -55,29 +57,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const navItems = [
     { label: 'Dashboard', icon: LayoutDashboard, path: ROUTES.DASHBOARD, isActive: isDashboardActive },
     { label: 'Transações', icon: Receipt, path: ROUTES.TRANSACTIONS, isActive: isTransactionsActive },
-    {
-      label: 'Nova Transação',
-      icon: PlusCircle,
-      path: `${ROUTES.TRANSACTIONS}?new=true`,
-      isActive: isNewTxActive,
-      action: () => {
-        if (onOpenNewTx) onOpenNewTx();
-        else navigate(`${ROUTES.TRANSACTIONS}?new=true`);
-      }
-    },
-    {
-      label: 'Importar CSV',
-      icon: FileSpreadsheet,
-      path: `${ROUTES.TRANSACTIONS}?tab=import`,
-      isActive: isImportCSVActive,
-      action: () => {
-        if (onOpenImportCSV) onOpenImportCSV();
-        else navigate(`${ROUTES.TRANSACTIONS}?tab=import`);
-      }
-    },
-    { label: 'Chatbot IA', icon: Bot, path: ROUTES.AI, isActive: isAIActive },
     { label: 'Análise Financeira', icon: LineChart, path: ROUTES.ANALYSIS, isActive: isAnalysisActive },
     { label: 'Histórico', icon: History, path: ROUTES.REPORTS, isActive: isHistoryActive },
+    { label: 'Chatbot IA', icon: Bot, path: ROUTES.AI, isActive: isAIActive },
+    { label: 'Metas financeiras', icon: Target, path: ROUTES.GOALS, isActive: location.pathname === ROUTES.GOALS },
+    { label: 'Simular quitação', icon: Calculator, path: ROUTES.DEBT_SIMULATION, isActive: location.pathname === ROUTES.DEBT_SIMULATION },
     { label: 'Perfil', icon: User, path: ROUTES.SETTINGS, isActive: isProfileActive },
   ];
 
@@ -164,7 +148,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             {/* Sidebar Links */}
             <nav className={cn('space-y-1.5 mt-3 transition-all duration-300', collapsed ? 'px-2' : 'px-3.5')}>
-              {navItems.map((item, idx) => {
+              {navItems.filter((item) => item.label !== 'Nova TransaÃ§Ã£o' && item.label !== 'Importar CSV').map((item, idx) => {
                 const Icon = item.icon;
                 const active = item.isActive;
 
