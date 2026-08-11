@@ -3,6 +3,7 @@ package com.hackathon.one.controller;
 import com.hackathon.one.dto.AnaliseFinanceiraHistoricoResponse;
 import com.hackathon.one.dto.AnaliseFinanceiraRequest;
 import com.hackathon.one.dto.AnaliseFinanceiraResponse;
+import com.hackathon.one.dto.EvolucaoFinanceiraResponse;
 import com.hackathon.one.service.AnaliseFinanceiraService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -19,7 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/analise-financeira")
 @RequiredArgsConstructor
-@Tag(name = "Análise Financeira", description = "Geração de perfil financeiro, recomendações e histórico de análises")
+@Tag(name = "Análise Financeira", description = "Geração de perfil financeiro, recomendações, histórico e evolução")
 public class AnaliseFinanceiraController {
 
     private final AnaliseFinanceiraService analiseFinanceiraService;
@@ -30,7 +31,7 @@ public class AnaliseFinanceiraController {
 
     @Operation(
             summary = "Gerar análise financeira",
-            description = "Recebe renda, endividamento e frequência de poupança, e devolve perfil financeiro, resumo de gastos e recomendações",
+            description = "Recebe renda, endividamento e frequência de poupança, e devolve perfil financeiro, score, resumo de gastos e recomendações",
             security = @SecurityRequirement(name = "bearerAuth")
     )
     @PostMapping
@@ -47,7 +48,6 @@ public class AnaliseFinanceiraController {
     //  GET /analise-financeira/historico
     // ─────────────────────────────────────────────────
 
-    // Lista todas as análises já feitas pelo usuário autenticado, da mais recente para a mais antiga.
     @Operation(
             summary = "Histórico de análises",
             description = "Retorna todas as análises financeiras já realizadas pelo usuário autenticado",
@@ -63,10 +63,31 @@ public class AnaliseFinanceiraController {
     }
 
     // ─────────────────────────────────────────────────
+    //  GET /analise-financeira/evolucao
+    // ─────────────────────────────────────────────────
+
+    // Compara a análise mais recente com a anterior, mostrando a evolução
+    // do perfil financeiro e do nível de endividamento do usuário ao longo do tempo.
+    // IMPORTANTE: essa rota precisa vir ANTES de "/{id}", senão o Spring
+    // tentaria interpretar "evolucao" como se fosse um ID.
+    @Operation(
+            summary = "Evolução financeira",
+            description = "Compara a análise financeira mais recente com a anterior, indicando tendência de melhora, piora ou estabilidade",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
+    @GetMapping("/evolucao")
+    public ResponseEntity<EvolucaoFinanceiraResponse> evolucao(
+            @AuthenticationPrincipal UserDetails userDetails
+    ) {
+        String emailUsuario = userDetails.getUsername();
+        EvolucaoFinanceiraResponse response = analiseFinanceiraService.calcularEvolucao(emailUsuario);
+        return ResponseEntity.ok(response);
+    }
+
+    // ─────────────────────────────────────────────────
     //  GET /analise-financeira/{id}
     // ─────────────────────────────────────────────────
 
-    // Retorna o detalhe de uma análise específica do usuário autenticado.
     @Operation(
             summary = "Detalhe de uma análise",
             description = "Retorna os dados completos de uma análise financeira específica",

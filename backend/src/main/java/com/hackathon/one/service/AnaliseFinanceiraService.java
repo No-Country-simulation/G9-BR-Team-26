@@ -6,6 +6,7 @@ import com.hackathon.one.domain.Usuario;
 import com.hackathon.one.dto.AnaliseFinanceiraHistoricoResponse;
 import com.hackathon.one.dto.AnaliseFinanceiraRequest;
 import com.hackathon.one.dto.AnaliseFinanceiraResponse;
+import com.hackathon.one.dto.EvolucaoFinanceiraResponse;
 import com.hackathon.one.exception.ResourceNotFoundException;
 import com.hackathon.one.repository.AnaliseFinanceiraRepository;
 import com.hackathon.one.repository.TransacaoRepository;
@@ -20,13 +21,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * Regras de negócio para análise financeira.
- * ATENÇÃO: o cálculo de perfil/probabilidade/recomendações está MOCKADO
- * enquanto o modelo real do time de Data Science não é integrado (ver card
- * "Integração real com API Python" no board — bloqueado até o Bloco 5 de DS).
- * O resumo de gastos, por outro lado, já é calculado com dados reais do banco.
- */
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -52,11 +46,12 @@ public class AnaliseFinanceiraService {
                         Collectors.reducing(BigDecimal.ZERO, Transacao::getValor, BigDecimal::add)
                 ));
 
-        // ── MOCK a partir daqui ──────────────────────────────────────
         String perfilFinanceiro = calcularPerfilMock(request);
         Double probabilidade = 0.75;
         List<String> recomendacoes = gerarRecomendacoesMock(perfilFinanceiro);
-        // ── fim do MOCK ──────────────────────────────────────────────
+
+        // Score não é mock — regra determinística real, agora persistida.
+        Integer score = calcularScore(request);
 
         AnaliseFinanceira analise = AnaliseFinanceira.builder()
                 .usuario(usuario)
@@ -65,25 +60,37 @@ public class AnaliseFinanceiraService {
                 .frequenciaPoupanca(request.frequenciaPoupanca())
                 .perfilFinanceiro(perfilFinanceiro)
                 .probabilidade(probabilidade)
+                .score(score)
                 .build();
 
         recomendacoes.forEach(analise::adicionarRecomendacao);
 
         analiseFinanceiraRepository.save(analise);
 
-        log.info("Análise financeira concluída para usuário: {} | perfil: {}", emailUsuario, perfilFinanceiro);
+        log.info("Análise financeira concluída para usuário: {} | perfil: {} | score: {}",
+                emailUsuario, perfilFinanceiro, score);
 
         return new AnaliseFinanceiraResponse(
                 perfilFinanceiro,
                 probabilidade,
+                score,
                 resumoGastos,
                 recomendacoes
         );
     }
 
-    // ─────────────────────────────────────────────────
-    //  Histórico
-    // ─────────────────────────────────────────────────
+    private Integer calcularScore(AnaliseFinanceiraRequest request) {
+        int score = 100 - request.nivelEndividamento();
+
+        String poupanca = request.frequenciaPoupanca();
+        if ("Alta".equalsIgnoreCase(poupanca)) {
+            score += 10;
+        } else if ("Baixa".equalsIgnoreCase(poupanca)) {
+            score -= 10;
+        }
+
+        return Math.max(0, Math.min(100, score));
+    }
 
     @Transactional(readOnly = true)
     public List<AnaliseFinanceiraHistoricoResponse> listarHistorico(String emailUsuario) {
@@ -105,8 +112,6 @@ public class AnaliseFinanceiraService {
         AnaliseFinanceira analise = analiseFinanceiraRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("AnaliseFinanceira", id));
 
-        // Garante que o usuário só acessa as próprias análises
-        // (mesmo padrão de segurança usado em TransacaoService).
         if (!analise.getUsuario().getId().equals(usuario.getId())) {
             throw new ResourceNotFoundException("AnaliseFinanceira", id);
         }
@@ -114,9 +119,56 @@ public class AnaliseFinanceiraService {
         return toHistoricoResponse(analise);
     }
 
-    // ─────────────────────────────────────────────────
-    //  Mapeamento
-    // ─────────────────────────────────────────────────
+    @Transactional(readOnly = true)
+    public EvolucaoFinanceiraResponse calcularEvolucao(String emailUsuario) {
+        Usuario usuario = usuarioRepository.findByEmail(emailUsuario)
+                .orElseThrow(() -> new ResourceNotFoundException("Usuario", emailUsuario));
+
+        List<AnaliseFinanceira> analises = analiseFinanceiraRepository
+                .findByUsuarioIdOrderByCriadoEmDesc(usuario.getId());
+
+        if (analises.isEmpty()) {
+            throw new ResourceNotFoundException("AnaliseFinanceira", emailUsuario);
+        }
+
+        AnaliseFinanceira atual = analises.get(0);
+
+        if (analises.size() < 2) {
+            return new EvolucaoFinanceiraResponse(
+                    atual.getPerfilFinanceiro(),
+                    null,
+                    atual.getScore(),
+                    null,
+                    atual.getCriadoEm(),
+                    null,
+                    null,
+                    "indisponivel"
+            );
+        }
+
+        AnaliseFinanceira anterior = analises.get(1);
+        int variacao = atual.getNivelEndividamento() - anterior.getNivelEndividamento();
+
+        String tendencia;
+        if (variacao < 0) {
+            tendencia = "melhora";
+        } else if (variacao > 0) {
+            tendencia = "piora";
+        } else {
+            tendencia = "estavel";
+        }
+
+        return new EvolucaoFinanceiraResponse(
+                atual.getPerfilFinanceiro(),
+                anterior.getPerfilFinanceiro(),
+                atual.getScore(),
+                anterior.getScore(),
+                atual.getCriadoEm(),
+                anterior.getCriadoEm(),
+                variacao,
+                tendencia
+        );
+    }
 
     private AnaliseFinanceiraHistoricoResponse toHistoricoResponse(AnaliseFinanceira analise) {
         List<String> textosRecomendacoes = analise.getRecomendacoes().stream()
@@ -131,12 +183,10 @@ public class AnaliseFinanceiraService {
                 analise.getFrequenciaPoupanca(),
                 analise.getPerfilFinanceiro(),
                 analise.getProbabilidade(),
+                analise.getScore(),
                 textosRecomendacoes
         );
     }
-
-    // ── Métodos privados de mock — serão REMOVIDOS quando a integração
-    //    real com a API Python (Data Science) estiver pronta ──────────
 
     private String calcularPerfilMock(AnaliseFinanceiraRequest request) {
         if (request.nivelEndividamento() > 50) {

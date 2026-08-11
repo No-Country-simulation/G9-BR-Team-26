@@ -18,6 +18,9 @@ public record AnaliseFinanceiraResponse(
         @Schema(example = "0.82", description = "Probabilidade/confiança da classificação")
         Double probabilidade,
 
+        @Schema(example = "75", description = "Score de saúde financeira, de 0 a 100")
+        Integer score,
+
         @JsonProperty("resumo_gastos")
         @Schema(description = "Soma de gastos por categoria")
         Map<String, java.math.BigDecimal> resumoGastos,

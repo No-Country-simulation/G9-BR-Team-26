@@ -32,6 +32,9 @@ public record AnaliseFinanceiraHistoricoResponse(
 
         @Schema(example = "0.75") Double probabilidade,
 
+        @Schema(example = "85", description = "Score de saúde financeira, de 0 a 100")
+        Integer score,
+
         @Schema(description = "Recomendações geradas nessa análise")
         List<String> recomendacoes
 
