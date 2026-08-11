@@ -17,11 +17,19 @@ spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
-
 jwt:
   secret: Y2hhdmVfc2VjcmV0YV9tdWl0b19ncmFuZGVfcGFyYV9vX2hhY2thdGhvbl9zZWd1cmFuY2E=
   expiration: 86400000 # 24 horas
 
+# Configuração do microserviço Python (Data Science / FastAPI).
+# URL e token via variável de ambiente — nunca hardcoded.
+# Valores padrão abaixo servem só para desenvolvimento local.
+datascience:
+  api:
+    url: ${DATASCIENCE_API_URL:http://localhost:8000}
+    token: ${DATASCIENCE_API_TOKEN:token-nao-configurado}
+    connect-timeout-ms: 5000
+    read-timeout-ms: 10000
 ---
 spring:
   config:
