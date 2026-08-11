@@ -155,3 +155,8 @@ Deve retornar o namespace da conta em JSON, sem erros.
 - Deploy da API FastAPI na subnet privada (bloqueado até o Data Science expor o serviço)
 - Deploy do Spring Boot na subnet pública
 - Integração entre os dois serviços pela rede interna da VCN
+
+## Variáveis de ambiente locais (.env)
+
+Para a integração com a API Python (Data Science) funcionar, é necessário criar um arquivo `backend/.env` (não commitado, cada pessoa cria o seu).
+Esse arquivo é lido automaticamente pelo `docker-compose.yml` (`env_file: .env`) e injetado como variável de ambiente no container do backend. Sem ele, a aplicação ainda sobe normalmente (usa um valor padrão de desenvolvimento), mas a chamada real para a API Python vai falhar por autenticação inválida quando a integração for ativada.
