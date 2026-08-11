@@ -18,9 +18,10 @@ spring:
     enabled: true
     baseline-on-migrate: true
 jwt:
-  secret: Y2hhdmVfc2VjcmV0YV9tdWl0b19ncmFuZGVfcGFyYV9vX2hhY2thdGhvbl9zZWd1cmFuY2E=
-  expiration: 86400000 # 24 horas
-
+  # Valor padrão SÓ para desenvolvimento local. Em produção, configurar
+  # a variável de ambiente JWT_SECRET com um valor forte e único.
+  secret: ${JWT_SECRET:Y2hhdmVfc2VjcmV0YV9tdWl0b19ncmFuZGVfcGFyYV9vX2hhY2thdGhvbl9zZWd1cmFuY2E=}
+  expiration: ${JWT_EXPIRATION:86400000} # 24 horas
 # Configuração do microserviço Python (Data Science / FastAPI).
 # URL e token via variável de ambiente — nunca hardcoded.
 # Valores padrão abaixo servem só para desenvolvimento local.
