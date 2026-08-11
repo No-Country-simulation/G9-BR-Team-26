@@ -18,12 +18,14 @@ Thumbs.db
 # Logs
 *.log
 
-.github/*
-
 # Chaves e credenciais OCI (NUNCA versionar)
 oci-keys/
 *.pem
+.oci/
 install.ps1
+
+# Pipeline de CI
+.github/*
 
 # Arquivos de build acidentalmente salvos como .txt pelo Notepad
 data-science/Dockerfile.txt

@@ -1,0 +1,94 @@
+# Pipeline de CI — roda automaticamente a cada push ou Pull Request.
+# Compila o projeto, roda os testes JUnit, e depois faz um teste completo
+# de ponta a ponta usando o smoke-test.ps1 já existente.
+name: CI - Finance AI Backend
+
+on:
+  push:
+    branches: [ main, "feature/**" ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  # ─────────────────────────────────────────────────
+  #  Job 1 — Build e testes unitários (rápido)
+  # ─────────────────────────────────────────────────
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Compilar o projeto
+        working-directory: ./backend
+        run: mvn -B compile
+
+      - name: Rodar testes JUnit
+        working-directory: ./backend
+        run: mvn -B test
+
+  # ─────────────────────────────────────────────────
+  #  Job 2 — Smoke test completo (com banco real)
+  # ─────────────────────────────────────────────────
+  smoke-test:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: finance_db
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Subir a aplicação em segundo plano
+        working-directory: ./backend
+        run: |
+          nohup mvn -B spring-boot:run > app.log 2>&1 &
+          echo "Aplicação iniciando..."
+
+      - name: Esperar a aplicação ficar pronta
+        run: |
+          for i in $(seq 1 30); do
+            if curl -s http://localhost:8080/auth/login -o /dev/null; then
+              echo "Aplicação está respondendo."
+              exit 0
+            fi
+            echo "Aguardando aplicação subir... ($i/30)"
+            sleep 5
+          done
+          echo "Aplicação não respondeu a tempo."
+          cat backend/app.log
+          exit 1
+
+      - name: Instalar PowerShell (para rodar o smoke-test.ps1)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y powershell
+
+      - name: Rodar smoke test
+        working-directory: ./scripts
+        run: pwsh -File ./smoke-test.ps1
