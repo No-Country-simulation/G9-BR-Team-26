@@ -114,7 +114,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {!collapsed && (
                   <div className="transition-opacity duration-200 whitespace-nowrap">
                     <span className="font-extrabold text-lg text-white tracking-tight block leading-tight">
-                      SmartFinance
+                      FinanceAI
                     </span>
                     <span className="text-[11px] font-medium text-blue-200/80 dark:text-slate-400 block">
                       Oracle X NoCountry

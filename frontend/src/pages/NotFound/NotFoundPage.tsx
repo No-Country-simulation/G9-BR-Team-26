@@ -9,9 +9,9 @@ export const NotFoundPage: React.FC = () => {
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center text-center p-6 space-y-4">
-      <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-blue-600 dark:text-blue-400">
+      {/* <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-blue-600 dark:text-blue-400">
         <Sparkles className="w-8 h-8" />
-      </div>
+      </div> */}
 
       <h1 className="text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">404</h1>
       <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200">Página Não Encontrada</h2>

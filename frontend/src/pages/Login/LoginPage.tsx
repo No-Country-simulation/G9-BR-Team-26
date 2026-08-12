@@ -57,10 +57,12 @@ export const LoginPage: React.FC = () => {
       <div className="w-full max-w-md z-10">
         {/* Brand Logo Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 shadow-xl shadow-blue-500/25 ring-1 ring-white/20 mb-4">
+          {/* <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 shadow-xl shadow-blue-500/25 ring-1 ring-white/20 mb-4">
             <Sparkles className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight text-white">SmartFinance</h1>
+          </div> */}
+          <br></br>
+            
+          <h1 className="text-2xl font-bold tracking-tight text-white">FinanceAI</h1>
           <p className="text-xs font-semibold uppercase tracking-wider text-blue-400 mt-1">
             Plataforma SaaS de Gestão Financeira com IA
           </p>
@@ -114,13 +116,13 @@ export const LoginPage: React.FC = () => {
                 Lembrar deste dispositivo
               </label>
 
-              <button
+              {/* <button
                 type="button"
                 onClick={() => setForgotModalOpen(true)}
                 className="text-blue-400 hover:text-blue-300 font-medium transition-colors"
               >
                 Esqueci minha senha
-              </button>
+              </button> */}
             </div>
 
             <Button
@@ -138,7 +140,7 @@ export const LoginPage: React.FC = () => {
           {/* Quick Demo Pre-fill notice */}
           <div className="mt-6 pt-4 border-t border-slate-700/60 text-center">
             <p className="text-[11px] text-slate-400">
-              💡 <span className="font-semibold text-slate-300">Modo de Demonstração:</span> Dados pré-preenchidos ativados para teste imediato.
+               <span className="font-semibold text-slate-300">FinanceAI:</span> Seu modo inteligente de administrar finanças.
             </p>
           </div>
         </div>

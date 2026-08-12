@@ -19,7 +19,7 @@ export const FinancialAnalysisPage: React.FC = () => {
   const errorMessage = isError ? handleApiError(error).message : createError ? handleApiError(createError).message : '';
 
   return <div className="space-y-6 max-w-5xl mx-auto">
-    <div><h1 className="text-2xl font-bold text-slate-900 dark:text-white">Análise Financeira</h1><p className="text-sm text-slate-500 mt-1">Gere um diagnóstico usando os dados suportados pela API.</p></div>
+    <div><h1 className="text-2xl font-bold text-slate-900 dark:text-white">Análise Financeira</h1><p className="text-sm text-slate-500 mt-1">Gere um diagnóstico financeiro com base na análise inteligente do FinanceAI.</p></div>
     {errorMessage && <div className="rounded-xl border border-rose-300 bg-rose-50 p-4 text-sm text-rose-700">{errorMessage} {handleApiError(error || createError).retryable && <button onClick={() => refetch()} className="underline font-semibold ml-2">Tentar novamente</button>}</div>}
     <Card><CardHeader><CardTitle>Nova análise</CardTitle></CardHeader><CardContent>
       <form onSubmit={submit} className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
