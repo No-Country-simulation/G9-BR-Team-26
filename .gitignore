@@ -29,3 +29,7 @@ install.ps1
 
 # Arquivos de build acidentalmente salvos como .txt pelo Notepad
 data-science/Dockerfile.txt
+
+# Variáveis de ambiente locais (segredos reais, NUNCA versionar)
+.env
+backend/.env
