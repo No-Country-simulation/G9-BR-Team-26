@@ -1,0 +1,6 @@
+{
+  "name": "SmartFinance SaaS",
+  "description": "Plataforma empresarial de gestão financeira pessoal e empresarial com Inteligência Artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
