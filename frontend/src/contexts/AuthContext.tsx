@@ -1,95 +1,58 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, LoginCredentials } from '../types/auth';
 import { authRepository } from '../services/repositories/auth.repository';
-import { TOKEN_KEY } from '../services/api/axios';
+import { clearSession, hasValidStoredSession, invalidateSession, TOKEN_EXPIRY_KEY, TOKEN_KEY, UNAUTHORIZED_EVENT } from '../services/api/session';
 
-interface AuthContextType {
-  user: User | null;
-  token: string | null;
-  isAuthenticated: boolean;
-  isLoading: boolean;
-  login: (credentials: LoginCredentials) => Promise<void>;
-  logout: () => Promise<void>;
-}
-
+interface AuthContextType { user: User | null; token: string | null; isAuthenticated: boolean; isLoading: boolean; login: (credentials: LoginCredentials) => Promise<void>; logout: () => Promise<void>; }
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(localStorage.getItem(TOKEN_KEY));
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [token, setToken] = useState<string | null>(() => hasValidStoredSession() ? localStorage.getItem(TOKEN_KEY) : null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const initAuth = async () => {
-      if (token) {
-        try {
-          const currentUser = await authRepository.getCurrentUser();
-          setUser(currentUser);
-        } catch {
-          localStorage.removeItem(TOKEN_KEY);
-          setToken(null);
-          setUser(null);
-        }
+      if (!token || !hasValidStoredSession()) {
+        clearSession();
+        setToken(null); setUser(null); setIsLoading(false); return;
       }
-      setIsLoading(false);
+      try { setUser(await authRepository.getCurrentUser()); }
+      catch { clearSession(); setToken(null); setUser(null); }
+      finally { setIsLoading(false); }
     };
-    initAuth();
+    void initAuth();
   }, [token]);
 
   useEffect(() => {
-    const clearSession = () => {
-      localStorage.removeItem(TOKEN_KEY);
-      setToken(null);
-      setUser(null);
-    };
-    window.addEventListener('smartfinance:unauthorized', clearSession);
-    return () => window.removeEventListener('smartfinance:unauthorized', clearSession);
+    if (!token) return;
+    const delay = Number(localStorage.getItem(TOKEN_EXPIRY_KEY)) - Date.now();
+    if (delay <= 0) { invalidateSession(); return; }
+    const timer = window.setTimeout(invalidateSession, delay);
+    return () => window.clearTimeout(timer);
+  }, [token]);
+
+  useEffect(() => {
+    const onUnauthorized = () => { clearSession(); setToken(null); setUser(null); setIsLoading(false); };
+    window.addEventListener(UNAUTHORIZED_EVENT, onUnauthorized);
+    return () => window.removeEventListener(UNAUTHORIZED_EVENT, onUnauthorized);
   }, []);
 
   const login = async (credentials: LoginCredentials) => {
     setIsLoading(true);
     try {
       const response = await authRepository.login(credentials);
-      setToken(response.token);
-      setUser(response.user);
       localStorage.setItem(TOKEN_KEY, response.token);
-    } finally {
-      setIsLoading(false);
-    }
+      localStorage.setItem(TOKEN_EXPIRY_KEY, String(Date.now() + response.expiresIn * 1000));
+      setToken(response.token); setUser(response.user);
+    } finally { setIsLoading(false); }
   };
-
   const logout = async () => {
     setIsLoading(true);
-    try {
-      await authRepository.logout();
-    } finally {
-      localStorage.removeItem(TOKEN_KEY);
-      setToken(null);
-      setUser(null);
-      setIsLoading(false);
-    }
+    try { await authRepository.logout(); }
+    finally { clearSession(); setToken(null); setUser(null); setIsLoading(false); }
   };
 
-  return (
-    <AuthContext.Provider
-      value={{
-        user,
-        token,
-        isAuthenticated: !!user,
-        isLoading,
-        login,
-        logout,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ user, token, isAuthenticated: !!user && hasValidStoredSession(), isLoading, login, logout }}>{children}</AuthContext.Provider>;
 };
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth deve ser usado dentro de um AuthProvider');
-  }
-  return context;
-};
+export const useAuth = () => { const context = useContext(AuthContext); if (!context) throw new Error('useAuth deve ser usado dentro de um AuthProvider'); return context; };

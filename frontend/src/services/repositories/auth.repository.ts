@@ -1,4 +1,5 @@
-import { api, TOKEN_KEY } from '../api/axios';
+import { api } from '../api/axios';
+import { TOKEN_EXPIRY_KEY, TOKEN_KEY } from '../api/session';
 import { LoginCredentials, AuthResponse, User } from '../../types/auth';
 
 interface BackendAuthResponse {
@@ -38,9 +39,9 @@ export const authRepository = {
     const token = data.accessToken || '';
     if (!token) throw new Error('A resposta de login não incluiu um token de acesso.');
     localStorage.setItem(TOKEN_KEY, token);
-
+    localStorage.setItem(TOKEN_EXPIRY_KEY, String(Date.now() + (data.expiresIn || 3600) * 1000));
     // Buscar perfil do usuário autenticado após o login
-    const user = await authRepository.getCurrentUserWithToken(token);
+    const user = await authRepository.getCurrentUserWithToken();
 
     return {
       token,
@@ -61,7 +62,7 @@ export const authRepository = {
     };
   },
 
-  getCurrentUserWithToken: async (token: string): Promise<User> => {
+  getCurrentUserWithToken: async (): Promise<User> => {
     // O token já está no storage e será anexado pelo interceptor central.
     const response = await api.get<BackendUserResponse>('/usuarios/me');
 
@@ -76,7 +77,6 @@ export const authRepository = {
   },
 
   logout: async (): Promise<{ success: boolean }> => {
-    localStorage.removeItem(TOKEN_KEY);
     return { success: true };
   }
 };

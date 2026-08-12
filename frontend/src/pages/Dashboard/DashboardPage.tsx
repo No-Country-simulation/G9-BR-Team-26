@@ -5,12 +5,12 @@ import { CategoryBarChart } from '../../components/charts/BarChart/CategoryBarCh
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/common/Card/Card';
 import { formatCurrency } from '../../utils/currency';
 import { formatRelativeDate } from '../../utils/date';
-import { handleApiError } from '../../services/api/axios';
+import { ApiErrorState } from '../../components/common/ApiErrorState/ApiErrorState';
 
 export const DashboardPage: React.FC = () => {
   const { summary, isLoading, isError, error, refetch } = useDashboard();
   if (isLoading) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-blue-600" /></div>;
-  if (isError) return <div className="rounded-xl bg-rose-50 border border-rose-300 p-4 text-rose-700">{handleApiError(error).message}<button onClick={() => refetch()} className="ml-2 underline">Tentar novamente</button></div>;
+  if (isError) return <ApiErrorState onRetry={refetch} />;
   if (!summary) return null;
   const categoryData = summary.expenseCategories.map(item => ({ category: item.category, spent: item.amount, color: item.color }));
   const topCategory = summary.expenseCategories.sort((a, b) => b.amount - a.amount)[0];

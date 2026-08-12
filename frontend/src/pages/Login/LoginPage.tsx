@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Sparkles, Mail, Lock, ArrowRight, ShieldCheck, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { ROUTES } from '../../constants/routes';
@@ -10,6 +10,7 @@ import { Modal } from '../../components/common/Modal/Modal';
 export const LoginPage: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,7 +29,8 @@ export const LoginPage: React.FC = () => {
 
     try {
       await login({ email, password, rememberMe });
-      navigate(ROUTES.DASHBOARD);
+      const redirect = searchParams.get('redirect');
+      navigate(redirect?.startsWith('/') ? redirect : ROUTES.DASHBOARD, { replace: true });
     } catch (err: any) {
       setError(err?.message || 'Falha na autenticação. Verifique suas credenciais.');
     } finally {
