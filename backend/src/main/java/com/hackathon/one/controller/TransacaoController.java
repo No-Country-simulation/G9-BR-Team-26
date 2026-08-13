@@ -1,9 +1,14 @@
 package com.hackathon.one.controller;
 
+import com.hackathon.one.dto.ErrorResponse;
 import com.hackathon.one.dto.TransacaoRequest;
 import com.hackathon.one.dto.TransacaoResponse;
 import com.hackathon.one.service.TransacaoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -13,7 +18,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -24,14 +28,15 @@ public class TransacaoController {
 
     private final TransacaoService transacaoService;
 
-    // ─────────────────────────────────────────
-    //  POST /transacoes
-    // ─────────────────────────────────────────
-
-    // Cria uma nova transação para o usuário autenticado.
-    // @param request corpo com descricao e valor
-    
     @Operation(summary = "Criar transação", description = "Registra uma nova transação para o usuário autenticado", security = @SecurityRequirement(name = "bearerAuth"))
+    @ApiResponses({
+            @ApiResponse(responseCode = "201", description = "Transação criada com sucesso",
+                    content = @Content(schema = @Schema(implementation = TransacaoResponse.class))),
+            @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+            @ApiResponse(responseCode = "401", description = "Token de autenticação ausente ou inválido",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+    })
     @PostMapping
     public ResponseEntity<TransacaoResponse> criar(
             @Valid @RequestBody TransacaoRequest request,
@@ -42,13 +47,12 @@ public class TransacaoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    // ─────────────────────────────────────────
-    //  GET /transacoes
-    // ─────────────────────────────────────────
-
-    // Lista todas as transações do usuário autenticado, da mais recente para a mais antiga.
-    // @param userDetails usuário autenticado extraído automaticamente do JWT pelo Spring Security
     @Operation(summary = "Listar transações", description = "Retorna todas as transações cadastradas pelo usuário autenticado", security = @SecurityRequirement(name = "bearerAuth"))
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso (pode ser vazia)"),
+            @ApiResponse(responseCode = "401", description = "Token de autenticação ausente ou inválido",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+    })
     @GetMapping
     public ResponseEntity<List<TransacaoResponse>> listarMinhas(
             @AuthenticationPrincipal UserDetails userDetails
@@ -59,6 +63,15 @@ public class TransacaoController {
     }
 
     @Operation(summary = "Atualizar transação", description = "Atualiza os dados de uma transação do usuário autenticado", security = @SecurityRequirement(name = "bearerAuth"))
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Transação atualizada com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+            @ApiResponse(responseCode = "401", description = "Token de autenticação ausente ou inválido",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+            @ApiResponse(responseCode = "404", description = "Transação não encontrada, ou pertence a outro usuário",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+    })
     @PutMapping("/{id}")
     public ResponseEntity<TransacaoResponse> atualizar(
             @PathVariable Long id,
@@ -71,6 +84,13 @@ public class TransacaoController {
     }
 
     @Operation(summary = "Excluir transação", description = "Remove uma transação do usuário autenticado", security = @SecurityRequirement(name = "bearerAuth"))
+    @ApiResponses({
+            @ApiResponse(responseCode = "204", description = "Transação removida com sucesso"),
+            @ApiResponse(responseCode = "401", description = "Token de autenticação ausente ou inválido",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+            @ApiResponse(responseCode = "404", description = "Transação não encontrada, ou pertence a outro usuário",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+    })
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(
             @PathVariable Long id,
