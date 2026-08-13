@@ -1,194 +1,144 @@
-# 📊 Smart Finance - Análise de Comportamento Financeiro
+# FinanceAI
 
-Bem-vindo ao repositório do projeto **Smart Finance**, uma solução de análise e saúde financeira desenvolvida para o hackathon. O objetivo principal é compreender o comportamento financeiro do usuário, classificar automaticamente despesas por meio de Inteligência Artificial, determinar seu perfil de risco/saúde financeira e gerar recomendações personalizadas.
+Plataforma web para controle de transações, análise financeira e recomendações personalizadas. O projeto reúne um frontend React, uma API Spring Boot, um serviço de ciência de dados em FastAPI, MySQL e um assistente de IA generativa (Fai) integrado via Gemini.
 
----
+![Java](https://img.shields.io/badge/Java_17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
 
-## 🧭 Visão geral do fluxo de arquitetura
+## Sumário
 
-A arquitetura do projeto foi reformulada para utilizar uma **API REST dedicada em FastAPI (Python)** responsável por servir os modelos de Inteligência Artificial. O **Spring Boot (Java)** atua como o backend central de negócio, orquestrando as chamadas HTTP para o microserviço FastAPI.
+- [Arquitetura](#arquitetura)
+- [Tecnologias](#tecnologias)
+- [Funcionalidades](#funcionalidades)
+- [Equipe de Backend](#equipe-de-backend)
+- [Equipe de Data Science](#equipe-de-data-science)
+- [Endpoints principais do backend](#endpoints-principais-do-backend)
+- [Documentação complementar](#documentação-complementar)
 
-```text
-┌──────────────────┐       HTTP       ┌─────────────────────┐       HTTP       ┌────────────────────────┐
-│ Cliente / Front  │ ────────────────> │  Backend Spring     │ ────────────────> │  API IA FastAPI        │
-│                  │ <──────────────── │  Boot + MySQL       │ <──────────────── │  (Serviço Python/ML)   │
-└──────────────────┘                   └─────────────────────┘                  └────────────────────────┘
-                                                                                            │
-                                                                                            ▼
-                                                                                  ┌──────────────────┐
-                                                                                  │ Modelos ML       │
-                                                                                  │ (.joblib)        │
-                                                                                  └──────────────────┘
-```
-
----
-
-## 🏗️ Arquitetura do Sistema
+## Arquitetura
 
 ```mermaid
-graph TD
-    Client[Cliente / Frontend] -->|HTTP / REST| Spring[Spring Boot API]
-    Spring -->|JPA / Hibernate| DB[(MySQL Database)]
-    Spring -->|HTTP REST / JSON| FastAPI[FastAPI AI Service]
-    FastAPI -->|Carrega em Memória| ML[Modelos ML .joblib]
-
-    subgraph "Módulo Data Science"
-        DS[Treinamento & Pipeline] -->|Serializa| ML
-    end
+flowchart LR
+  FE["Frontend\nReact + TypeScript"] -->|"HTTP / JWT"| BE["Backend\nSpring Boot"]
+  BE --> DB[("MySQL")]
+  BE -->|"HTTP / JSON"| DS["Data Science\nFastAPI + modelos ML"]
+  BE -->|"Gemini API"| FAI["Chat Fai"]
 ```
 
-### Componentes principais
+| Componente | Diretório | Responsabilidade |
+|---|---|---|
+| Frontend | `frontend/` | Interface web e consumo da API. |
+| Backend | `backend/` | Autenticação JWT, regras de negócio, persistência, integrações com IA e Fai. |
+| Data Science | `data-science/` | Modelos de classificação/análise e API FastAPI. |
+| Infraestrutura | `docker/` e `backend/docker-compose.yml` | Documentação e execução containerizada do backend com MySQL. |
 
-1. **Backend Core (Spring Boot - Java 17)**
-   - Gerencia autenticação JWT, usuários, persistência de transações e histórico de análises no MySQL.
-   - Consome a API FastAPI para solicitar classificações de gastos e análises de perfil financeiro.
+> A comunicação com a API Gemini acontece **exclusivamente pelo backend**: o frontend nunca tem acesso à chave nem chama a IA generativa diretamente, o que evita exposição de credenciais no cliente.
 
-2. **Microserviço de IA (FastAPI - Python 3.10+)**
-   - Expõe endpoints REST de alta performance para inferência em tempo real.
-   - Carrega os modelos de Machine Learning serializados (`.joblib`).
+## Tecnologias
 
-3. **Módulo de Data Science (Python)**
-   - Treinamento dos modelos de IA, feature engineering e geração dos artefatos `.joblib`.
-   - Modelo 1: Classificador de categorias de despesas (TF-IDF + Classificador).
-   - Modelo 2: Classificador de perfil financeiro e motor de recomendações.
+- **Frontend:** ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat-square) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square) ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white&style=flat-square)
+- **Backend:** ![Java](https://img.shields.io/badge/-Java_17-ED8B00?logo=openjdk&logoColor=white&style=flat-square) ![Spring Boot](https://img.shields.io/badge/-Spring_Boot-6DB33F?logo=springboot&logoColor=white&style=flat-square) ![Spring Security](https://img.shields.io/badge/-Spring_Security-6DB33F?logo=springsecurity&logoColor=white&style=flat-square) (JWT)
+- **Data Science:** ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square) Pandas, Scikit-Learn
+- **Banco de dados:** ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square)
+- **IA generativa:** ![Google Gemini](https://img.shields.io/badge/-Google_Gemini-8E75B2?logo=googlegemini&logoColor=white&style=flat-square)
+- **Infraestrutura:** ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square)
 
----
+## Funcionalidades
 
-## 📌 Tabela de Endpoints da Aplicação
+- Cadastro e login com JWT.
+- CRUD e importação em lote de transações.
+- Classificação de transações e análise financeira via serviço de ciência de dados.
+- Metas financeiras, relatórios e simulação de quitação.
+- Chat Fai, assistente de finanças pessoais integrado à API Gemini, restrito ao escopo financeiro do usuário autenticado.
 
-### 🌐 Endpoints do Backend Core (Spring Boot)
+## Equipe de Backend
 
-| Método | Endpoint | Protegido | Descrição |
-| :--- | :--- | :---: | :--- |
-| `POST` | `/auth/signup` | ❌ | Cadastra um novo usuário no sistema. |
-| `POST` | `/auth/login` | ❌ | Autentica o usuário e retorna o token JWT. |
-| `POST` | `/transacoes` | 🔐 | Cria uma nova transação para o usuário autenticado. |
-| `GET` | `/transacoes` | 🔐 | Lista as transações do usuário autenticado. |
-| `PUT` | `/transacoes/{id}` | 🔐 | Atualiza uma transação existente. |
-| `DELETE` | `/transacoes/{id}` | 🔐 | Remove uma transação do usuário. |
-| `POST` | `/transacoes/classificar` | 🔐 | Envia transação para o FastAPI e devolve a categoria classificada por IA. |
-| `POST` | `/analise-financeira` | 🔐 | Agrega histórico/dados do usuário, consulta FastAPI e gera perfil + recomendações. |
-| `GET` | `/analise-financeira/historico` | 🔐 | Lista todas as análises efetuadas pelo usuário. |
-| `GET` | `/analise-financeira/{id}` | 🔐 | Exibe os detalhes de uma análise específica do usuário. |
+A equipe de Backend é responsável pela API REST do projeto, que centraliza o gerenciamento de dados de usuários e transações, orquestra a lógica de análise financeira e faz a comunicação com o serviço de Ciência de Dados e com a API do Gemini (Chat Fai).
 
----
+A aplicação foi construída em **Java 17** com **Spring Boot 3.3.1**, utilizando:
 
-### 🤖 Endpoints do Microserviço de IA (FastAPI)
+- **Spring Web** — criação dos endpoints RESTful.
+- **Spring Data JPA** — abstração de banco de dados e persistência ORM.
+- **MySQL Connector/J** — driver de conexão com o MySQL.
+- **Spring Boot Starter Validation** — validação sintática de payloads via Bean Validation.
+- **Lombok** — geração automática de getters, setters, construtores e builders.
+- **Springdoc OpenAPI** — documentação Swagger UI gerada automaticamente.
+- **ModelMapper** — conversão entre entidades JPA e DTOs.
 
-| Método | Endpoint | Consumido Por | Descrição |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/classificar` | Backend Spring | Recebe a descrição/valor da transação e retorna a categoria predita e a confiança da IA. |
-| `POST` | `/analise-financeira` | Backend Spring | Recebe a renda, endividamento, poupança e resumo de gastos para retornar perfil e recomendações. |
-| `GET` | `/health` | Infra/Spring | Endpoint de verificação de integridade do microserviço FastAPI. |
+A organização do código segue o padrão em camadas do ecossistema Spring:
 
----
-
-## 🤖 Lógica da Documentação de Data Science & Treinamento
-
-O modelo de Inteligência Artificial é treinado especificamente para responder aos dois contratos de inferência utilizados pelo backend Spring Boot:
-
-### 1. Classificação de Categorias (`/classificar`)
-- **Alvo do Modelo**: Classificar uma string descritiva (ex: *"Uber Trip"*, *"Supermercado XYZ"*) nas categorias padrão: `alimentacao`, `transporte`, `moradia`, `saude`, `educacao`, `lazer`, `servicos`, `outros`.
-- **Técnica**: Vetorização de texto (**TF-IDF**) + Algoritmo Classificador (**Logistic Regression** / **MultinomialNB** / **SVM**).
-
-### 2. Análise de Perfil Financeiro e Recomendações (`/analise-financeira`)
-- **Alvo do Modelo**: Classificar o comportamento financeiro do usuário entre as categorias de perfil:
-  - `Saudavel`: Baixo endividamento, boa taxa de poupança e distribuição equilibrada de gastos.
-  - `Em observacao`: Comprometimento moderado da renda ou concentração elevada em gastos supérfluos.
-  - `Em risco`: Alto endividamento, baixa/nenhuma poupança e despesas essenciais/supérfluas comprometendo o orçamento.
-- **Técnica**: Algoritmo de classificação tabular (**Random Forest** / **Gradient Boosting**) sobre os dados declarativos agregados com métricas de despesas por categoria.
-
----
-
-## 🔄 Fluxo Completo de Integração de Dados
-
-### 🌟 Fluxo 1: Classificação de Transação (`/transacoes/classificar`)
-
-```text
-Entrada (Spring Request)           FastAPI /classificar              Modelo IA (.joblib)                Saída (Spring Response)
-┌───────────────────────┐         ┌────────────────────┐            ┌──────────────────┐               ┌────────────────────────┐
-│ {                     │  HTTP   │ {                  │  predict() │ {                │  JSON Response│ {                      │
-│   "descricao":        │ ──────> │   "descricao":     │ ─────────> │   "categoria":   │ ────────────> │   "categoria":         │
-│     "Ifood Burger",   │  POST   │     "Ifood Burger",│            │     "alimentacao"│               │     "alimentacao"      │
-│   "valor": 45.90      │         │   "valor": 45.90   │            │ }                │               │ }                      │
-│ }                     │         │ }                  │            └──────────────────┘               └────────────────────────┘
-└───────────────────────┘         └────────────────────┘
+```
+com.hackathon.one/
+├── FinanceApplication.java    # Classe principal de inicialização
+├── controller/                # Exposição de endpoints REST (REST Controllers)
+├── service/                   # Camada de lógica de negócio e regras do sistema
+├── repository/                # Interfaces de comunicação com o MySQL (JPA Repositories)
+├── model/                     # Entidades persistentes (Usuario, Transacao, etc.)
+├── dto/                       # Objetos de Transferência de Dados (Requests/Responses)
+├── exception/                 # Tratamento global de erros (@ControllerAdvice)
+└── config/                    # Configurações do Spring (Swagger, ModelMapper, etc.)
 ```
 
----
+As configurações de ambiente são organizadas por perfis (`application-dev.yml` para desenvolvimento local e `application-docker.yml` para execução em container), separando os parâmetros de conexão com o MySQL, JPA/Hibernate e demais integrações por contexto de execução.
 
-### 🌟 Fluxo 2: Análise Financeira Completa (`/analise-financeira`)
+## Equipe de Data Science
 
-```text
-Entrada (Spring Request)               Spring Boot Backend                   FastAPI /analise-financeira            Modelo IA + FastAPI Response           Saída Final (Spring)
-┌────────────────────────────┐         ┌──────────────────────────────┐     ┌────────────────────────────────┐     ┌────────────────────────────────┐     ┌────────────────────────────┐
-│ {                          │  HTTP   │ 1. Busca transações do       │ HTTP│ {                              │     │ {                              │     │ {                          │
-│   "rendaMensal": 4500.0,   │ ──────> │    usuário no MySQL.        │POST │   "renda_mensal": 4500.0,      │────>│   "perfil_financeiro":         │────>│   "perfil_financeiro":     │
-│   "nivelEndividamento": 25,│  POST   │ 2. Agrega despesas por       │────>│   "nivel_endividamento": 25.0, │     │     "Em observacao",           │     │     "Em observacao",       │
-│   "frequenciaPoupanca":    │         │    categoria.                │     │   "frequencia_poupanca":       │     │   "probabilidade": 0.82,       │     │   "probabilidade": 0.82,   │
-│     "Media"                │         │ 3. Monta payload para        │     │     "Media",                   │     │   "resumo_gastos": { ... },    │     │   "resumo_gastos": { ... },│
-│ }                          │         │    o FastAPI.                │     │   "gasto_alimentacao": 420.0,  │     │   "recomendacoes": [           │     │   "recomendacoes": [       │
-└────────────────────────────┘         └──────────────────────────────┘     │   "gasto_transporte": 300.0,   │     │     "Monitorar gastos..."      │     │     "Monitorar gastos..."  │
-                                                                            │   "gasto_lazer": 40.0          │     │   ]                            │     │   ]                        │
-                                                                            │ }                              │     │ }                              │     │ }                          │
-                                                                            └────────────────────────────────┘     └────────────────────────────────┘     └────────────────────────────┘
-```
+A equipe de Data Science é responsável por treinar, avaliar e serializar os modelos de Machine Learning consumidos pelo backend, além de expô-los através de um serviço próprio em FastAPI.
 
----
+### Modelos desenvolvidos
 
-## 📁 Estrutura do repositório
+| Modelo | Objetivo | Algoritmo | Artefatos gerados |
+|---|---|---|---|
+| Modelo 1 — Categoria | Classificar a categoria de uma transação a partir da descrição textual (ex: "Uber" → Transporte) | TF-IDF + Multinomial Naive Bayes | `modelo_categoria.joblib`, `tfidf.joblib` |
+| Modelo 2 — Perfil Financeiro | Classificar o perfil financeiro do usuário (Saudável / Em observação / Em risco) a partir de dados socioeconômicos e financeiros | One-Hot Encoding + Random Forest (via Pipeline) | `modelo_perfil.joblib`, `feature_importance.csv` |
 
-```bash
-G9-HACKATHON-TEST/
-├── backend/            # API Spring Boot (Java 17, Spring Security, JPA, MySQL)
-├── data-science/       # Pipeline de ML, treinamento de modelos e API FastAPI
-├── docker/             # Scripts e arquivos de infraestrutura (Docker Compose, MySQL)
-├── docs/               # Planejamento, especificações e metas do hackathon
-└── README.md           # Visão geral do repositório
-```
+### Pipeline de trabalho
 
----
+1. `data/eda.ipynb` — exploração inicial e verificação de qualidade dos dados brutos.
+2. `notebooks/sandbox/TratamentoVariaveis.ipynb` — limpeza e tratamento de tipos/inconsistências.
+3. `notebooks/sandbox/EngenhariaAtributos.ipynb` — criação de atributos derivados e geração dos datasets prontos para treino.
+4. `notebooks/training/TreinamentoCategoria.ipynb` — treino, avaliação e serialização do Modelo 1.
+5. `notebooks/training/TreinamentoPerfil.ipynb` — treino, avaliação e serialização do Modelo 2.
+6. `api/scripts/predictor.py` — carrega os artefatos de `models/` e expõe as funções de predição consumidas pela API FastAPI.
 
-## 🚀 Como Executar
+### Resultados obtidos
 
-### 1. Subir o Banco de Dados (MySQL)
+- **Modelo 1 (Categoria):** Accuracy ≈ 98,4% · F1-macro ≈ 98,4% (validação cruzada: F1-macro médio ≈ 98,1%, desvio padrão ≈ 0,001).
+- **Modelo 2 (Perfil Financeiro):** Accuracy ≈ 100% · F1-macro ≈ 100%.
 
-```bash
-cd backend
-docker compose up -d
-```
+> **Nota de transparência sobre o Modelo 2:** as variáveis mais relevantes identificadas (`nivel_endividamento`, `score_credito`, `percentual_renda_investida`) são as mesmas utilizadas na definição original do rótulo `perfil_financeiro` no dataset sintético. Ou seja, o modelo reproduz com alta fidelidade a lógica de negócio que já originou o rótulo, e não necessariamente descobre um padrão novo e independente — comportamento esperado dado como o dataset foi construído, e registrado aqui como limitação do experimento, não como falha do pipeline.
 
-### 2. Executar a API FastAPI de Inteligência Artificial
+## Endpoints principais do backend
 
-```bash
-cd data-science
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
+| Método | Endpoint | Descrição |
+|---|---|---|
+| `POST` | `/auth/signup` | Cria uma conta. |
+| `POST` | `/auth/login` | Autentica e retorna JWT. |
+| `GET/POST/PUT/DELETE` | `/transacoes` | Gerencia transações. |
+| `POST` | `/transacoes/lote` | Importa transações em lote. |
+| `POST` | `/transacoes/classificar` | Classifica uma transação pelo serviço de IA. |
+| `POST` | `/analise-financeira` | Gera análise financeira. |
+| `GET` | `/analise-financeira/historico` | Consulta o histórico de análises. |
+| `GET` | `/analise-financeira/evolucao` | Consulta a evolução financeira. |
+| `POST` | `/fai/chat` | Conversa com a Fai. |
+| `GET/POST` | `/metas` | Consulta e cria metas financeiras. |
+| `POST` | `/simulacao/quitacao` | Simula quitação de dívida. |
+| `GET` | `/usuarios/me` | Consulta o perfil autenticado. |
 
-### 3. Executar o Backend Spring Boot
+Rotas, payloads e respostas detalhados estão documentados via Swagger/OpenAPI, gerado automaticamente pelo Springdoc a partir dos controllers do backend.
 
-```bash
-cd backend
-mvn clean spring-boot:run
-```
+## Documentação complementar
 
----
-
-## ☁️ Integração com OCI (Oracle Cloud Infrastructure)
-
-- Versionamento e armazenamento dos artefatos `.joblib` em buckets no OCI Object Storage.
-- Download automático das versões mais recentes dos modelos na inicialização do serviço FastAPI.
-- Persistência e exportação de relatórios para inteligência de dados na nuvem.
-
----
-
-## 📚 Documentação Complementar
-
-- [docs/METAS.md](docs/METAS.md)
-- [docs/PLANO-ENDPOINTS.md](docs/PLANO-ENDPOINTS.md)
-- [backend/README.md](backend/README.md)
-- [data-science/README.md](data-science/README.md)
-- [data-science/FLUXO.md](data-science/FLUXO.md)
-- [data-science/PLANOS.md](data-science/PLANOS.md)
-
+- [SETUP.md](SETUP.md): preparação do ambiente backend.
+- [backend/README.md](backend/README.md): documentação específica da API Java.
+- [frontend/README.md](frontend/README.md): documentação do cliente web.
+- [data-science/README.md](data-science/README.md): serviço e modelos de ciência de dados.
+- [docker/README.md](docker/README.md): imagens e Compose.

@@ -33,3 +33,4 @@ data-science/Dockerfile.txt
 # Variáveis de ambiente locais (segredos reais, NUNCA versionar)
 .env
 backend/.env
+backend/.env

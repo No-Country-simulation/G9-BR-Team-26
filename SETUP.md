@@ -160,3 +160,27 @@ Deve retornar o namespace da conta em JSON, sem erros.
 
 Para a integração com a API Python (Data Science) funcionar, é necessário criar um arquivo `backend/.env` (não commitado, cada pessoa cria o seu).
 Esse arquivo é lido automaticamente pelo `docker-compose.yml` (`env_file: .env`) e injetado como variável de ambiente no container do backend. Sem ele, a aplicação ainda sobe normalmente (usa um valor padrão de desenvolvimento), mas a chamada real para a API Python vai falhar por autenticação inválida quando a integração for ativada.
+## Deploy na OCI (Oracle Cloud) — Backend
+
+O backend está rodando em produção numa Compute Instance na OCI.
+
+### Infraestrutura
+- **Instância:** `finance-ai-spring-instance-v2` (shape `VM.Standard.A2.Flex`, Ampere/ARM, Always Free)
+- **IP público:** `163.176.209.203`
+- **Porta:** `8080`
+- **Swagger:** `http://163.176.209.203:8080/swagger-ui/index.html`
+
+### Como foi feito o deploy
+1. Docker instalado na instância via `dnf` (repositório oficial do Docker, não o pacote `docker-engine` do Oracle Linux, que não existe)
+2. Repositório clonado direto na instância via `git clone`
+3. **Importante — arquitetura ARM:** o `Dockerfile` precisou ser ajustado, trocando `eclipse-temurin:17-jre-alpine` por `eclipse-temurin:17-jre` (a variante alpine não tem build para ARM)
+4. Arquivo `.env` criado manualmente na instância (nunca commitado) com `DATASCIENCE_API_TOKEN`
+5. `docker compose up -d --build` sobe MySQL + Spring Boot juntos
+
+### Para atualizar o deploy (nova versão do código)
+```bash
+ssh -i oci-keys/finance-ai-ssh-key.key opc@163.176.209.203
+cd G9-BR-Team-26/backend
+git pull origin main
+docker compose up -d --build
+```
