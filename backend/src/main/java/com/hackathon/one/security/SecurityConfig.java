@@ -1,5 +1,7 @@
 package com.hackathon.one.security;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hackathon.one.dto.ErrorResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,6 +41,12 @@ public class SecurityConfig {
                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .anyRequest().authenticated()
             )
+            .exceptionHandling(exceptions -> exceptions.authenticationEntryPoint((request, response, exception) -> {
+                response.setStatus(401);
+                response.setContentType("application/json;charset=UTF-8");
+                ErrorResponse error = ErrorResponse.of(401, "Unauthorized", "Token JWT ausente, inválido ou expirado.", request.getRequestURI());
+                new ObjectMapper().findAndRegisterModules().writeValue(response.getWriter(), error);
+            }))
             .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authenticationProvider(authenticationProvider())
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

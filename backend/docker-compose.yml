@@ -25,6 +25,8 @@ services:
         condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: docker
+    env_file:
+      - .env
     ports:
       - "8080:8080"
 

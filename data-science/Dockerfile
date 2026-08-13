@@ -27,7 +27,7 @@ COPY . .
 WORKDIR /app/api
 
 # Documenta a porta na qual a API de Data Science irá rodar
-EXPOSE 7070
+EXPOSE 8000
 
 # Inicializa o servidor Uvicorn escutando em todas as interfaces de rede na porta 7070
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7070"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
