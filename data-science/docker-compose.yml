@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  data-science-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: data_science_api
+    ports:
+      # Mapeia a porta 8000 da sua máquina para a porta 8000 interna do container
+      - "8000:8000"
+    volumes:
+      # Mapeia o projeto local para /app para permitir live-reload durante o desenvolvimento
+      - .:/app
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app/api
+    restart: unless-stopped
+    # Sobrescreve o CMD para incluir --reload em ambiente de desenvolvimento
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
