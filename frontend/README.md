@@ -1,137 +1,97 @@
-# SmartFinance - Sistema de Gestão e Análise Financeira
+# FinanceAI — Frontend
 
-**SmartFinance** é uma plataforma web moderna de gestão e análise preditiva financeira desenvolvida com **React**, **TypeScript** e **Tailwind CSS**, com apoio da **Oracle** e **NoCountry**.
+Cliente web do FinanceAI, construído com React, TypeScript, Vite e Tailwind CSS. Ele consome a API Spring Boot; não acessa diretamente MySQL, FastAPI ou Gemini.
 
-O sistema oferece controle de movimentações financeiras, simulação preditiva de risco e recomendação inteligente para saúde financeira do usuário.
+## Tecnologias
 
----
+- React 19 e TypeScript
+- Vite 6
+- Tailwind CSS 4
+- React Router
+- TanStack Query
+- Axios
+- Lucide React e Recharts
 
-## 🛠️ Tecnologia e Arquitetura Frontend
+## Funcionalidades
 
-A aplicação foi construída seguindo os mais elevados padrões de desenvolvimento frontend, focando em performance, acessibilidade e modularidade.
+- Autenticação e persistência de sessão JWT.
+- Dashboard, transações, importação CSV e metas financeiras.
+- Análise financeira, relatórios e simulação de quitação.
+- Perfil, preferências de tema e rotas protegidas.
+- Chat Fai (`/ia`), que apresenta um estado de indisponibilidade e bloqueia novos envios caso o endpoint falhe.
 
-### Tech Stack:
-- **Core Framework:** React 18 (Vite)
-- **Linguagem:** TypeScript (Tipagem estática completa)
-- **Estilização:** Tailwind CSS (Arquitetura responsiva e suporte nativo a Tema Claro/Escuro)
-- **Ícones:** Lucide React
-- **Roteamento:** React Router DOM (v6) com controle avançado de Query Params
-- **Visualização de Dados:** Lucide, Recharts / D3.js para gráficos dinâmicos
+## Pré-requisitos
 
----
+- Node.js 20+ (LTS recomendado)
+- npm
+- Backend em execução, por padrão em `http://localhost:8080`
 
-## 🎨 Design System e Interface
+## Configuração
 
-1. **Tema de Fundo Limpo (Full White Light / Deep Dark):**
-   - No modo claro, a interface utiliza um fundo limpo e brilhante (`bg-white`), destacando cards e dados com contraste WCAG AA.
-   - Suporte nativo a **Modo Escuro (Dark Mode)** sincronizado via `ThemeContext`.
+Copie o arquivo de exemplo:
 
-2. **Navegação Inteligente (Sidebar & Header):**
-   - Destaque ativo de rota ajustado com `useLocation` e parâmetros de busca (`?tab=import`, `?new=true`), garantindo que o item selecionado na Navbar corresponda exatamente à aba em exibição.
-   - Header com busca global de transações e menu de atalhos rápidos.
+```bash
+cp .env.example .env
+```
 
-3. **Inclusão e Sem Foto de Estoque:**
-   - Ícone de perfil limpo e vetorial em SVG (`<User />`), sem dependência de imagens externas ou ilustrações não profissionais.
+No Windows PowerShell, caso o `cp` não esteja disponível:
 
-4. **Footer Institucional:**
-   - Rodapé oficial do projeto: **SmartFinance • Com apoio Oracle X NoCountry** com indicação de certificado SSL 256-bit.
+```powershell
+Copy-Item .env.example .env
+```
 
----
+Variáveis suportadas:
 
-## 📁 Estrutura de Pastas
+```env
+VITE_API_BASE_URL=http://localhost:8080
+```
+
+`VITE_API_BASE_URL` é opcional: sem ela, a aplicação usa `http://localhost:8080`.
+
+> Não defina `GEMINI_API_KEY` neste diretório. A chave pertence ao backend, em `backend/.env`, pois só o servidor chama a API Gemini.
+
+## Executar localmente
+
+```bash
+npm install
+npm run dev
+```
+
+Abra `http://localhost:3000`.
+
+## Scripts
+
+| Comando | Descrição |
+|---|---|
+| `npm run dev` | Inicia o servidor Vite na porta 3000. |
+| `npm run lint` | Executa a verificação de tipos com TypeScript. |
+| `npm run build` | Gera o build de produção e o bundle do servidor. |
+| `npm start` | Inicia o servidor gerado em `dist/`. |
+
+## Estrutura principal
 
 ```text
 src/
-├── components/
-│   ├── common/           # Componentes reutilizáveis (Button, Card, Modal, Input, Badge, Table)
-│   └── layout/           # Componentes de estrutura (DashboardLayout, Header, Sidebar, Footer)
-├── constants/            # Constantes de rotas, categorias e metadados
-├── contexts/             # Provedores de contexto (ThemeContext, AuthContext)
-├── hooks/                # Custom React Hooks para lógica de negócio e persistência
-├── pages/
-│   ├── Dashboard/        # Visão geral de KPIs e distribuição de receitas/despesas
-│   ├── Transactions/     # Tabela de transações e módulo de importação CSV
-│   ├── FinancialAnalysis/# Modelo preditivo e análise de crédito com IA
-│   ├── Reports/          # Histórico de análises e exportação de dados
-│   └── Settings/         # Perfil do usuário e preferências do sistema
-├── types/                # Definições de interfaces TypeScript (Transaction, Analysis, User)
-└── utils/                # Utilitários de formatação de moeda (R$) e datas
+├── components/     # Componentes comuns e de layout
+├── constants/      # Rotas, categorias e constantes
+├── contexts/       # AuthContext e ThemeContext
+├── hooks/          # Consultas e mutações da API
+├── pages/          # Telas da aplicação, incluindo AI/AIPage.tsx
+├── services/       # Cliente Axios, sessão e repositórios
+├── types/          # Tipos TypeScript
+└── utils/          # Formatação e funções utilitárias
 ```
 
----
+## Integração com a API e tratamento de erros
 
-## 🚀 Funcionalidades Principais
+O cliente Axios centralizado fica em `src/services/api/axios.ts`. Ele:
 
-### 1. Dashboard (`/dashboard`)
-- Indicadores chave de desempenho (Saldo Total, Entradas, Saídas, Investimentos).
-- Gráficos visuais de categorias e fluxo mensal.
-- Atalho para registro de novas movimentações.
+- adiciona o token JWT às rotas protegidas;
+- normaliza erros de rede e respostas da API;
+- invalida a sessão em respostas `401` ou `403`.
 
-### 2. Transações (`/transactions`)
-- **Gestão de Transações:** Listagem completa com filtros por pesquisa, categoria e tipo.
-- **Operações CRUD:** Criação, edição e exclusão de transações em tempo real.
-- **Importação CSV (`/transactions?tab=import`):** Upload de arquivos `.csv` com prévia de formato e validação de colunas (`descricao`, `valor`).
+O tratamento é isolado por tela. Em particular, quando `/fai/chat` retorna timeout, erro de rede, `5xx` ou erro de configuração do Gemini, a tela da Fai exibe “Funcionalidade indisponível no momento. Tente novamente mais tarde.” e desabilita o formulário de mensagens. As demais telas continuam operando normalmente.
 
-### 3. Análise Financeira (`/analysis`)
-- Simulação preditiva de capacidade de pagamento e margem de segurança.
-- Classificação do perfil financeiro (*Conservador*, *Moderado*, *Arrojado*).
-- Recomendações acionáveis para otimização de orçamento e reserva de emergência.
+## Produção
 
-### 4. Histórico de Análises (`/reports`)
-- Registro cronológico de simulações anteriores com barras de progresso de probabilidade.
-- Modal de detalhamento completo por registro.
-- **Exportação de Relatórios:** Download de relatórios nos formatos **Excel (.xlsx)** e **CSV**.
-
-### 5. Perfil e Configurações (`/settings`)
-- Edição de informações pessoais (Nome, E-mail, Cargo).
-- Visualização de detalhes da conta e ID exclusivo.
-- Alternância instantânea de tema (Modo Claro vs. Modo Escuro).
-
----
-
-## 💻 Como Executar o Projeto Localmente
-
-1. **Clonar e acessar o repositório:**
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
-   cd <NOME_DA_PASTA>
-   ```
-
-2. **Instalar as dependências:**
-   ```bash
-   npm install
-   ```
-
-3. **Configurar as variáveis de ambiente:**
-   Crie um arquivo `.env` na raiz do projeto (ou copie o `.env.example`):
-   ```bash
-   cp .env.example .env
-   ```
-   Adicione sua chave da API do Gemini no arquivo `.env`:
-   ```env
-   GEMINI_API_KEY=sua_chave_gemini_aqui
-   ```
-
-4. **Executar o ambiente de desenvolvimento:**
-   ```bash
-   npm run dev
-   ```
-   Acesse a aplicação no seu navegador em: `http://localhost:3000`
-
-5. **Outros comandos disponíveis:**
-   ```bash
-   # Verificar erros de código e tipos TypeScript
-   npm run lint
-
-   # Gerar o build de produção (Full-Stack Express + Vite)
-   npm run build
-
-   # Executar a versão de produção compilada
-   npm start
-   ```
-
----
-
-## 🏢 Créditos e Apoio
-
-Desenvolvido por **SmartFinance** em parceria e apoio com **Oracle** X **NoCountry**.
+Defina `VITE_API_BASE_URL` durante o build para apontar ao endereço público do backend. Como variáveis `VITE_*` são embutidas no bundle, nunca use esse prefixo para segredos.

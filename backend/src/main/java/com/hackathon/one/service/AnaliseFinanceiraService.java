@@ -7,6 +7,7 @@ import com.hackathon.one.dto.AnaliseFinanceiraHistoricoResponse;
 import com.hackathon.one.dto.AnaliseFinanceiraRequest;
 import com.hackathon.one.dto.AnaliseFinanceiraResponse;
 import com.hackathon.one.dto.EvolucaoFinanceiraResponse;
+import com.hackathon.one.dto.externo.DataScienceAnaliseResponse;
 import com.hackathon.one.exception.ResourceNotFoundException;
 import com.hackathon.one.repository.AnaliseFinanceiraRepository;
 import com.hackathon.one.repository.TransacaoRepository;
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestClientException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -29,6 +31,7 @@ public class AnaliseFinanceiraService {
     private final AnaliseFinanceiraRepository analiseFinanceiraRepository;
     private final TransacaoRepository transacaoRepository;
     private final UsuarioRepository usuarioRepository;
+    private final DataScienceApiClient dataScienceApiClient;
 
     @Transactional
     public AnaliseFinanceiraResponse analisar(AnaliseFinanceiraRequest request, String emailUsuario) {
@@ -46,11 +49,24 @@ public class AnaliseFinanceiraService {
                         Collectors.reducing(BigDecimal.ZERO, Transacao::getValor, BigDecimal::add)
                 ));
 
-        String perfilFinanceiro = calcularPerfilMock(request);
-        Double probabilidade = 0.75;
-        List<String> recomendacoes = gerarRecomendacoesMock(perfilFinanceiro);
+        String perfilFinanceiro;
+        Double probabilidade;
 
-        // Score não é mock — regra determinística real, agora persistida.
+        try {
+            DataScienceAnaliseResponse resposta = dataScienceApiClient.analisar(
+                    request.rendaMensal(), request.nivelEndividamento(), request.frequenciaPoupanca()
+            );
+            perfilFinanceiro = resposta.perfil();
+            probabilidade = resposta.probabilidade();
+            log.info("Perfil calculado via API real: {} | probabilidade: {}", perfilFinanceiro, probabilidade);
+        } catch (RestClientException e) {
+            log.warn("API Python indisponível, usando fallback mockado. Erro: {}", e.getMessage());
+            perfilFinanceiro = calcularPerfilMock(request);
+            probabilidade = 0.5;
+        }
+
+        List<String> recomendacoes = gerarRecomendacoes(perfilFinanceiro);
+
         Integer score = calcularScore(request);
 
         AnaliseFinanceira analise = AnaliseFinanceira.builder()
@@ -197,7 +213,7 @@ public class AnaliseFinanceiraService {
         return "Saudavel";
     }
 
-    private List<String> gerarRecomendacoesMock(String perfil) {
+    private List<String> gerarRecomendacoes(String perfil) {
         return switch (perfil) {
             case "Em risco" -> List.of(
                     "Priorizar a quitação de dívidas com juros mais altos",

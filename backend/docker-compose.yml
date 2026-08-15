@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
@@ -32,6 +30,8 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       DATASCIENCE_API_URL: ${DATASCIENCE_API_URL}
       DATASCIENCE_API_TOKEN: ${DATASCIENCE_API_TOKEN}
+    env_file:
+      - .env
     ports:
       - "8080:8080"
 

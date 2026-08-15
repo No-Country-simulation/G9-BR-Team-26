@@ -1,6 +1,11 @@
 spring:
   application:
     name: finance
+  # O Spring Boot não carrega arquivos .env automaticamente. Este import torna
+  # GEMINI_API_KEY disponível também na execução local; em produção a variável
+  # de ambiente do processo continua tendo precedência.
+  config:
+    import: optional:file:./.env[.properties]
   datasource:
     # Ajustado: Adicionado &allowPublicKeyRetrieval=true
     url: jdbc:mysql://localhost:3306/finance_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
@@ -31,6 +36,13 @@ datascience:
     token: ${DATASCIENCE_API_TOKEN:token-nao-configurado}
     connect-timeout-ms: 5000
     read-timeout-ms: 10000
+fai:
+  gemini:
+    # Configure GEMINI_API_KEY no ambiente. Nunca inclua a chave em código ou respostas HTTP.
+    api-key: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-2.5-flash}
+    connect-timeout-ms: ${GEMINI_CONNECT_TIMEOUT_MS:5000}
+    read-timeout-ms: ${GEMINI_READ_TIMEOUT_MS:15000}
 ---
 spring:
   config:

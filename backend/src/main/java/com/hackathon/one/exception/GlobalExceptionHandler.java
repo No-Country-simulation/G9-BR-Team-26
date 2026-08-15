@@ -10,6 +10,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 
 import java.util.List;
 
@@ -85,6 +86,46 @@ public class GlobalExceptionHandler {
                 detalhes
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ErrorResponse> handleUnreadableBody(
+            HttpMessageNotReadableException ex, HttpServletRequest request) {
+        ErrorResponse error = ErrorResponse.ofValidation(
+                HttpStatus.BAD_REQUEST.value(),
+                HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                "Corpo da requisição inválido.",
+                request.getRequestURI(),
+                List.of("Envie um JSON válido no formato esperado.")
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(GeminiIntegrationException.class)
+    public ResponseEntity<ErrorResponse> handleGeminiIntegration(
+            GeminiIntegrationException ex, HttpServletRequest request) {
+        log.warn("Falha na integração Gemini na rota {}: {}", request.getRequestURI(), ex.getMessage());
+        ErrorResponse error = ErrorResponse.of(
+                HttpStatus.BAD_GATEWAY.value(),
+                HttpStatus.BAD_GATEWAY.getReasonPhrase(),
+                "Não foi possível consultar a Fai agora. Tente novamente mais tarde.",
+                request.getRequestURI()
+        );
+        return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(error);
+    }
+
+    @ExceptionHandler(GeminiApiKeyNotConfiguredException.class)
+    public ResponseEntity<ErrorResponse> handleGeminiApiKeyNotConfigured(
+            GeminiApiKeyNotConfiguredException ex, HttpServletRequest request) {
+        log.warn("Chat Fai indisponível na rota {}: GEMINI_API_KEY não configurada.", request.getRequestURI());
+        ErrorResponse error = ErrorResponse.ofValidation(
+                HttpStatus.SERVICE_UNAVAILABLE.value(),
+                HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase(),
+                "Funcionalidade indisponível no momento. Tente novamente mais tarde.",
+                request.getRequestURI(),
+                List.of("A integração Gemini não está configurada no servidor.")
+        );
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(error);
     }
 
     @ExceptionHandler(Exception.class)

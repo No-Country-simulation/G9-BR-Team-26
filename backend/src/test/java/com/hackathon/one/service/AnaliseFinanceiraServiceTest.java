@@ -11,11 +11,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.client.RestClientException;
 
 import java.util.Collections;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -23,12 +25,15 @@ class AnaliseFinanceiraServiceTest {
 
     @Mock
     private AnaliseFinanceiraRepository analiseFinanceiraRepository;
-
     @Mock
     private TransacaoRepository transacaoRepository;
-
     @Mock
     private UsuarioRepository usuarioRepository;
+    // ADICIONADO: faltava esse mock. O AnaliseFinanceiraService depende de DataScienceApiClient
+    // (injetado via @RequiredArgsConstructor), então sem esse @Mock o Mockito não conseguia
+    // preencher o campo em @InjectMocks e ele ficava null -> NullPointerException nos testes.
+    @Mock
+    private DataScienceApiClient dataScienceApiClient; 
 
     @InjectMocks
     private AnaliseFinanceiraService analiseFinanceiraService;
@@ -37,11 +42,17 @@ class AnaliseFinanceiraServiceTest {
         return Usuario.builder().id(1L).nome("Teste").email("teste@email.com").build();
     }
 
+    private void mockApiIndisponivel() {
+        when(dataScienceApiClient.analisar(any(), any(), any()))
+                .thenThrow(new RestClientException("API indisponível (simulado)"));
+    }
+
     @Test
     void shouldCalculateHighScoreForLowDebtAndHighSavings() {
         Usuario usuario = usuarioMock();
         when(usuarioRepository.findByEmail("teste@email.com")).thenReturn(Optional.of(usuario));
         when(transacaoRepository.findByUsuarioIdOrderByCriadoEmDesc(1L)).thenReturn(Collections.emptyList());
+        mockApiIndisponivel();
 
         AnaliseFinanceiraRequest request = new AnaliseFinanceiraRequest(
                 new java.math.BigDecimal("4500"), 10, "Alta"
@@ -58,6 +69,7 @@ class AnaliseFinanceiraServiceTest {
         Usuario usuario = usuarioMock();
         when(usuarioRepository.findByEmail("teste@email.com")).thenReturn(Optional.of(usuario));
         when(transacaoRepository.findByUsuarioIdOrderByCriadoEmDesc(1L)).thenReturn(Collections.emptyList());
+        mockApiIndisponivel();
 
         AnaliseFinanceiraRequest request = new AnaliseFinanceiraRequest(
                 new java.math.BigDecimal("4500"), 95, "Baixa"
@@ -74,6 +86,7 @@ class AnaliseFinanceiraServiceTest {
         Usuario usuario = usuarioMock();
         when(usuarioRepository.findByEmail("teste@email.com")).thenReturn(Optional.of(usuario));
         when(transacaoRepository.findByUsuarioIdOrderByCriadoEmDesc(1L)).thenReturn(Collections.emptyList());
+        mockApiIndisponivel();
 
         AnaliseFinanceiraRequest request = new AnaliseFinanceiraRequest(
                 new java.math.BigDecimal("4500"), 25, "Media"
