@@ -24,6 +24,7 @@ public class TransacaoService {
 
     private final TransacaoRepository transacaoRepository;
     private final UsuarioRepository usuarioRepository;
+    private final ClassificacaoService classificacaoService;
 
     // ─────────────────────────────────────────
     //  Criação
@@ -35,9 +36,9 @@ public class TransacaoService {
         Usuario usuario = usuarioRepository.findByEmail(emailUsuario)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario", emailUsuario));
 
-        // A categoria não é recebida pelo cliente neste momento.
-        // Quando o modelo de classificação estiver pronto, ele será responsável por definir a categoria correta.
-        String categoria = "outros";
+        // A categoria não é recebida pelo cliente: é inferida automaticamente
+        // pelo classificador (ver ClassificacaoService).
+        String categoria = classificacaoService.classificar(request).categoria();
 
         Transacao transacao = Transacao.builder()
                 .descricao(request.descricao())
@@ -82,9 +83,9 @@ public class TransacaoService {
 
         transacao.setDescricao(requireNonNull(request.descricao(), "A descrição é obrigatória."));
         transacao.setValor(requireNonNull(request.valor(), "O valor é obrigatório."));
-        // A categoria não é recebida pelo cliente neste momento.
-        // Quando o modelo de classificação estiver pronto, ele será responsável por definir a categoria correta.
-        transacao.setCategoria("outros");
+        // A categoria não é recebida pelo cliente: é reinferida automaticamente
+        // pelo classificador a cada atualização (ver ClassificacaoService).
+        transacao.setCategoria(classificacaoService.classificar(request).categoria());
 
         Transacao atualizada = transacaoRepository.save(transacao);
         return toResponse(atualizada);

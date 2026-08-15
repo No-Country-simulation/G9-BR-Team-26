@@ -4,8 +4,8 @@ spring:
   datasource:
     # Ajustado: Adicionado &allowPublicKeyRetrieval=true
     url: jdbc:mysql://localhost:3306/finance_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
-    username: root
-    password: root
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -18,9 +18,9 @@ spring:
     enabled: true
     baseline-on-migrate: true
 jwt:
-  # Valor padrão SÓ para desenvolvimento local. Em produção, configurar
-  # a variável de ambiente JWT_SECRET com um valor forte e único.
-  secret: ${JWT_SECRET:Y2hhdmVfc2VjcmV0YV9tdWl0b19ncmFuZGVfcGFyYV9vX2hhY2thdGhvbl9zZWd1cmFuY2E=}
+  # Sem valor padrão: JWT_SECRET é obrigatório em todos os ambientes.
+  # Ver backend/.env.example para um valor de exemplo de uso local.
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:86400000} # 24 horas
 # Configuração do microserviço Python (Data Science / FastAPI).
 # URL e token via variável de ambiente — nunca hardcoded.
@@ -39,5 +39,5 @@ spring:
   datasource:
     # Ajustado: Adicionado &allowPublicKeyRetrieval=true para quando rodar dentro do container
     url: jdbc:mysql://mysql:3306/finance_db?useSSL=false&allowPublicKeyRetrieval=true
-    username: root
-    password: root
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}

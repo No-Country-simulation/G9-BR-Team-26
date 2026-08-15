@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -40,27 +39,19 @@ public class UsuarioController {
     }
 
     // ─────────────────────────────────────────
-    //  GET /usuarios/all
-    // ─────────────────────────────────────────
-
-    // Lista todos os usuários cadastrados; é uma rota administrativa.
-    @Operation(summary = "Listar todos os usuários", description = "Retorna todos os usuários cadastrados (somente para administradores)", security = @SecurityRequirement(name = "bearerAuth"))
-    @GetMapping("/all")
-    public ResponseEntity<List<UserResponse>> listarTodos() {
-        List<UserResponse> response = usuarioService.listarTodos();
-        return ResponseEntity.ok(response);
-    }
-
-    // ─────────────────────────────────────────
     //  GET /usuarios/{id}
     // ─────────────────────────────────────────
 
-    // Retorna os dados públicos de um usuário pelo seu ID numérico.
+    // Retorna os dados públicos de um usuário pelo seu ID numérico, desde que
+    // o solicitante seja o dono da conta (email do token == email do recurso).
     // A senha nunca é incluída na resposta.
-    @Operation(summary = "Buscar usuário por ID", description = "Retorna os dados públicos de um usuário pelo identificador", security = @SecurityRequirement(name = "bearerAuth"))
+    @Operation(summary = "Buscar usuário por ID", description = "Retorna os dados públicos de um usuário pelo identificador, desde que seja o próprio usuário autenticado", security = @SecurityRequirement(name = "bearerAuth"))
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponse> buscarPorId(@PathVariable Long id) {
-        UserResponse response = usuarioService.buscarPorId(id);
+    public ResponseEntity<UserResponse> buscarPorId(
+            @PathVariable Long id,
+            @AuthenticationPrincipal UserDetails userDetails
+    ) {
+        UserResponse response = usuarioService.buscarPorId(id, userDetails.getUsername());
         return ResponseEntity.ok(response);
     }
 
@@ -68,10 +59,15 @@ public class UsuarioController {
     //  DELETE /usuarios/{id}
     // ─────────────────────────────────────────
 
-    @Operation(summary = "Excluir usuário", description = "Remove um usuário do sistema pelo identificador", security = @SecurityRequirement(name = "bearerAuth"))
+    // Remove a conta do usuário pelo identificador, desde que o solicitante
+    // seja o dono da conta (email do token == email do recurso).
+    @Operation(summary = "Excluir usuário", description = "Remove a própria conta do usuário autenticado", security = @SecurityRequirement(name = "bearerAuth"))
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        usuarioService.deletar(id);
+    public ResponseEntity<Void> deletar(
+            @PathVariable Long id,
+            @AuthenticationPrincipal UserDetails userDetails
+    ) {
+        usuarioService.deletarSeProprio(id, userDetails.getUsername());
         return ResponseEntity.noContent().build();
     }
 }

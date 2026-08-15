@@ -4,6 +4,7 @@ import com.hackathon.one.domain.Usuario;
 import com.hackathon.one.dto.LoginRequest;
 import com.hackathon.one.dto.SignupRequest;
 import com.hackathon.one.dto.UserResponse;
+import com.hackathon.one.exception.EmailJaCadastradoException;
 import com.hackathon.one.repository.UsuarioRepository;
 import com.hackathon.one.security.JwtUtil;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,8 +60,8 @@ class AuthServiceTest {
         when(usuarioRepository.existsByEmail("maria@email.com")).thenReturn(true);
 
         assertThatThrownBy(() -> authService.signup(request))
-                .isInstanceOf(RuntimeException.class)
-                .hasMessage("Email já cadastrado");
+                .isInstanceOf(EmailJaCadastradoException.class)
+                .hasMessageContaining("maria@email.com");
     }
 
     @Test
