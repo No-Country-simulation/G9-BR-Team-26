@@ -6,4 +6,6 @@ api/controller/__pycache__/
 api/config/__pycache__/
 api/dto/__pycache__/
 api/security/__pycache__/
+api/tests/__pycache__/
+.pytest_cache/
 api/.env

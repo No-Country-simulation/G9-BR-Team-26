@@ -37,6 +37,7 @@ router = APIRouter(tags=["health"])
                         },
                         "degraded": {
                             "summary": "Um ou mais modelos indisponíveis",
+                            "value": {
                                 "status": "degraded",
                                 "models": {
                                     "tfidf": True,
@@ -50,7 +51,7 @@ router = APIRouter(tags=["health"])
                 }
             },
         }
-    
+    },
 )
 def health_check(service: PredictionService = Depends(get_service)) -> dict:
     return service.health_status()

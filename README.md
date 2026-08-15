@@ -161,9 +161,9 @@ docker compose up -d
 ### 2. Executar a API FastAPI de Inteligência Artificial
 
 ```bash
-cd data-science
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+cd data-science/api
+pip install -r ../requirements.txt
+uvicorn main:app --reload --port 8000
 ```
 
 ### 3. Executar o Backend Spring Boot

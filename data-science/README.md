@@ -58,7 +58,7 @@ data-science/
 
 ## Como executar a API
 
-### 🐳 Via Docker (Recomendado — Porta 7070)
+### 🐳 Via Docker (Recomendado — Porta 8000)
 
 A partir do diretório `data-science`:
 
@@ -69,12 +69,12 @@ A partir do diretório `data-science`:
 
 2. **Subir o container:**
    ```bash
-   docker run -d -p 7070:7070 --name datascience-api smart-finance-ds
+   docker run -d -p 8000:8000 --name datascience-api smart-finance-ds
    ```
 
 3. **Acessar a documentação Swagger:**
    ```text
-   http://localhost:7070/docs
+   http://localhost:8000/docs
    ```
 
 ### 🐍 Via Python (Ambiente Local)
@@ -88,12 +88,12 @@ A partir do diretório `data-science`:
 2. **Executar o servidor:**
    ```bash
    cd api
-   uvicorn main:app --host 0.0.0.0 --port 7070 --reload
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
    ```
 
 3. **Acessar a documentação Swagger:**
    ```text
-   http://localhost:7070/docs
+   http://localhost:8000/docs
    ```
 
 Os notebooks usam caminhos relativos partindo da própria pasta onde estão (`../../data`, `../../models`), então devem ser executados a partir de dentro de `notebooks/sandbox/` ou `notebooks/training/`, respectivamente, com Jupyter/VS Code apontando o kernel para o ambiente onde as dependências foram instaladas.

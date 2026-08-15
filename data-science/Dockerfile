@@ -1,33 +1,32 @@
 # ═══════════════════════════════════════════════════════════
-#  Dockerfile — Data Science AI Service (FastAPI)
+#  Dockerfile — Finance AI Data Science API (FastAPI)
+#  Imagem única (sem multi-stage, já que Python não compila
+#  como Java — só precisamos instalar as dependências).
 # ═══════════════════════════════════════════════════════════
 
-# Imagem base oficial do Python 3.11 (versão slim para menor tamanho e maior segurança)
-FROM python:3.11-slim
+FROM python:3.12-slim
 
-# Variáveis de ambiente para otimizar o Python no container
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/app/api
-
-# Diretório raiz de trabalho no container
 WORKDIR /app
 
-# Copia o arquivo de dependências para aproveitar o cache de camadas do Docker
+# Copia primeiro só o requirements.txt (aproveita cache do Docker:
+# se o código mudar mas as dependências não, não reinstala tudo de novo).
 COPY requirements.txt .
 
-# Atualiza o pip e instala as dependências do projeto
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Instala as dependências. --no-cache-dir evita guardar cache do pip
+# dentro da imagem, deixando ela menor.
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia todo o código-fonte (incluindo api/ e os modelos em models/)
-COPY . .
+# Copia o código da API e os modelos treinados.
+COPY api ./api
+COPY models ./models
 
-# Define o diretório de trabalho na pasta da API
+# Muda para dentro da pasta da API, de onde o uvicorn/gunicorn é executado
+# (mesmo comportamento documentado no api/README.md).
 WORKDIR /app/api
 
-# Documenta a porta na qual a API de Data Science irá rodar
-EXPOSE 7070
+# Porta que a API usa (documentação, não abre a porta sozinha).
+EXPOSE 8000
 
-# Inicializa o servidor Uvicorn escutando em todas as interfaces de rede na porta 7070
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7070"]
+# Comando de inicialização, usando gunicorn com workers uvicorn
+# (padrão mais robusto para produção do que uvicorn sozinho).
+CMD ["gunicorn", "main:app", "--workers", "2", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000"]
