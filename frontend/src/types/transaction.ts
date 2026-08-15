@@ -47,7 +47,8 @@ export interface CreateTransactionDTO {
   description: string;
   amount: number;
   type: TransactionType;
-  category: TransactionCategory;
+  // Opcional: se o usuário não selecionar, o backend classifica a categoria automaticamente (IA).
+  category?: TransactionCategory;
   date: string;
   status: TransactionStatus;
   paymentMethod: PaymentMethod;

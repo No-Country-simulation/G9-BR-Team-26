@@ -42,6 +42,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsLoading(true);
     try {
       const response = await authRepository.login(credentials);
+      // SECURITY (XSS risk): storing the token in localStorage — see the note in
+      // services/api/session.ts. Migrating to an httpOnly cookie is the recommended
+      // fix but requires a backend auth contract change, so it's not done here.
       localStorage.setItem(TOKEN_KEY, response.token);
       localStorage.setItem(TOKEN_EXPIRY_KEY, String(Date.now() + response.expiresIn * 1000));
       setToken(response.token); setUser(response.user);
