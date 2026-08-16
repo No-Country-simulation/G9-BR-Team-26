@@ -109,7 +109,18 @@ A equipe de Data Science é responsável por treinar, avaliar e serializar os mo
 5. `notebooks/training/TreinamentoPerfil.ipynb` — treino, avaliação e serialização do Modelo 2.
 6. `api/scripts/predictor.py` — carrega os artefatos de `models/` e expõe as funções de predição consumidas pela API FastAPI.
 
-### Resultados obtidos
+```bash
+cd data-science/api
+pip install -r ../requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+### 3. Executar o Backend Spring Boot
+
+```bash
+cd backend
+mvn clean spring-boot:run
+```
 
 - **Modelo 1 (Categoria):** Accuracy ≈ 98,4% · F1-macro ≈ 98,4% (validação cruzada: F1-macro médio ≈ 98,1%, desvio padrão ≈ 0,001).
 - **Modelo 2 (Perfil Financeiro):** Accuracy ≈ 100% · F1-macro ≈ 100%.

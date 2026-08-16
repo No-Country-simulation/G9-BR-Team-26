@@ -73,7 +73,7 @@ class UsuarioServiceTest {
     }
 
     @Test
-    void shouldDeleteExistingUser() {
+    void shouldDeleteExistingUserWhenOwner() {
         Usuario usuario = Usuario.builder()
                 .id(12L)
                 .nome("Caio")
@@ -82,8 +82,52 @@ class UsuarioServiceTest {
 
         when(usuarioRepository.findById(12L)).thenReturn(Optional.of(usuario));
 
-        usuarioService.deletar(12L);
+        usuarioService.deletarSeProprio(12L, "caio@email.com");
 
         verify(usuarioRepository).delete(usuario);
+    }
+
+    @Test
+    void shouldThrowWhenDeletingUserThatIsNotTheOwner() {
+        Usuario usuario = Usuario.builder()
+                .id(13L)
+                .nome("Duda")
+                .email("duda@email.com")
+                .build();
+
+        when(usuarioRepository.findById(13L)).thenReturn(Optional.of(usuario));
+
+        assertThatThrownBy(() -> usuarioService.deletarSeProprio(13L, "outra@email.com"))
+                .isInstanceOf(ResourceNotFoundException.class);
+    }
+
+    @Test
+    void shouldFindUserByIdWhenOwner() {
+        Usuario usuario = Usuario.builder()
+                .id(14L)
+                .nome("Elis")
+                .email("elis@email.com")
+                .criadoEm(LocalDateTime.of(2024, 3, 3, 9, 0))
+                .build();
+
+        when(usuarioRepository.findById(14L)).thenReturn(Optional.of(usuario));
+
+        UserResponse response = usuarioService.buscarPorId(14L, "elis@email.com");
+
+        assertThat(response.getNome()).isEqualTo("Elis");
+    }
+
+    @Test
+    void shouldThrowWhenFindingUserByIdThatIsNotTheOwner() {
+        Usuario usuario = Usuario.builder()
+                .id(15L)
+                .nome("Flavio")
+                .email("flavio@email.com")
+                .build();
+
+        when(usuarioRepository.findById(15L)).thenReturn(Optional.of(usuario));
+
+        assertThatThrownBy(() -> usuarioService.buscarPorId(15L, "outra@email.com"))
+                .isInstanceOf(ResourceNotFoundException.class);
     }
 }

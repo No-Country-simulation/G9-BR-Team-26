@@ -2,13 +2,22 @@ fastapi>=0.100.0
 uvicorn>=0.22.0
 pydantic>=2.0.0
 joblib>=1.2.0
-numpy>=1.24.0
-scipy>=1.11.0
+# numpy/scipy/pandas pinned exatamente (como scikit-learn==1.5.2) porque os
+# artefatos .joblib em data-science/models/ foram serializados com essas
+# versões: um desalinhamento de versão pode quebrar o unpickling ou mudar
+# resultados de inferência silenciosamente. Versões compatíveis com
+# Python 3.12 e scikit-learn 1.5.2 (mesma matriz usada no Dockerfile).
+numpy==1.26.4
+scipy==1.13.1
 scikit-learn==1.5.2
-pandas>=2.0.0
+pandas==2.2.2
 matplotlib>=3.8.0
 seaborn>=0.13.0
 ipykernel>=6.0.0
 python-multipart>=0.0.6
 gunicorn>=20.1.0
 python-dotenv>=1.0.0
+
+# Dependências de teste (suíte pytest em api/tests/)
+pytest>=8.0.0
+httpx>=0.27.0

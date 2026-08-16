@@ -3,14 +3,16 @@ services:
     image: mysql:8.0
     container_name: finance-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: finance_db
-    ports:
-      - "3306:3306"
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    expose:
+      - "3306"
     volumes:
       - mysql-data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${MYSQL_ROOT_PASSWORD}"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -23,6 +25,11 @@ services:
         condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      DB_USERNAME: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      DATASCIENCE_API_URL: ${DATASCIENCE_API_URL}
+      DATASCIENCE_API_TOKEN: ${DATASCIENCE_API_TOKEN}
     env_file:
       - .env
     ports:

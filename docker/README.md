@@ -1,8 +1,8 @@
 # Docker e infraestrutura
 
-Este diretório centraliza a documentação de contêineres. Os arquivos de build ficam ao lado de cada serviço para que cada imagem tenha o contexto de build correto.
+`Futuramente as dockerfiles da api e da data-science estarão aqui para facilitar o deploy.`
 
-## Por que existem dois Dockerfiles?
+Este diretório contém documentações e scripts auxiliares para a execução de serviços containerizados do projeto. Os serviços de banco de dados e backend são orquestrados através do arquivo [`backend/docker-compose.yml`](../backend/docker-compose.yml), dentro da pasta `backend/` (não na raiz do projeto).
 
 Há dois serviços independentes, com runtimes e dependências diferentes. Por isso cada um precisa da sua própria imagem:
 
@@ -13,14 +13,29 @@ Há dois serviços independentes, com runtimes e dependências diferentes. Por i
 
 Os Dockerfiles **não são duplicados**: o primeiro produz a API de regras de negócio e o segundo produz o serviço de inferência de ML. Eles podem ser implantados, escalados e atualizados separadamente. O backend se comunica com o Data Science por HTTP usando `DATASCIENCE_API_URL`.
 
-## Compose atual: backend + MySQL
+### Credenciais e Variáveis de Ambiente
+Nenhuma credencial fica hardcoded no `docker-compose.yml` — todas vêm de variáveis de
+ambiente, lidas de um arquivo `.env` (não versionado) na pasta `backend/`. Veja
+`backend/.env.example` para a lista completa de chaves esperadas.
+
+*   **Imagem**: `mysql:8.0`
+*   **Porta**: `3306`, exposta somente na rede interna do Docker (`expose`) — não é
+    publicada no host, para reduzir a superfície de ataque.
+*   **Banco de Dados Padrão**: `finance_db`
+*   **Usuário da aplicação**: definido por `MYSQL_USER` / `MYSQL_PASSWORD`
+*   **Senha de Root**: definida por `MYSQL_ROOT_PASSWORD`
 
 O arquivo [`backend/docker-compose.yml`](../backend/docker-compose.yml) sobe:
 
 - `mysql`: MySQL 8, com volume nomeado `mysql-data` e porta `3306` exposta;
 - `backend`: API Spring Boot construída a partir de `backend/Dockerfile`, exposta na porta `8080`.
 
-O Data Science ainda não está declarado nesse Compose; execute-o localmente ou construa sua imagem separadamente conforme a seção seguinte.
+### Inicializar os Serviços
+Para subir o banco de dados e o backend em segundo plano (modo detached), execute a partir de `backend/` (com um arquivo `.env` configurado, ver `.env.example`):
+```bash
+cd backend
+docker compose up -d
+```
 
 ### Configuração
 
@@ -70,6 +85,5 @@ O Dockerfile do Data Science expõe a porta `7070`. Ao usar essa imagem junto ao
 
 ## Observações de segurança
 
-- Arquivos `.env` contêm segredos e ficam ignorados pelo Git.
-- Não registre nem publique `GEMINI_API_KEY`, tokens ou credenciais reais.
-- Em produção, prefira variáveis providas pelo orquestrador/gerenciador de segredos em vez de copiar arquivos `.env`.
+## 💾 Persistência de Dados
+Os dados do banco de dados são mantidos de forma persistente através do volume nomeado `mysql-data` (com hífen), gerenciado localmente pelo Docker Engine. Isso garante que a exclusão/recriação dos containers não cause a perda do banco de dados configurado pelo Spring Boot.

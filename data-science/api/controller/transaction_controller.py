@@ -62,11 +62,13 @@ router = APIRouter(tags=["transactions"])
         },
         503: {
             "description": "Artefato do modelo de classificação não carregado.",
+            "content": {
                 "application/json": {
                     "example": {"detail": "O modelo de classificação de transações não está disponível."}
                 }
             },
         },
+    },
 )
 
 def classificar_transacao(

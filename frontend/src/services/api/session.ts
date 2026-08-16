@@ -1,3 +1,12 @@
+// SECURITY (XSS risk): the JWT and its expiry are stored in localStorage below,
+// which is readable by any JavaScript running on this origin. A successful XSS
+// attack (e.g. via a compromised dependency or unsanitized user content) would
+// have unrestricted read access to the token. The recommended fix is to migrate
+// authentication to an httpOnly + Secure + SameSite=Strict cookie set by the
+// backend, so the token is never exposed to client-side JS at all — but that
+// requires changing the auth contract between frontend and backend (login/refresh
+// responses, CSRF handling, etc.), which is out of scope for this change. Until
+// that migration happens, keep CSP as strict as possible to reduce XSS exposure.
 export const TOKEN_KEY = 'smartfinance_auth_token';
 export const TOKEN_EXPIRY_KEY = 'smartfinance_auth_expires_at';
 export const UNAUTHORIZED_EVENT = 'smartfinance:unauthorized';

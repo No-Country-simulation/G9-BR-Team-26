@@ -10,6 +10,7 @@
 # ==============================================================================
 
 import logging
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -123,9 +124,20 @@ app = FastAPI(
 # Middleware
 # ==============================================================================
 
+# Lista de origens permitidas para CORS, vinda de variável de ambiente
+# (ex.: "http://localhost:3000,https://smartfinance.example.com").
+# allow_origins=["*"] combinado com allow_credentials=True é inválido pela
+# especificação CORS e permitiria que qualquer origem enviasse requisições
+# autenticadas à API — por isso a lista deve ser explícita.
+ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("ALLOWED_ORIGINS", "").split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

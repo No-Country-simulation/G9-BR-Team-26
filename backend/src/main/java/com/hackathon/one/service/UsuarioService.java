@@ -36,17 +36,20 @@ public class UsuarioService {
     // ─────────────────────────────────────────
 
     /**
-     * Retorna os dados públicos de um usuário pelo seu ID.
-     * A senha nunca é exposta — o retorno é sempre via DTO.
+     * Retorna os dados públicos de um usuário pelo seu ID, desde que o
+     * solicitante seja o dono do recurso (email do token == email do usuário-alvo).
+     * Usuários não podem consultar dados de outras contas.
      *
      * @param id identificador do usuário
+     * @param emailAutenticado e-mail extraído do token JWT do requisitante
      * @return DTO com dados do usuário
-     * @throws ResourceNotFoundException se o usuário não for encontrado
+     * @throws ResourceNotFoundException se o usuário não for encontrado ou não pertencer ao requisitante
      */
     @Transactional(readOnly = true)
-    public UserResponse buscarPorId(Long id) {
+    public UserResponse buscarPorId(Long id, String emailAutenticado) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario", id));
+        validarPosse(usuario, emailAutenticado, id);
         return toResponse(usuario);
     }
 
@@ -57,11 +60,36 @@ public class UsuarioService {
                 .toList();
     }
 
+    /**
+     * Remove a conta do usuário, desde que o solicitante seja o dono do recurso
+     * (email do token == email do usuário-alvo). Segue o mesmo padrão de
+     * validação de posse usado em {@link TransacaoService#deletar}.
+     *
+     * @param id identificador do usuário a ser removido
+     * @param emailAutenticado e-mail extraído do token JWT do requisitante
+     * @throws ResourceNotFoundException se o usuário não for encontrado ou não pertencer ao requisitante
+     */
     @Transactional
-    public void deletar(Long id) {
+    public void deletarSeProprio(Long id, String emailAutenticado) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario", id));
+        validarPosse(usuario, emailAutenticado, id);
         usuarioRepository.delete(usuario);
+    }
+
+    // ─────────────────────────────────────────
+    //  Validação de posse
+    // ─────────────────────────────────────────
+
+    /**
+     * Garante que o usuário autenticado só possa operar sobre a própria conta.
+     * Lança {@link ResourceNotFoundException} (em vez de um 403) para não revelar
+     * a existência de contas alheias, seguindo o mesmo padrão usado em {@link TransacaoService}.
+     */
+    private void validarPosse(Usuario usuario, String emailAutenticado, Long id) {
+        if (!usuario.getEmail().equalsIgnoreCase(emailAutenticado)) {
+            throw new ResourceNotFoundException("Usuario", id);
+        }
     }
 
     // ─────────────────────────────────────────

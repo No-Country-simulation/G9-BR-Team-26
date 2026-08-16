@@ -5,6 +5,7 @@ import com.hackathon.one.dto.AuthResponse;
 import com.hackathon.one.dto.LoginRequest;
 import com.hackathon.one.dto.SignupRequest;
 import com.hackathon.one.dto.UserResponse;
+import com.hackathon.one.exception.EmailJaCadastradoException;
 import com.hackathon.one.repository.UsuarioRepository;
 import com.hackathon.one.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,7 @@ public class AuthService {
 
     public UserResponse signup(SignupRequest request) {
         if (usuarioRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("Email já cadastrado"); // Idealmente criar uma exception customizada e um ControllerAdvice
+            throw new EmailJaCadastradoException(request.getEmail());
         }
 
         Usuario usuario = Usuario.builder()

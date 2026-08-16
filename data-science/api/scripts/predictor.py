@@ -25,6 +25,7 @@ from typing import Any, Dict, Tuple
 import joblib
 import numpy as np
 import pandas as pd
+from fastapi import HTTPException, status
 from scipy.sparse import hstack
 
 logger = logging.getLogger(__name__)
@@ -204,11 +205,19 @@ class ModelPredictor:
             logger.warning("Modelos de categoria não disponíveis.")
             return "desconhecida", 0.0
 
-        X_text = self.tfidf.transform([descricao])           # (1, 487)
-        X_valor = np.array([[float(valor)]])                  # (1, 1)
-        X_final = hstack([X_text, X_valor])                  # (1, 488)
+        try:
+            X_text = self.tfidf.transform([descricao])           # (1, 487)
+            X_valor = np.array([[float(valor)]])                  # (1, 1)
+            X_final = hstack([X_text, X_valor])                  # (1, 488)
 
-        probs = self.cat_model.predict_proba(X_final)[0]
+            probs = self.cat_model.predict_proba(X_final)[0]
+        except Exception:
+            logger.exception("Falha na inferência do modelo de categoria.")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Falha ao classificar a transação.",
+            )
+
         idx = int(np.argmax(probs))
         label = str(self.cat_model.classes_[idx])
         return label, float(probs[idx])
@@ -267,7 +276,15 @@ class ModelPredictor:
 
         df = pd.DataFrame([row])[_PERFIL_FEATURE_NAMES]
 
-        probs = self.perf_model.predict_proba(df)[0]
+        try:
+            probs = self.perf_model.predict_proba(df)[0]
+        except Exception:
+            logger.exception("Falha na inferência do modelo de perfil financeiro.")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Falha ao analisar o perfil financeiro.",
+            )
+
         idx = int(np.argmax(probs))
         label = str(self.perf_model.classes_[idx])
         return label, float(probs[idx])

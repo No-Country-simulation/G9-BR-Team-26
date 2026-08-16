@@ -6,6 +6,8 @@
 # documentação da API nem nas respostas de erro.
 # ============================================================================== 
 
+import hmac
+
 from fastapi import HTTPException, Security, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
@@ -27,7 +29,7 @@ async def verify_token(
     O valor esperado do token é intencionalmente omitido de todas as respostas e da documentação.
     
     """
-    if credentials.credentials != API_TOKEN:
+    if not API_TOKEN or not hmac.compare_digest(credentials.credentials, API_TOKEN):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Token de autenticação inválido ou ausente.",

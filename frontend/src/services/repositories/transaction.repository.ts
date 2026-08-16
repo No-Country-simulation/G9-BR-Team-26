@@ -37,6 +37,8 @@ const mapBackendToTransaction = (b: BackendTransacaoResponse): Transaction => {
       categoryStr = 'Investimentos';
     } else if (lower.includes('salar') || lower.includes('receita')) {
       categoryStr = 'Salário';
+    } else if (lower.includes('servic') || lower.includes('serviç')) {
+      categoryStr = 'Serviços';
     } else {
       categoryStr = 'Outros';
     }
@@ -52,6 +54,28 @@ const mapBackendToTransaction = (b: BackendTransacaoResponse): Transaction => {
     status: 'COMPLETED',
     paymentMethod: 'PIX',
   };
+};
+
+// Mapeia a categoria escolhida no frontend para o vocabulário usado pelo backend
+// (alimentacao, transporte, moradia, saude, educacao, lazer, servicos, outros, ...).
+// Enquanto o TransacaoRequest do backend não expõe oficialmente o campo "categoria"
+// (classificação hoje é automática via ML), esse campo é enviado de forma tolerante:
+// se o backend ainda não o ler, ele é simplesmente ignorado pelo Jackson.
+const mapCategoryToBackend = (category: TransactionCategory): string => {
+  const map: Record<TransactionCategory, string> = {
+    'Alimentação': 'alimentacao',
+    'Moradia': 'moradia',
+    'Transporte': 'transporte',
+    'Saúde': 'saude',
+    'Educação': 'educacao',
+    'Lazer': 'lazer',
+    'Investimentos': 'investimentos',
+    'Salário': 'salario',
+    'Vendas': 'vendas',
+    'Serviços': 'servicos',
+    'Outros': 'outros',
+  };
+  return map[category] ?? 'outros';
 };
 
 export const transactionRepository = {
@@ -85,6 +109,9 @@ export const transactionRepository = {
     const response = await api.post<BackendTransacaoResponse>('/transacoes', {
       descricao: dto.description,
       valor: dto.amount,
+      // Enviado apenas quando o usuário escolhe manualmente uma categoria;
+      // se omitido, o backend classifica automaticamente via ML.
+      ...(dto.category ? { categoria: mapCategoryToBackend(dto.category) } : {}),
     });
     return mapBackendToTransaction(response.data);
   },
@@ -93,6 +120,7 @@ export const transactionRepository = {
     const response = await api.put<BackendTransacaoResponse>(`/transacoes/${dto.id}`, {
       descricao: dto.description || '',
       valor: dto.amount || 0,
+      ...(dto.category ? { categoria: mapCategoryToBackend(dto.category) } : {}),
     });
     return mapBackendToTransaction(response.data);
   },
