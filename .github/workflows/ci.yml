@@ -41,11 +41,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-test
     services:
+      # Configuração do CONTAINER do MySQL — só aceita as variáveis
+      # que a imagem oficial do MySQL entende (MYSQL_*), nada de
+      # JWT_SECRET ou variáveis da aplicação aqui.
       mysql:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: finance_db
+          MYSQL_USER: finance_user
+          MYSQL_PASSWORD: finance_password
         ports:
           - 3306:3306
         options: >-
@@ -66,6 +71,14 @@ jobs:
 
       - name: Subir a aplicação em segundo plano
         working-directory: ./backend
+        # Variáveis de ambiente da APLICAÇÃO — é aqui que o Spring Boot
+        # vai buscar os valores pra resolver ${JWT_SECRET} etc.
+        env:
+          DB_USERNAME: finance_user
+          DB_PASSWORD: finance_password
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          DATASCIENCE_API_URL: ${{ secrets.DATASCIENCE_API_URL }}
+          DATASCIENCE_API_TOKEN: ${{ secrets.DATASCIENCE_API_TOKEN }}
         run: |
           nohup mvn -B spring-boot:run > app.log 2>&1 &
           echo "Aplicação iniciando..."
